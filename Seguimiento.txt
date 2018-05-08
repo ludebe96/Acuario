@@ -1,0 +1,72 @@
+|====================PRIMERA ENTREGA====================|
+- Caja - 6 3/4 HORAS - DONE
+- Gastos
+- Ventas
+- Compras
+- Inventario
+- Clientes
+|=======================================================| 
+
+
+|-------------------------DETALLES-------------------------|
+
+
+
+
+|==============================CAJA==============================|
+- Seguimiento (Transacciones E/S, ajuste de balance)
+- Cuenta (Caja y Ahorros):
+	- Efectivo
+	- Banco
+	- Cheques
+|================================================================|
+
+
+|============================GASTOS==============================|
+- Vista general (Subtotal por categoría)
+- Vista detallada Categorías:
+	- Compras
+	- Comida
+	- Sueldos
+	- Retiros
+	- Serivicios e Impuestos
+|================================================================|
+
+
+|==============================VENTAS============================|
+- Generación y almacenamiento de factura
+- Impresión y reimpresión de factura
+- Movimiento de Stock - (la cantidad vendida importa más que el
+		stock actual. Considerar limite menor a cero en stock.)
+|================================================================|
+
+
+|==============================COMPRAS===========================|
+- Categorías:
+	- Peces
+	- Productos Internos
+	- Comida
+	- Campo
+	- Varios 1
+	(Agregado dinámico)
+- Movimiento de Stock
+|================================================================|
+
+
+|===========================INVENTARIO=========================|
+- ABM
+- Peces: Especies y variedades
+- Lista de precios (Por mayor, por menor, oferta, distribuidor)
+|==============================================================|
+
+
+
+|=============================CLIENTES===========================|
+- ABM
+	- Nombre
+	- CUIT
+	- Mail
+	- Telefono 1
+	- Telefono 2
+	- Telefono 3
+|================================================================|

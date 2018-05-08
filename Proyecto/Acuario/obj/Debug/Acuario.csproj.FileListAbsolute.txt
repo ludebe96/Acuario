@@ -1,0 +1,20 @@
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\bin\Debug\Acuario.exe.config
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\bin\Debug\Acuario.exe
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\bin\Debug\Acuario.pdb
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\bin\Debug\MetroFramework.Design.dll
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\bin\Debug\MetroFramework.dll
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\obj\Debug\Acuario.csprojResolveAssemblyReference.cache
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\obj\Debug\Acuario.Properties.Resources.resources
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\obj\Debug\Acuario.csproj.GenerateResource.Cache
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\obj\Debug\Acuario.exe
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\obj\Debug\Acuario.pdb
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\obj\Debug\Acuario.Forms.FormHome.resources
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\obj\Debug\Acuario.Forms.FormCaja.resources
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario\Acuario\obj\Debug\Acuario.Forms.FormAjustarBalance.resources
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Proyecto\Proyecto\Acuario\bin\Debug\Acuario.exe.config
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Proyecto\Proyecto\Acuario\obj\Debug\Acuario.exe
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Proyecto\Proyecto\Acuario\obj\Debug\Acuario.pdb
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario V0.1.0.0\Proyecto\Acuario\bin\Debug\Acuario.exe.config
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario V0.1.0.0\Proyecto\Acuario\obj\Debug\Acuario.exe
+C:\Users\lucio\Documents\Visual Studio 2015\Projects\Acuario V0.1.0.0\Proyecto\Acuario\obj\Debug\Acuario.pdb
