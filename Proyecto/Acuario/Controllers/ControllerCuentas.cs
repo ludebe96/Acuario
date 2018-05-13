@@ -69,6 +69,12 @@ namespace Acuario.Controllers
             ControllerTransacciones.Instance.NuevaTransaccion(transaccion);
         }
 
+        public void Transferir(EntitieCuenta cuentaA, EntitieCuenta cuentaB, decimal monto)
+        {
+            ManagerDB.Instance.Execute("UPDATE Cuentas SET Balance = Balance - " + monto.ToString().Replace(",", ".") + " WHERE ID_Cuenta = " + cuentaA.GetIdCuenta());
+            ManagerDB.Instance.Execute("UPDATE Cuentas SET Balance = Balance + " + monto.ToString().Replace(",", ".") + " WHERE ID_Cuenta = " + cuentaB.GetIdCuenta());
+        }
+
         public EntitieCuenta GetCuentaById(int idCuenta)
         {
             DataTable dt = ManagerDB.Instance.ExecuteQuery("SELECT * FROM Cuentas WHERE ID_Cuenta = " + idCuenta);

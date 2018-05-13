@@ -39,8 +39,7 @@ namespace Acuario.Forms
 
         private Boolean nuevoBalanceValido()
         {
-            decimal num;
-            return decimal.TryParse(textBoxBalanceNuevo.Text, out num);
+            return ManagerFormats.Instance.MontoValido(textBoxBalanceNuevo.Text);
         }
 
         // |==============================EVENTOS==============================|

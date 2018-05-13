@@ -96,6 +96,17 @@ namespace Acuario.Managers
             return Convert.ToDecimal(money.Replace("$", ""));
         }
 
+        public String StringToMoney(String monto)
+        {
+            return DecimalToMoney(MoneyToDecimal(monto), true);
+        }
+        
+        public Boolean MontoValido(String monto)
+        {
+            decimal num;
+            return decimal.TryParse(monto, out num);
+        }
+
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
     }
 }

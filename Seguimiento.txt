@@ -1,5 +1,5 @@
 |====================PRIMERA ENTREGA====================|
-- Caja - 6 3/4 HORAS - DONE
+- Caja - 8 HORAS
 - Gastos
 - Ventas
 - Compras

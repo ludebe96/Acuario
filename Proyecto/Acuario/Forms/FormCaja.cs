@@ -134,5 +134,10 @@ namespace Acuario.Forms
         {
             ManagerForms.Instance.PrevForm();
         }
+
+        private void btnTransferencias_Click(object sender, EventArgs e)
+        {
+            ManagerForms.Instance.NewForm("FormTransferencias", true, false);
+        }
     }
 }
