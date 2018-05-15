@@ -293,7 +293,7 @@
             this.Controls.Add(this.mPanelGridTotales);
             this.MinimumSize = new System.Drawing.Size(585, 467);
             this.Name = "FormCaja";
-            this.Text = "FormCaja";
+            this.Text = "Caja";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCaja_FormClosed);
             this.Load += new System.EventHandler(this.FormCaja_Load);
             this.mPanelGrid.ResumeLayout(false);

@@ -33,18 +33,27 @@ namespace Acuario.Managers
             String stringValue = value.ToString();
             Boolean esNegativo = value < 0;
             if (esNegativo)
+                // Remuev epara trabajar sólo con números
                 stringValue = stringValue.Replace("-", "");
             String returnValue = "";
             String actualesDecimales = "";
-
-
             int cantDecimales = -1;
 
-            // Chequea decimales
-            if (stringValue.Contains(","))
+            //Chequea decimales
+            if (stringValue.Contains(",") || stringValue.Contains("."))
+            {
                 actualesDecimales = stringValue.Substring(stringValue.IndexOf(",") + 1, stringValue.Length - stringValue.IndexOf(",") - 1);
+                if (actualesDecimales.Length > 2)
+                    actualesDecimales = actualesDecimales.Substring(0, 2);
+
+                if (stringValue.Contains(","))
+                    stringValue = stringValue.Substring(0, stringValue.IndexOf(","));
+                else
+                    stringValue = stringValue.Substring(0, stringValue.IndexOf("."));
+
+            }
             else
-                actualesDecimales = ",00";
+                actualesDecimales = "00";
 
             if (actualesDecimales.Length == 1)
             {
@@ -59,16 +68,16 @@ namespace Acuario.Managers
             else
                 cantDecimales = 0;
 
-            // Prepara enteros según cantidad de decimales
-            String enterosActuales = stringValue.Substring(0, stringValue.Length - cantDecimales);
+
+            // A esta altura, stringValue contiene solo a los enteros            
 
             // Setea separador de miles
             int contador = 0;
-            for (int i = enterosActuales.Length; i > 0; i--)
+            for (int i = stringValue.Length; i > 0; i--)
             {
                 if (contador == 3)
                 {
-                    enterosActuales = enterosActuales.Insert(i, ".");
+                    stringValue = stringValue.Insert(i, ".");
                     contador = 0;
                     i++;
                 }
@@ -77,7 +86,7 @@ namespace Acuario.Managers
             }
 
             // Asignaciones finales
-            returnValue = enterosActuales + actualesDecimales;
+            returnValue = stringValue + actualesDecimales;
 
             if (moneySign)
             {
@@ -93,14 +102,22 @@ namespace Acuario.Managers
 
         public Decimal MoneyToDecimal(String money)
         {
-            return Convert.ToDecimal(money.Replace("$", ""));
+            money = money.Replace("$", "");
+
+            /* Si contiene un punto, es con decimal.
+             * Si contiene una coma, es un decimal.
+             */
+            if (money.Contains(".") && !money.Contains(","))
+                money = money.Replace(".", ",");
+
+            return Convert.ToDecimal(money);
         }
 
         public String StringToMoney(String monto)
         {
             return DecimalToMoney(MoneyToDecimal(monto), true);
         }
-        
+
         public Boolean MontoValido(String monto)
         {
             decimal num;

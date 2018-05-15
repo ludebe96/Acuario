@@ -34,9 +34,9 @@ namespace Acuario.Forms
         private EntitieCuenta GetCuentaSeleccionada()
         {
             int rowIndex = gridCuentas.SelectedRows[0].Index;
-            int indexColIdCuenta = ManagerGrid.Instance.GetColumnIndexByText(gridCuentas, "id cuenta");
-            int indexColCuenta = ManagerGrid.Instance.GetColumnIndexByText(gridCuentas, "cuenta");
-            int indexColBalance = ManagerGrid.Instance.GetColumnIndexByText(gridCuentas, "balance actual");
+            int indexColIdCuenta = ManagerGrids.Instance.GetColumnIndexByText(gridCuentas, "id cuenta");
+            int indexColCuenta = ManagerGrids.Instance.GetColumnIndexByText(gridCuentas, "cuenta");
+            int indexColBalance = ManagerGrids.Instance.GetColumnIndexByText(gridCuentas, "balance actual");
 
             EntitieCuenta cuenta = new EntitieCuenta(
                 Convert.ToInt32(gridCuentas.Rows[rowIndex].Cells[indexColIdCuenta].Value),
@@ -79,7 +79,7 @@ namespace Acuario.Forms
          */
         private void CalcularTotal()
         {
-            int indexColBalance = ManagerGrid.Instance.GetColumnIndexByText(gridCuentas, "balance actual");
+            int indexColBalance = ManagerGrids.Instance.GetColumnIndexByText(gridCuentas, "balance actual");
             Decimal total = 0;
 
             for (Int16 i = 0; i < gridCuentas.Rows.Count; i++)

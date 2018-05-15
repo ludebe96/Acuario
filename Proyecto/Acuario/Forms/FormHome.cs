@@ -27,5 +27,10 @@ namespace Acuario.Forms
         {
             ManagerForms.Instance.NewForm("FormCaja", false, false);
         }
+
+        private void btnGastos_Click(object sender, EventArgs e)
+        {
+            ManagerForms.Instance.NewForm("FormGastos", false, false);
+        }
     }
 }

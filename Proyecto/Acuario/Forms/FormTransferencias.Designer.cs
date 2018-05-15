@@ -322,7 +322,7 @@
             this.MaximumSize = new System.Drawing.Size(617, 452);
             this.MinimumSize = new System.Drawing.Size(617, 452);
             this.Name = "FormTransferencias";
-            this.Text = "FormTransferencias";
+            this.Text = "Transferencias";
             this.Load += new System.EventHandler(this.FormTransferencias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDe)).EndInit();
             this.panelGrillaDe.ResumeLayout(false);

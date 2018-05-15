@@ -17,7 +17,6 @@ namespace Acuario.Forms
         // |==============================ATRIBUTOS===============================|
         public decimal BalanceNuevo;
         private decimal balancePrevio;
-        private FormAjustarBalance formAjustarBalance;
 
         // |==============================CONSTRUCTORES==============================|
 

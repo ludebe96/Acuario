@@ -62,9 +62,9 @@ namespace Acuario.Forms
                 grilla = gridA;
 
             int rowIndex = grilla.SelectedRows[0].Index;
-            int indexColIdCuenta = ManagerGrid.Instance.GetColumnIndexByText(grilla, "id cuenta");
-            int indexColCuenta = ManagerGrid.Instance.GetColumnIndexByText(grilla, "cuenta");
-            int indexColBalance = ManagerGrid.Instance.GetColumnIndexByText(grilla, "balance actual");
+            int indexColIdCuenta = ManagerGrids.Instance.GetColumnIndexByText(grilla, "id cuenta");
+            int indexColCuenta = ManagerGrids.Instance.GetColumnIndexByText(grilla, "cuenta");
+            int indexColBalance = ManagerGrids.Instance.GetColumnIndexByText(grilla, "balance actual");
 
             return new EntitieCuenta(Convert.ToInt32(grilla.Rows[rowIndex].Cells[indexColIdCuenta].Value),
                 grilla.Rows[rowIndex].Cells[indexColCuenta].Value.ToString(),

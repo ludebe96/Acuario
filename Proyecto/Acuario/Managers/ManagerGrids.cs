@@ -5,23 +5,23 @@ using MetroFramework;
 
 namespace Acuario.Managers
 {
-    public class ManagerGrid
+    public class ManagerGrids
     {
         // |==============================ATRIBUTOS==============================|
-        private static ManagerGrid instance;
-        public static ManagerGrid Instance
+        private static ManagerGrids instance;
+        public static ManagerGrids Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new ManagerGrid();
+                    instance = new ManagerGrids();
 
                 return instance;
             }
         }
 
         // |==============================CONSTRUCTORES==============================|
-        private ManagerGrid()
+        private ManagerGrids()
         {
 
         }

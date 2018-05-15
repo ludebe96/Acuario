@@ -178,7 +178,7 @@
             this.MaximumSize = new System.Drawing.Size(416, 326);
             this.MinimumSize = new System.Drawing.Size(416, 326);
             this.Name = "FormAjustarBalance";
-            this.Text = "FormAjustarBalance";
+            this.Text = "Ajustar Balance";
             this.Load += new System.EventHandler(this.FormAjustarBalance_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
