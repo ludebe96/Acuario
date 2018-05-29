@@ -129,15 +129,15 @@ namespace Acuario.Forms
 
             RefreshGrid();
         }
+        
+        private void btnTransferencias_Click(object sender, EventArgs e)
+        {
+            ManagerForms.Instance.NewForm("FormTransferencias", true, false);
+        }
 
         private void FormCaja_FormClosed(object sender, FormClosedEventArgs e)
         {
             ManagerForms.Instance.PrevForm();
-        }
-
-        private void btnTransferencias_Click(object sender, EventArgs e)
-        {
-            ManagerForms.Instance.NewForm("FormTransferencias", true, false);
         }
     }
 }

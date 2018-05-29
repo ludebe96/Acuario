@@ -30,7 +30,6 @@ namespace Acuario.Entities
         public EntitieTransaccion(int idCuenta, int idTipoTransaccion,
             Decimal monto)
         {
-            this.idTransaccion = idTransaccion;
             this.idCuenta = idCuenta;
             this.idTipoTransaccion = idTipoTransaccion;
             this.monto = monto;

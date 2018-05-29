@@ -20,6 +20,9 @@ namespace Acuario.Managers
         }
         public List<Form> Forms;
 
+        private delegate int FormDelegate();
+
+
         // |==============================CONSTRUCTORES==============================|
 
         ManagerForms()
@@ -93,6 +96,19 @@ namespace Acuario.Managers
             return Forms[Forms.Count - 1];
         }
 
+        /* Repopula comboboxes y 
+         * actualiza la grilla
+         * */
+        public void ActualizarFormPeces()
+        {
+            Forms.FormPeces formPeces = ManagerForms.Instance.GetActiveFormByName("FormPeces");
+            if (formPeces != null)
+            {
+                formPeces.PopulateComboboxes();
+                formPeces.RefreshGrid();
+            }
+        }
+
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
         private int CheckIfFormAlreadyShowing(String FormName)
@@ -104,6 +120,16 @@ namespace Acuario.Managers
             }
 
             return -1;
+        }
+        private dynamic GetActiveFormByName(String formTypeName)
+        {
+            for (int i = 0; i < Forms.Count; i++)
+            {
+                if (Forms[i].GetType().ToString().ToUpper().Equals(("Acuario.Forms." + formTypeName).ToUpper()))
+                    return Forms[i];
+            }
+
+            return null;
         }
     }
 }

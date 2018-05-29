@@ -1,0 +1,6 @@
+|===================================================V0.4.0.0===================================================|
+- Peces: ABM de peces, variedades y especies con su stock y precios.
+- Mejoras visuales (Responsividad de forms, campos, columnas de grillas, etc)
+|==============================================================================================================|
+
+14/05/2018

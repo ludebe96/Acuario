@@ -30,20 +30,6 @@ namespace Acuario.Forms
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
-        private void PopulateComboCategorias()
-        {
-            List<EntitieGastoCategoria> categorias = ControllerGastoCategorias.Instance.GetCategorias();
-            idCategoriasCombobox = new List<int>();
-
-            for (int i = 0; i < categorias.Count; i++)
-            {
-                comboBoxCategorias.Items.Add(categorias[i].GetNombre());
-                idCategoriasCombobox.Add(categorias[i].GetIdCuenta());
-            }
-
-            comboBoxCategorias.SelectedIndex = 0;
-        }
-
         private Boolean ValidInputs()
         {
             if (textboxDescripcion.Text.Equals(String.Empty) ||
@@ -88,7 +74,7 @@ namespace Acuario.Forms
 
         private void FormNuevoGasto_Load(object sender, EventArgs e)
         {
-            PopulateComboCategorias();
+            ControllerGastoCategorias.Instance.PopulateComboboxCategorias(ref comboBoxCategorias, ref idCategoriasCombobox);
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)

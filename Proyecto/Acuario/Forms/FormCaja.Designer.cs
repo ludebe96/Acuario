@@ -74,6 +74,7 @@
             this.gridCuentas.AllowUserToAddRows = false;
             this.gridCuentas.AllowUserToDeleteRows = false;
             this.gridCuentas.AllowUserToResizeRows = false;
+            this.gridCuentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridCuentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gridCuentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridCuentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -135,7 +136,6 @@
             this.cuenta.Name = "cuenta";
             this.cuenta.ReadOnly = true;
             this.cuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cuenta.Width = 122;
             // 
             // columnBalanceActual
             // 
@@ -143,7 +143,6 @@
             this.columnBalanceActual.Name = "columnBalanceActual";
             this.columnBalanceActual.ReadOnly = true;
             this.columnBalanceActual.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnBalanceActual.Width = 122;
             // 
             // metroLabel1
             // 

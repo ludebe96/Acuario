@@ -76,7 +76,7 @@ namespace Acuario.Managers
             DataTable dataTable = null;
 
             //Si se abrió correctamente la conexión
-            if (TryOpenConnection())
+            if (TryOpenConnection() && !query.Equals(String.Empty))
             {
                 try
                 {

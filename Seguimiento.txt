@@ -3,7 +3,7 @@
 - Gastos - 4 HORAS 1/2
 - Ventas
 - Compras
-- Inventario
+- Inventario - 15 HORAS
 - Clientes
 |=======================================================| 
 

@@ -319,10 +319,12 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.panelGrillaA);
             this.Controls.Add(this.panelGrillaDe);
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(617, 452);
             this.MinimumSize = new System.Drawing.Size(617, 452);
             this.Name = "FormTransferencias";
             this.Text = "Transferencias";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTransferencias_FormClosed);
             this.Load += new System.EventHandler(this.FormTransferencias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridDe)).EndInit();
             this.panelGrillaDe.ResumeLayout(false);

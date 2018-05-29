@@ -127,5 +127,10 @@ namespace Acuario.Forms
                     GetCuentaSeleccionada(false).GetNombre() + " ?"))
                     RealizarTransferencia();
         }
+
+        private void FormTransferencias_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ManagerForms.Instance.PrevForm();
+        }
     }
 }

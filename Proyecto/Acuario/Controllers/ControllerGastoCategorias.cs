@@ -61,6 +61,25 @@ namespace Acuario.Controllers
             return categoria;
         }
 
+        public void PopulateComboboxCategorias(ref MetroFramework.Controls.MetroComboBox combo, ref List<int> idCategoriasCombobox)
+        {
+            List<EntitieGastoCategoria> categorias = GetCategorias();
+            idCategoriasCombobox = new List<int>();
+            combo.Items.Clear();
+
+            combo.Items.Add("-");
+            idCategoriasCombobox.Add(0);
+
+            for (int i = 0; i < categorias.Count; i++)
+            {
+                combo.Items.Add(categorias[i].GetNombre());
+                idCategoriasCombobox.Add(categorias[i].GetIdCuenta());
+            }
+
+            if (combo.Items.Count > 0)
+                combo.SelectedIndex = 0;
+        }
+
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
     }

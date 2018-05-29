@@ -48,7 +48,7 @@
             this.btnGenerar.Location = new System.Drawing.Point(23, 187);
             this.btnGenerar.Margin = new System.Windows.Forms.Padding(0);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(583, 30);
+            this.btnGenerar.Size = new System.Drawing.Size(582, 30);
             this.btnGenerar.TabIndex = 0;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseSelectable = true;
@@ -113,7 +113,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(23, 63);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(583, 121);
+            this.metroPanel1.Size = new System.Drawing.Size(582, 121);
             this.metroPanel1.TabIndex = 3;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -202,9 +202,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 250);
+            this.ClientSize = new System.Drawing.Size(625, 250);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.btnGenerar);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(625, 250);
+            this.MinimumSize = new System.Drawing.Size(625, 250);
             this.Name = "FormNuevoGasto";
             this.Text = "Nuevo Gasto";
             this.Load += new System.EventHandler(this.FormNuevoGasto_Load);

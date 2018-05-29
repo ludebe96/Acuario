@@ -50,8 +50,8 @@
             this.btnNuevoGasto = new MetroFramework.Controls.MetroButton();
             this.btnEliminarGasto = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.labelSubtotal = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridGastos)).BeginInit();
             this.metroPanel1.SuspendLayout();
@@ -80,7 +80,7 @@
             this.gridGastos.AllowUserToAddRows = false;
             this.gridGastos.AllowUserToDeleteRows = false;
             this.gridGastos.AllowUserToResizeRows = false;
-            this.gridGastos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridGastos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridGastos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gridGastos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridGastos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -157,24 +157,28 @@
             this.columnCategoria.HeaderText = "Categoria";
             this.columnCategoria.Name = "columnCategoria";
             this.columnCategoria.ReadOnly = true;
+            this.columnCategoria.Width = 80;
             // 
             // columnDescripcion
             // 
             this.columnDescripcion.HeaderText = "Descripcion";
             this.columnDescripcion.Name = "columnDescripcion";
             this.columnDescripcion.ReadOnly = true;
+            this.columnDescripcion.Width = 90;
             // 
             // columnMonto
             // 
             this.columnMonto.HeaderText = "Monto";
             this.columnMonto.Name = "columnMonto";
             this.columnMonto.ReadOnly = true;
+            this.columnMonto.Width = 65;
             // 
             // columnFechaHora
             // 
             this.columnFechaHora.HeaderText = "Fecha";
             this.columnFechaHora.Name = "columnFechaHora";
             this.columnFechaHora.ReadOnly = true;
+            this.columnFechaHora.Width = 60;
             // 
             // btnBuscar
             // 
@@ -245,6 +249,7 @@
             // 
             // btnNuevoGasto
             // 
+            this.btnNuevoGasto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnNuevoGasto.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnNuevoGasto.Location = new System.Drawing.Point(43, 523);
             this.btnNuevoGasto.Margin = new System.Windows.Forms.Padding(0);
@@ -257,6 +262,7 @@
             // 
             // btnEliminarGasto
             // 
+            this.btnEliminarGasto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminarGasto.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnEliminarGasto.Location = new System.Drawing.Point(601, 523);
             this.btnEliminarGasto.Margin = new System.Windows.Forms.Padding(0);
@@ -269,6 +275,8 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.metroPanel1.Controls.Add(this.labelSubtotal);
             this.metroPanel1.Controls.Add(this.metroLabel4);
@@ -283,6 +291,18 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // labelSubtotal
+            // 
+            this.labelSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSubtotal.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.labelSubtotal.Location = new System.Drawing.Point(423, 2);
+            this.labelSubtotal.Name = "labelSubtotal";
+            this.labelSubtotal.Size = new System.Drawing.Size(294, 25);
+            this.labelSubtotal.TabIndex = 3;
+            this.labelSubtotal.Text = "$0,00";
+            this.labelSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
@@ -292,16 +312,6 @@
             this.metroLabel4.Size = new System.Drawing.Size(94, 25);
             this.metroLabel4.TabIndex = 2;
             this.metroLabel4.Text = "SUBTOTAL:";
-            // 
-            // labelSubtotal
-            // 
-            this.labelSubtotal.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.labelSubtotal.Location = new System.Drawing.Point(423, 2);
-            this.labelSubtotal.Name = "labelSubtotal";
-            this.labelSubtotal.Size = new System.Drawing.Size(294, 25);
-            this.labelSubtotal.TabIndex = 3;
-            this.labelSubtotal.Text = "$0,00";
-            this.labelSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormGastos
             // 

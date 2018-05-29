@@ -23,6 +23,11 @@ namespace Acuario.Forms
         /* |===============FUNCIONES Y MÉTODOS===============|*/
 
         /* |===============EVENTOS===============|*/
+
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+        }
+
         private void buttonCaja_Click(object sender, EventArgs e)
         {
             ManagerForms.Instance.NewForm("FormCaja", false, false);
@@ -31,6 +36,11 @@ namespace Acuario.Forms
         private void btnGastos_Click(object sender, EventArgs e)
         {
             ManagerForms.Instance.NewForm("FormGastos", false, false);
+        }
+
+        private void btnPeces_Click(object sender, EventArgs e)
+        {
+            ManagerForms.Instance.NewForm("FormPeces", false, false);
         }
     }
 }

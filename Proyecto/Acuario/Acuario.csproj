@@ -64,10 +64,17 @@
     <Compile Include="Controllers\ControllerCuentas.cs" />
     <Compile Include="Controllers\ControllerGastoCategorias.cs" />
     <Compile Include="Controllers\ControllerGastos.cs" />
+    <Compile Include="Controllers\ControllerPeces.cs" />
+    <Compile Include="Controllers\ControllerPrecios.cs" />
     <Compile Include="Controllers\ControllerTipoTransacciones.cs" />
     <Compile Include="Controllers\ControllerTransacciones.cs" />
     <Compile Include="Entities\EntitieCuenta.cs" />
     <Compile Include="Entities\EntitieGasto.cs" />
+    <Compile Include="Entities\EntitiePez.cs" />
+    <Compile Include="Entities\EntitiePezEspecie.cs" />
+    <Compile Include="Entities\EntitiePezTamaño.cs" />
+    <Compile Include="Entities\EntitiePezVariedad.cs" />
+    <Compile Include="Entities\EntitiePrecio.cs" />
     <Compile Include="Entities\EntitieTipoTransaccion.cs" />
     <Compile Include="Entities\EntitieTransaccion.cs" />
     <Compile Include="Entities\EntitieGastoCategoria.cs" />
@@ -83,6 +90,12 @@
     <Compile Include="Forms\FormCaja.Designer.cs">
       <DependentUpon>FormCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEspecies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEspecies.Designer.cs">
+      <DependentUpon>FormEspecies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGastos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,17 +108,53 @@
     <Compile Include="Forms\FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormNuevaEspecie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNuevaEspecie.Designer.cs">
+      <DependentUpon>FormNuevaEspecie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNuevaVariedad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNuevaVariedad.Designer.cs">
+      <DependentUpon>FormNuevaVariedad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormNuevoGasto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormNuevoGasto.Designer.cs">
       <DependentUpon>FormNuevoGasto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormNuevoPez.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNuevoPez.Designer.cs">
+      <DependentUpon>FormNuevoPez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPeces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPeces.Designer.cs">
+      <DependentUpon>FormPeces.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormTransferencias.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormTransferencias.Designer.cs">
       <DependentUpon>FormTransferencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVariedades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVariedades.Designer.cs">
+      <DependentUpon>FormVariedades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVentas.Designer.cs">
+      <DependentUpon>FormVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Managers\ManagerDB.cs" />
     <Compile Include="Managers\ManagerExceptions.cs" />
@@ -124,17 +173,38 @@
     <EmbeddedResource Include="Forms\FormCaja.resx">
       <DependentUpon>FormCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEspecies.resx">
+      <DependentUpon>FormEspecies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGastos.resx">
       <DependentUpon>FormGastos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNuevaEspecie.resx">
+      <DependentUpon>FormNuevaEspecie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNuevaVariedad.resx">
+      <DependentUpon>FormNuevaVariedad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNuevoGasto.resx">
       <DependentUpon>FormNuevoGasto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNuevoPez.resx">
+      <DependentUpon>FormNuevoPez.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPeces.resx">
+      <DependentUpon>FormPeces.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormTransferencias.resx">
       <DependentUpon>FormTransferencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVariedades.resx">
+      <DependentUpon>FormVariedades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVentas.resx">
+      <DependentUpon>FormVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

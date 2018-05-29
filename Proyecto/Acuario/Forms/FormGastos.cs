@@ -31,23 +31,6 @@ namespace Acuario.Forms
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
-        private void PopulateComboCategorias()
-        {
-            List<EntitieGastoCategoria> categorias = ControllerGastoCategorias.Instance.GetCategorias();
-            idCategoriasCombobox = new List<int>();
-
-            comboBoxCategorias.Items.Add("-");
-            idCategoriasCombobox.Add(0);
-
-            for (int i = 0; i < categorias.Count; i++)
-            {
-                comboBoxCategorias.Items.Add(categorias[i].GetNombre());
-                idCategoriasCombobox.Add(categorias[i].GetIdCuenta());
-            }
-
-            comboBoxCategorias.SelectedIndex = 0;
-        }
-
         private void RefreshGrid()
         {
             gridGastos.Rows.Clear();
@@ -98,7 +81,7 @@ namespace Acuario.Forms
 
         private void FormGastos_Load(object sender, EventArgs e)
         {
-            PopulateComboCategorias();
+            ControllerGastoCategorias.Instance.PopulateComboboxCategorias(ref comboBoxCategorias, ref idCategoriasCombobox);
 
             dateTimeDesde.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
 

@@ -37,7 +37,6 @@ namespace Acuario.Managers
                 stringValue = stringValue.Replace("-", "");
             String returnValue = "";
             String actualesDecimales = "";
-            int cantDecimales = -1;
 
             //Chequea decimales
             if (stringValue.Contains(",") || stringValue.Contains("."))
@@ -56,17 +55,10 @@ namespace Acuario.Managers
                 actualesDecimales = "00";
 
             if (actualesDecimales.Length == 1)
-            {
-                cantDecimales = 2;
                 actualesDecimales = "," + actualesDecimales + "0";
-            }
+
             else if (actualesDecimales.Length == 2)
-            {
                 actualesDecimales = "," + actualesDecimales;
-                cantDecimales = 3;
-            }
-            else
-                cantDecimales = 0;
 
 
             // A esta altura, stringValue contiene solo a los enteros            
@@ -122,6 +114,30 @@ namespace Acuario.Managers
         {
             decimal num;
             return decimal.TryParse(monto, out num);
+        }
+
+        /* 
+         * Convierte un entero a un número
+         * String con separador de miles
+         */
+        public String IntToNumber(int numero)
+        {
+            String stringValue = numero.ToString();
+
+            int contador = 0;
+            for (int i = stringValue.Length; i > 0; i--)
+            {
+                if (contador == 3)
+                {
+                    stringValue = stringValue.Insert(i, ".");
+                    contador = 0;
+                    i++;
+                }
+                else
+                    contador++;
+            }
+
+            return stringValue;
         }
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
