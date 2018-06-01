@@ -31,7 +31,7 @@
             this.buttonCaja = new System.Windows.Forms.Button();
             this.btnGastos = new System.Windows.Forms.Button();
             this.btnPeces = new System.Windows.Forms.Button();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCaja
@@ -56,7 +56,7 @@
             // 
             // btnPeces
             // 
-            this.btnPeces.Location = new System.Drawing.Point(64, 241);
+            this.btnPeces.Location = new System.Drawing.Point(33, 165);
             this.btnPeces.Name = "btnPeces";
             this.btnPeces.Size = new System.Drawing.Size(75, 23);
             this.btnPeces.TabIndex = 2;
@@ -64,21 +64,22 @@
             this.btnPeces.UseVisualStyleBackColor = true;
             this.btnPeces.Click += new System.EventHandler(this.btnPeces_Click);
             // 
-            // metroButton1
+            // btnClientes
             // 
-            this.metroButton1.Location = new System.Drawing.Point(545, 275);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(75, 23);
-            this.metroButton1.TabIndex = 3;
-            this.metroButton1.Text = "metroButton1";
-            this.metroButton1.UseSelectable = true;
+            this.btnClientes.Location = new System.Drawing.Point(114, 165);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(75, 23);
+            this.btnClientes.TabIndex = 3;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 559);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnPeces);
             this.Controls.Add(this.btnGastos);
             this.Controls.Add(this.buttonCaja);
@@ -94,7 +95,7 @@
         private System.Windows.Forms.Button buttonCaja;
         private System.Windows.Forms.Button btnGastos;
         private System.Windows.Forms.Button btnPeces;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.Button btnClientes;
     }
 }
 

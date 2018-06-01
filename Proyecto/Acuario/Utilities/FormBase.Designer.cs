@@ -1,6 +1,6 @@
-﻿namespace Acuario.Forms
+﻿namespace Acuario.Utilities
 {
-    partial class FormVentas
+    partial class FormBase
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // FormVentas
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 300);
-            this.Name = "FormVentas";
-            this.Text = "Ventas";
-            this.ResumeLayout(false);
-
+            this.Text = "FormBase";
         }
 
         #endregion

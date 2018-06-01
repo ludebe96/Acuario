@@ -140,6 +140,19 @@ namespace Acuario.Managers
             return stringValue;
         }
 
+        public Boolean MailValido(String mail)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(mail);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
     }
 }

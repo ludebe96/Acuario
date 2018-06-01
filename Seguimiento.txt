@@ -4,7 +4,7 @@
 - Ventas
 - Compras
 - Inventario - 15 HORAS
-- Clientes
+- Clientes - 2 HORAS 1/2
 |=======================================================| 
 
 

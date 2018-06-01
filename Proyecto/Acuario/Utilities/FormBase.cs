@@ -8,16 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Acuario.Forms
+namespace Acuario.Utilities
 {
-    public partial class FormVentas : MetroFramework.Forms.MetroForm
+    public partial class FormBase : MetroFramework.Forms.MetroForm
     {
-        // |==============================CONSTRUCTORES==============================|
-
-        public FormVentas()
+        public FormBase()
         {
             InitializeComponent();
         }
+
+        // |==============================ATRIBUTOS==============================|
+
+        // |==============================CONSTRUCTORES==============================|
 
         // |==============================METODOS Y FUNCIONES==============================|
 

@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ControllerClientes.cs" />
     <Compile Include="Controllers\ControllerCuentas.cs" />
     <Compile Include="Controllers\ControllerGastoCategorias.cs" />
     <Compile Include="Controllers\ControllerGastos.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Controllers\ControllerPrecios.cs" />
     <Compile Include="Controllers\ControllerTipoTransacciones.cs" />
     <Compile Include="Controllers\ControllerTransacciones.cs" />
+    <Compile Include="Entities\EntitieCliente.cs" />
     <Compile Include="Entities\EntitieCuenta.cs" />
     <Compile Include="Entities\EntitieGasto.cs" />
     <Compile Include="Entities\EntitiePez.cs" />
@@ -89,6 +91,12 @@
     </Compile>
     <Compile Include="Forms\FormCaja.Designer.cs">
       <DependentUpon>FormCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormClientes.Designer.cs">
+      <DependentUpon>FormClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormEspecies.cs">
       <SubType>Form</SubType>
@@ -120,6 +128,12 @@
     <Compile Include="Forms\FormNuevaVariedad.Designer.cs">
       <DependentUpon>FormNuevaVariedad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormNuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNuevoCliente.Designer.cs">
+      <DependentUpon>FormNuevoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormNuevoGasto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,12 +164,6 @@
     <Compile Include="Forms\FormVariedades.Designer.cs">
       <DependentUpon>FormVariedades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormVentas.Designer.cs">
-      <DependentUpon>FormVentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Managers\ManagerDB.cs" />
     <Compile Include="Managers\ManagerExceptions.cs" />
     <Compile Include="Managers\ManagerFormats.cs" />
@@ -167,11 +175,22 @@
     <Compile Include="Managers\ManagerProcesos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ControllerBase.cs" />
+    <Compile Include="Utilities\EntitieBase.cs" />
+    <Compile Include="Utilities\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FormAjustarBalance.resx">
       <DependentUpon>FormAjustarBalance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCaja.resx">
       <DependentUpon>FormCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEspecies.resx">
       <DependentUpon>FormEspecies.cs</DependentUpon>
@@ -188,6 +207,9 @@
     <EmbeddedResource Include="Forms\FormNuevaVariedad.resx">
       <DependentUpon>FormNuevaVariedad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNuevoCliente.resx">
+      <DependentUpon>FormNuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormNuevoGasto.resx">
       <DependentUpon>FormNuevoGasto.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,9 +224,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormVariedades.resx">
       <DependentUpon>FormVariedades.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormVentas.resx">
-      <DependentUpon>FormVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

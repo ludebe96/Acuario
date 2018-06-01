@@ -66,12 +66,14 @@ namespace Acuario.Forms
 
         private void CrearEspecie()
         {
-            if (!modificando)
-                ControllerPeces.Instance.CrearEspecie(new EntitiePezEspecie(textboxNombre.Text), true);
-            else
-                ControllerPeces.Instance.ModificarEspecie(especieAModificar.GetIdPezEspecie(), new EntitiePezEspecie(textboxNombre.Text));
+            ControllerPeces.Instance.CrearEspecie(new EntitiePezEspecie(textboxNombre.Text), true);
+            ManagerMessages.Instance.NewInformationMessage(this, "Especie creada");
+        }
 
-            ManagerForms.Instance.ActualizarFormPeces();
+        private void ModificarEspecie()
+        {
+            ControllerPeces.Instance.ModificarEspecie(especieAModificar.GetIdPezEspecie(), new EntitiePezEspecie(textboxNombre.Text));
+            ManagerMessages.Instance.NewInformationMessage(this, "Especie modificada");
         }
 
         private void PrepararModoModificacion()

@@ -96,19 +96,6 @@ namespace Acuario.Managers
             return Forms[Forms.Count - 1];
         }
 
-        /* Repopula comboboxes y 
-         * actualiza la grilla
-         * */
-        public void ActualizarFormPeces()
-        {
-            Forms.FormPeces formPeces = ManagerForms.Instance.GetActiveFormByName("FormPeces");
-            if (formPeces != null)
-            {
-                formPeces.PopulateComboboxes();
-                formPeces.RefreshGrid();
-            }
-        }
-
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
         private int CheckIfFormAlreadyShowing(String FormName)

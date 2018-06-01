@@ -68,15 +68,16 @@ namespace Acuario.Forms
 
         private void CrearVariedad()
         {
-            if (!modificando)
-                ControllerPeces.Instance.CrearVariedad(new EntitiePezVariedad(idEspeciesCombobox[comboboxEspecies.SelectedIndex],
+            ControllerPeces.Instance.CrearVariedad(new EntitiePezVariedad(idEspeciesCombobox[comboboxEspecies.SelectedIndex],
                     textboxNombre.Text, false));
-            else
-                ControllerPeces.Instance.ModificarVariedad(variedadAModificar.GetIdPezVariedad(),
+            ManagerMessages.Instance.NewInformationMessage(this, "Variedad creada");
+        }
+
+        private void ModificarVariedad()
+        {
+            ControllerPeces.Instance.ModificarVariedad(variedadAModificar.GetIdPezVariedad(),
                     new EntitiePezVariedad(idEspeciesCombobox[comboboxEspecies.SelectedIndex],
                 textboxNombre.Text, false));
-
-            ManagerForms.Instance.ActualizarFormPeces();
         }
 
         private void PrepararModoModificacion()
@@ -115,9 +116,16 @@ namespace Acuario.Forms
         {
             if (ValidInput())
             {
-                if (modificando || (!modificando && !VariedadExistente()))
+                if (!modificando && !VariedadExistente())
                 {
                     CrearVariedad();
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+
+                else if (modificando)
+                {
+                    ModificarVariedad();
                     DialogResult = DialogResult.OK;
                     Close();
                 }

@@ -66,10 +66,7 @@ namespace Acuario.Forms
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
-                {
-                    ManagerMessages.Instance.NewInformationMessage(this, "Variedad modificada");
                     RefreshGrid();
-                }
             }
         }
 

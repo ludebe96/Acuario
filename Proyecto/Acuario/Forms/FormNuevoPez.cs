@@ -104,13 +104,12 @@ namespace Acuario.Forms
             return false;
         }
 
-        private void CrearPez()
+        private int CrearPrecio()
         {
             Decimal precioMinorista = 0;
             Decimal precioMayorista = 0;
             Decimal precioOferta = 0;
             Decimal precioDistribuidor = 0;
-            int stock = 0;
 
             if (!textboxPrecioMinorista.Text.Trim().Equals(String.Empty))
                 precioMinorista = ManagerFormats.Instance.MoneyToDecimal(textboxPrecioMinorista.Text);
@@ -124,19 +123,37 @@ namespace Acuario.Forms
             if (!textboxPrecioMinorista.Text.Trim().Equals(String.Empty))
                 precioDistribuidor = ManagerFormats.Instance.MoneyToDecimal(textboxPrecioDistribuidor.Text);
 
+            return ControllerPrecios.Instance.CrearPrecio(
+                new EntitiePrecio(precioMinorista, precioMayorista, precioOferta, precioDistribuidor));
+        }
+
+        private void CrearPez()
+        {
+            int idPrecio = CrearPrecio();
+
+            int stock = 0;
+
             if (!textboxPrecioMinorista.Text.Trim().Equals(String.Empty))
                 stock = Convert.ToInt32(textboxStock.Text);
 
+            ControllerPeces.Instance.CrearPez(new EntitiePez(idVariedadesCombobox[comboboxVariedades.SelectedIndex],
+                idTamañosCombobox[comboboxTamaños.SelectedIndex], idPrecio, textboxNombre.Text, stock));
+            ManagerMessages.Instance.NewInformationMessage(this, "Pez creado");
+        }
 
-            int idPrecio = ControllerPrecios.Instance.CrearPrecio(
-                new EntitiePrecio(precioMinorista, precioMayorista, precioOferta, precioDistribuidor));
+        private void ModificarPez()
+        {
+            int idPrecio = CrearPrecio();
 
-            if (!modificando)
-                ControllerPeces.Instance.CrearPez(new EntitiePez(idVariedadesCombobox[comboboxVariedades.SelectedIndex],
-                    idTamañosCombobox[comboboxTamaños.SelectedIndex], idPrecio, textboxNombre.Text, stock));
-            else
-                ControllerPeces.Instance.ModificarPez(pezAModificar.GetIdPez(), new EntitiePez(idVariedadesCombobox[comboboxVariedades.SelectedIndex],
-                    idTamañosCombobox[comboboxTamaños.SelectedIndex], idPrecio, textboxNombre.Text, stock));
+            int stock = 0;
+
+            if (!textboxPrecioMinorista.Text.Trim().Equals(String.Empty))
+                stock = Convert.ToInt32(textboxStock.Text);
+
+            ControllerPeces.Instance.ModificarPez(pezAModificar.GetIdPez(), new EntitiePez(idVariedadesCombobox[comboboxVariedades.SelectedIndex],
+                idTamañosCombobox[comboboxTamaños.SelectedIndex], idPrecio, textboxNombre.Text, stock));
+
+            ManagerMessages.Instance.NewInformationMessage(this, "Pez modificado");
         }
 
         private void PrepararModoModificacion()
@@ -200,9 +217,16 @@ namespace Acuario.Forms
         {
             if (ValidInput())
             {
-                if (modificando || (!modificando && !PezExistente()))
+                if (!modificando && !PezExistente())
                 {
                     CrearPez();
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+
+                else if (modificando)
+                {
+                    ModificarPez();
                     DialogResult = DialogResult.OK;
                     Close();
                 }
@@ -232,8 +256,8 @@ namespace Acuario.Forms
 
         private void comboboxEspecies_SelectedIndexChanged(object sender, EventArgs e)
         {
-                ControllerPeces.Instance.PopulateComboboxVariedades(ref comboboxVariedades,
-                    ref idVariedadesCombobox, idEspeciesCombobox[comboboxEspecies.SelectedIndex], true);
+            ControllerPeces.Instance.PopulateComboboxVariedades(ref comboboxVariedades,
+                ref idVariedadesCombobox, idEspeciesCombobox[comboboxEspecies.SelectedIndex], true);
         }
 
         private void FormNuevoPez_FormClosed(object sender, FormClosedEventArgs e)

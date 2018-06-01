@@ -66,6 +66,8 @@ namespace Acuario.Forms
 
             ControllerGastos.Instance.NuevoGasto(gasto);
 
+            ManagerMessages.Instance.NewInformationMessage(this, "Gasto generado");
+
             DialogResult = DialogResult.OK;
             Close();
         }

@@ -66,6 +66,17 @@ CREATE TABLE Transacciones(
 )
 GO
 
+CREATE TABLE Clientes(
+	ID_Cliente INT PRIMARY KEY IDENTITY,
+	Nombre VARCHAR(50),
+	Cuit VARCHAR(15),
+	Mail VARCHAR(50),
+	Telefono_1 VARCHAR(20),
+	Telefono_2 VARCHAR(20),
+	Telefono_3 VARCHAR(20)
+)
+GO
+
 CREATE TABLE Gasto_Categorias(
 	ID_Gasto_Categoria INT PRIMARY KEY IDENTITY,
 	Nombre VARCHAR(30) UNIQUE NOT NULL
