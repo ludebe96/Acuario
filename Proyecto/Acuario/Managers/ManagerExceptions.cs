@@ -33,7 +33,7 @@ namespace Acuario.Managers
         public void CatchException(Exception e, String userMessage)
         {
             ManagerLogs.Instance.EscribirLog(e.ToString());
-            ManagerMessages.Instance.NewErrorMessage(userMessage);
+            ManagerMessages.Instance.NewErrorMessage(null, userMessage);
         }
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|

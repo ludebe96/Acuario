@@ -30,18 +30,11 @@ namespace Acuario.Managers
 
         public void EscribirLog(String log)
         {
-            try
+            String texto = "[" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString() + "]" + log;
+            if (!ManagerFiles.Instance.EscribirArchivo(texto, ManagerNames.ERROR_LOGS_FILEPATH, true))
             {
-                streamWriter = new StreamWriter(ManagerNames.ERROR_LOGS_FILEPATH, true);
-                streamWriter.WriteLine("[" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString() + "]" + log);
-                streamWriter.Close();
-            }
-            catch (IOException)
-            {
-                streamWriter = new StreamWriter(ManagerNames.Instance.DESKTOP_PATH + "\\error_logs.txt", true);
-                streamWriter.Write(log);
-                streamWriter.Close();
-                ManagerMessages.Instance.NewErrorMessage("No se pudo escribir el log correctamente.\nSe generó el error_log en el escritorio.");
+                ManagerFiles.Instance.EscribirArchivo(texto, ManagerNames.DESKTOP_PATH + "\\error_logs.txt", true);
+                ManagerMessages.Instance.NewErrorMessage(null, "No se pudo escribir el log correctamente.\nSe generó el error_log en el escritorio.");
             }
         }
 

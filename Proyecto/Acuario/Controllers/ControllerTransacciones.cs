@@ -39,7 +39,11 @@ namespace Acuario.Controllers
                 "VALUES(" + transaccion.GetIdCuenta() + ", " + transaccion.GetIdTipoTransaccion() + ", " +
                 transaccion.GetMonto().ToString().Replace(",", ".") + ", '" + transaccion.GetFechaHora().ToString() + "')");
 
-            ManagerDB.Instance.Execute("UPDATE Cuentas SET Balance = Balance - " + transaccion.GetMonto().ToString().Replace(",", ".") + " " + 
+            String signo = "";
+            if (transaccion.GetMonto() >= 0)
+                signo = "+";
+
+            ManagerDB.Instance.Execute("UPDATE Cuentas SET Balance = Balance " + signo + " " + transaccion.GetMonto().ToString().Replace(",", ".") + " " + 
                 "WHERE ID_Cuenta = " + transaccion.GetIdCuenta());
 
             return Convert.ToInt32(ManagerDB.Instance.ExecuteQuery("SELECT MAX(ID_Transaccion) FROM Transacciones").Rows[0][0]);
@@ -50,7 +54,13 @@ namespace Acuario.Controllers
             EntitieTransaccion transaccion = GetTransaccionById(idTransaccion);
 
             ManagerDB.Instance.Execute("DELETE FROM Transacciones WHERE ID_Transaccion = " + transaccion.GetIdTransaccion());
-            ManagerDB.Instance.Execute("UPDATE Cuentas SET Balance = Balance + " + transaccion.GetMonto().ToString().Replace(",", ".") + " " +
+
+            String signo = "+";
+            // Inversa
+            if (transaccion.GetMonto() >= 0)
+                signo = "-";
+
+            ManagerDB.Instance.Execute("UPDATE Cuentas SET Balance = Balance " + signo + " " + transaccion.GetMonto().ToString().Replace(",", ".") + " " +
                 "WHERE ID_Cuenta = " + transaccion.GetIdCuenta());
         }
 

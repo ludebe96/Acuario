@@ -44,7 +44,7 @@
             this.textboxCliente = new MetroFramework.Controls.MetroTextBox();
             this.btnBuscar = new MetroFramework.Controls.MetroButton();
             this.btnModificar = new MetroFramework.Controls.MetroButton();
-            this.bnEliminar = new MetroFramework.Controls.MetroButton();
+            this.btnEliminar = new MetroFramework.Controls.MetroButton();
             this.btnNuevo = new MetroFramework.Controls.MetroButton();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridClientes)).BeginInit();
@@ -237,18 +237,18 @@
             this.btnModificar.UseSelectable = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // bnEliminar
+            // btnEliminar
             // 
-            this.bnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bnEliminar.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.bnEliminar.Location = new System.Drawing.Point(492, 390);
-            this.bnEliminar.Margin = new System.Windows.Forms.Padding(0);
-            this.bnEliminar.Name = "bnEliminar";
-            this.bnEliminar.Size = new System.Drawing.Size(165, 30);
-            this.bnEliminar.TabIndex = 17;
-            this.bnEliminar.Text = "Eliminar";
-            this.bnEliminar.UseSelectable = true;
-            this.bnEliminar.Click += new System.EventHandler(this.bnEliminar_Click);
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnEliminar.Location = new System.Drawing.Point(492, 390);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(165, 30);
+            this.btnEliminar.TabIndex = 17;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseSelectable = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevo
             // 
@@ -269,7 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 440);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.bnEliminar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.textboxCliente);
@@ -278,6 +278,7 @@
             this.MinimumSize = new System.Drawing.Size(680, 440);
             this.Name = "FormClientes";
             this.Text = "Clientes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormClientes_FormClosed);
             this.Load += new System.EventHandler(this.FormClientes_Load);
             this.panelGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridClientes)).EndInit();
@@ -300,7 +301,7 @@
         private MetroFramework.Controls.MetroTextBox textboxCliente;
         private MetroFramework.Controls.MetroButton btnBuscar;
         private MetroFramework.Controls.MetroButton btnModificar;
-        private MetroFramework.Controls.MetroButton bnEliminar;
+        private MetroFramework.Controls.MetroButton btnEliminar;
         private MetroFramework.Controls.MetroButton btnNuevo;
     }
 }

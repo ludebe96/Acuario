@@ -16,10 +16,24 @@ namespace Acuario.Forms
 {
     public partial class FormCaja : MetroFramework.Forms.MetroForm
     {
+        // |==============================ATRIBUTOS==============================|
+
+        Boolean modoSeleccion;
+        public int IdCuentaSeleccionada;
+
         // |==============================CONSTRUCTORES==============================|
         public FormCaja()
         {
             InitializeComponent();
+
+            this.modoSeleccion = false;
+        }
+
+        public FormCaja(Boolean modoSeleccion)
+        {
+            InitializeComponent();
+
+            this.modoSeleccion = true;
         }
 
         // |==============================METODOS Y FUNCIONES==============================|
@@ -96,21 +110,55 @@ namespace Acuario.Forms
             labelTotalAhorros.Text = ManagerFormats.Instance.DecimalToMoney(totalAhorros, true);
         }
 
-        // |==============================EVENTOS==============================|
-        private void buttonAjustarBalanceCuentas_Click(object sender, EventArgs e)
+        private void PrepararModoSeleccion()
         {
-            if (ManagerMessages.Instance.NewConfirmMessage(this, "¿Desea ajustar el balance de " + GetCuentaSeleccionada().GetNombre() + " ?"))
+            Text = "Seleccione una cuenta";
+
+            btnAjustarBalanceCuentas.Text = "Seleccionar";
+
+            panelAhorros.Visible = false;
+            btnTransferencias.Visible = false;
+            btnAjustarBalanceAhorros.Visible = false;
+            MinimumSize = new Size(Size.Width, 265);
+            Size = new Size(Size.Width, 265);
+        }
+
+        // |==============================EVENTOS==============================|
+
+        private void FormCaja_Load(object sender, EventArgs e)
+        {
+            InitGrid();
+
+            RefreshGrid();
+
+            if (modoSeleccion)
+                PrepararModoSeleccion();
+        }
+
+        private void btnAjustarBalanceCuentas_Click(object sender, EventArgs e)
+        {
+            if (!modoSeleccion)
             {
-                using (var form = new FormAjustarBalance(GetCuentaSeleccionada().GetBalance()))
+                if (ManagerMessages.Instance.NewConfirmMessage(this, "¿Desea ajustar el balance de " + GetCuentaSeleccionada().GetNombre() + " ?"))
                 {
-                    var result = form.ShowDialog();
-                    if (result == DialogResult.OK)
-                        AjustarBalance(GetIDCuentaSeleccionada(), form.BalanceNuevo);
+                    using (var form = new FormAjustarBalance(GetCuentaSeleccionada().GetBalance()))
+                    {
+                        var result = form.ShowDialog();
+                        if (result == DialogResult.OK)
+                            AjustarBalance(GetIDCuentaSeleccionada(), form.BalanceNuevo);
+                    }
                 }
+            }
+            else
+            {
+                int colIdCuenta = ManagerGrids.Instance.GetColumnIndexByText(gridCuentas, "ID CUENTA");
+                IdCuentaSeleccionada = Convert.ToInt32(gridCuentas.Rows[gridCuentas.SelectedRows[0].Index].Cells[colIdCuenta].Value);
+                DialogResult = DialogResult.OK;
+                Close();
             }
         }
 
-        private void buttonAjustarBalanceAhorros_Click(object sender, EventArgs e)
+        private void btnAjustarBalanceAhorros_Click(object sender, EventArgs e)
         {
             if (ManagerMessages.Instance.NewConfirmMessage(this, "¿Desea ajustar el balance de los AHORROS?"))
             {
@@ -123,13 +171,6 @@ namespace Acuario.Forms
             }
         }
 
-        private void FormCaja_Load(object sender, EventArgs e)
-        {
-            InitGrid();
-
-            RefreshGrid();
-        }
-        
         private void btnTransferencias_Click(object sender, EventArgs e)
         {
             ManagerForms.Instance.NewForm("FormTransferencias", true, false);
@@ -137,7 +178,8 @@ namespace Acuario.Forms
 
         private void FormCaja_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ManagerForms.Instance.PrevForm();
+            if (!Modal)
+                ManagerForms.Instance.PrevForm();
         }
     }
 }

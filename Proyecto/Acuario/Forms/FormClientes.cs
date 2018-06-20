@@ -17,6 +17,9 @@ namespace Acuario.Forms
     public partial class FormClientes : MetroFramework.Forms.MetroForm
     {
 
+        private Boolean modoSeleccion;
+        public int IdClienteSeleccionado;
+
         // |==============================ATRIBUTOS==============================|
 
         // |==============================CONSTRUCTORES==============================|
@@ -24,6 +27,13 @@ namespace Acuario.Forms
         public FormClientes()
         {
             InitializeComponent();
+        }
+
+        public FormClientes(Boolean modoSeleccion)
+        {
+            InitializeComponent();
+
+            this.modoSeleccion = true;
         }
 
         // |==============================METODOS Y FUNCIONES==============================|
@@ -72,25 +82,47 @@ namespace Acuario.Forms
             RefreshGrid();
         }
 
+        private void PrepararModoSeleccion()
+        {
+            Text = "Seleccione un Cliente";
+            btnNuevo.Text = "Seleccionar";
+
+            btnModificar.Visible = false;
+            btnEliminar.Visible = false;
+        }
+
         // |==============================EVENTOS==============================|
+
+        private void FormClientes_Load(object sender, EventArgs e)
+        {
+            RefreshGrid();
+
+            if (modoSeleccion)
+                PrepararModoSeleccion();
+        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             RefreshGrid();
         }
 
-        private void FormClientes_Load(object sender, EventArgs e)
-        {
-            RefreshGrid();
-        }
-
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            using (var form = new FormNuevoCliente())
+            if (!modoSeleccion)
             {
-                var result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                    RefreshGrid();
+                using (var form = new FormNuevoCliente())
+                {
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                        RefreshGrid();
+                }
+            }
+            else
+            {
+                int colIdCliente= ManagerGrids.Instance.GetColumnIndexByText(gridClientes, "ID CLIENTE");
+                IdClienteSeleccionado = Convert.ToInt32(gridClientes.Rows[gridClientes.SelectedRows[0].Index].Cells[colIdCliente].Value);
+                DialogResult = DialogResult.OK;
+                Close();
             }
         }
 
@@ -102,7 +134,7 @@ namespace Acuario.Forms
                 ManagerMessages.Instance.NewInformationMessage(this, "Seleccione un cliente a modificar");
         }
 
-        private void bnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (gridClientes.SelectedRows.Count > 0)
             {
@@ -114,6 +146,12 @@ namespace Acuario.Forms
             }
             else
                 ManagerMessages.Instance.NewInformationMessage(this, "Seleccione un cliente a eliminar");
+        }
+
+        private void FormClientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!Modal)
+                ManagerForms.Instance.PrevForm();
         }
     }
 }

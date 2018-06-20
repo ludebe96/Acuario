@@ -18,11 +18,12 @@ namespace Acuario.Managers
             }
         }
 
-        public const String SYSTEM_NAME = "Acuario";
-        public const String SYSTEM_ROOT_FOLDER = @"C:\Program Files (x86)\" + SYSTEM_NAME + @"\";
-        public const String ERROR_LOGS_FILEPATH = SYSTEM_ROOT_FOLDER + "error_logs.txt";
-        public const String CONFIG_FILEPATH = SYSTEM_ROOT_FOLDER + "config.txt";
-        public String DESKTOP_PATH = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        public static String SYSTEM_NAME = "Acuario";
+        public static String SYSTEM_ROOT_FOLDER = @"C:\Program Files (x86)\" + SYSTEM_NAME + @"\";
+        public static String ERROR_LOGS_FILEPATH = SYSTEM_ROOT_FOLDER + "error_logs.txt";
+        public static String CONFIG_FILEPATH = SYSTEM_ROOT_FOLDER + "config.txt";
+        public static String DESKTOP_PATH = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        public static String FACTURAS_PATH = SYSTEM_ROOT_FOLDER + "Facturas/";
 
         // |==============================CONSTRUCTORES==============================|
         private ManagerNames()

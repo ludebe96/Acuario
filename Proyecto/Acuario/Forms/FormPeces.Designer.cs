@@ -55,7 +55,7 @@
             this.btnNuevoPez = new MetroFramework.Controls.MetroButton();
             this.textboxNombre = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.bnEliminar = new MetroFramework.Controls.MetroButton();
+            this.btnEliminar = new MetroFramework.Controls.MetroButton();
             this.btnModificar = new MetroFramework.Controls.MetroButton();
             this.btnVerVariedades = new MetroFramework.Controls.MetroButton();
             this.btnVerEspecies = new MetroFramework.Controls.MetroButton();
@@ -350,16 +350,16 @@
             // 
             // bnEliminar
             // 
-            this.bnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bnEliminar.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.bnEliminar.Location = new System.Drawing.Point(189, 480);
-            this.bnEliminar.Margin = new System.Windows.Forms.Padding(0);
-            this.bnEliminar.Name = "bnEliminar";
-            this.bnEliminar.Size = new System.Drawing.Size(165, 30);
-            this.bnEliminar.TabIndex = 14;
-            this.bnEliminar.Text = "Eliminar";
-            this.bnEliminar.UseSelectable = true;
-            this.bnEliminar.Click += new System.EventHandler(this.bnEliminar_Click);
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnEliminar.Location = new System.Drawing.Point(189, 480);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEliminar.Name = "bnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(165, 30);
+            this.btnEliminar.TabIndex = 14;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseSelectable = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -408,7 +408,7 @@
             this.Controls.Add(this.btnVerEspecies);
             this.Controls.Add(this.btnVerVariedades);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.bnEliminar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.textboxNombre);
             this.Controls.Add(this.btnNuevoPez);
@@ -456,7 +456,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrecioMayor;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrecioOferta;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrecioDistribuidor;
-        private MetroFramework.Controls.MetroButton bnEliminar;
+        private MetroFramework.Controls.MetroButton btnEliminar;
         private MetroFramework.Controls.MetroButton btnModificar;
         private MetroFramework.Controls.MetroButton btnVerVariedades;
         private MetroFramework.Controls.MetroButton btnVerEspecies;

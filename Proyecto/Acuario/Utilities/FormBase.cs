@@ -25,6 +25,25 @@ namespace Acuario.Utilities
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
+        private void RefreshGrid()
+        {/*
+            gridBase.Rows.Clear();
+            List<EntitieBase> gastos = ControllerBase.Instance.GetGastos(GetIdCategoriaSeleccionada(),
+                dateTimeDesde.Value, dateTimeHasta.Value);
+
+            for (int i = 0; i < gastos.Count; i++)
+            {
+                gridGastos.Rows.Add(gastos[i].GetIdGasto(),
+                    gastos[i].GetIdCategoria(),
+                    gastos[i].GetIdCuenta(),
+                    ControllerGastoCategorias.Instance.GetCategoriaById(gastos[i].GetIdCategoria()).GetNombre(),
+                    gastos[i].GetDescripcion(),
+                    ManagerFormats.Instance.DecimalToMoney(gastos[i].GetMonto(), true),
+                    gastos[i].GetFechaHora().ToString());
+            }
+            */
+        }
+
         // |==============================EVENTOS==============================|
     }
 }

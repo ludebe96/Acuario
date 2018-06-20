@@ -39,9 +39,9 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.mLabelTotalCuentas = new MetroFramework.Controls.MetroLabel();
             this.mPanelGridTotales = new MetroFramework.Controls.MetroPanel();
-            this.buttonAjustarBalanceCuentas = new MetroFramework.Controls.MetroButton();
-            this.buttonAjustarBalanceAhorros = new MetroFramework.Controls.MetroButton();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.btnAjustarBalanceCuentas = new MetroFramework.Controls.MetroButton();
+            this.btnAjustarBalanceAhorros = new MetroFramework.Controls.MetroButton();
+            this.panelAhorros = new MetroFramework.Controls.MetroPanel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.labelTotalAhorros = new MetroFramework.Controls.MetroLabel();
@@ -49,7 +49,7 @@
             this.mPanelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCuentas)).BeginInit();
             this.mPanelGridTotales.SuspendLayout();
-            this.metroPanel1.SuspendLayout();
+            this.panelAhorros.SuspendLayout();
             this.SuspendLayout();
             // 
             // mPanelGrid
@@ -187,51 +187,51 @@
             // 
             // buttonAjustarBalanceCuentas
             // 
-            this.buttonAjustarBalanceCuentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnAjustarBalanceCuentas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAjustarBalanceCuentas.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.buttonAjustarBalanceCuentas.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.buttonAjustarBalanceCuentas.Location = new System.Drawing.Point(20, 194);
-            this.buttonAjustarBalanceCuentas.Name = "buttonAjustarBalanceCuentas";
-            this.buttonAjustarBalanceCuentas.Size = new System.Drawing.Size(545, 30);
-            this.buttonAjustarBalanceCuentas.TabIndex = 5;
-            this.buttonAjustarBalanceCuentas.Text = "Ajustar Balance";
-            this.buttonAjustarBalanceCuentas.UseSelectable = true;
-            this.buttonAjustarBalanceCuentas.Click += new System.EventHandler(this.buttonAjustarBalanceCuentas_Click);
+            this.btnAjustarBalanceCuentas.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnAjustarBalanceCuentas.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnAjustarBalanceCuentas.Location = new System.Drawing.Point(20, 201);
+            this.btnAjustarBalanceCuentas.Name = "buttonAjustarBalanceCuentas";
+            this.btnAjustarBalanceCuentas.Size = new System.Drawing.Size(545, 30);
+            this.btnAjustarBalanceCuentas.TabIndex = 5;
+            this.btnAjustarBalanceCuentas.Text = "Ajustar Balance";
+            this.btnAjustarBalanceCuentas.UseSelectable = true;
+            this.btnAjustarBalanceCuentas.Click += new System.EventHandler(this.btnAjustarBalanceCuentas_Click);
             // 
             // buttonAjustarBalanceAhorros
             // 
-            this.buttonAjustarBalanceAhorros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnAjustarBalanceAhorros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAjustarBalanceAhorros.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.buttonAjustarBalanceAhorros.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.buttonAjustarBalanceAhorros.Location = new System.Drawing.Point(20, 349);
-            this.buttonAjustarBalanceAhorros.Name = "buttonAjustarBalanceAhorros";
-            this.buttonAjustarBalanceAhorros.Size = new System.Drawing.Size(545, 30);
-            this.buttonAjustarBalanceAhorros.TabIndex = 7;
-            this.buttonAjustarBalanceAhorros.Text = "Ajustar Balance";
-            this.buttonAjustarBalanceAhorros.UseSelectable = true;
-            this.buttonAjustarBalanceAhorros.Click += new System.EventHandler(this.buttonAjustarBalanceAhorros_Click);
+            this.btnAjustarBalanceAhorros.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnAjustarBalanceAhorros.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnAjustarBalanceAhorros.Location = new System.Drawing.Point(20, 349);
+            this.btnAjustarBalanceAhorros.Name = "buttonAjustarBalanceAhorros";
+            this.btnAjustarBalanceAhorros.Size = new System.Drawing.Size(545, 30);
+            this.btnAjustarBalanceAhorros.TabIndex = 7;
+            this.btnAjustarBalanceAhorros.Text = "Ajustar Balance";
+            this.btnAjustarBalanceAhorros.UseSelectable = true;
+            this.btnAjustarBalanceAhorros.Click += new System.EventHandler(this.btnAjustarBalanceAhorros_Click);
             // 
-            // metroPanel1
+            // panelAhorros
             // 
-            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelAhorros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel1.Controls.Add(this.metroLabel4);
-            this.metroPanel1.Controls.Add(this.metroLabel2);
-            this.metroPanel1.Controls.Add(this.labelTotalAhorros);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(20, 271);
-            this.metroPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(545, 87);
-            this.metroPanel1.TabIndex = 6;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
+            this.panelAhorros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAhorros.Controls.Add(this.metroLabel4);
+            this.panelAhorros.Controls.Add(this.metroLabel2);
+            this.panelAhorros.Controls.Add(this.labelTotalAhorros);
+            this.panelAhorros.HorizontalScrollbarBarColor = true;
+            this.panelAhorros.HorizontalScrollbarHighlightOnWheel = false;
+            this.panelAhorros.HorizontalScrollbarSize = 10;
+            this.panelAhorros.Location = new System.Drawing.Point(20, 271);
+            this.panelAhorros.Margin = new System.Windows.Forms.Padding(0);
+            this.panelAhorros.Name = "panelAhorros";
+            this.panelAhorros.Size = new System.Drawing.Size(545, 75);
+            this.panelAhorros.TabIndex = 6;
+            this.panelAhorros.VerticalScrollbarBarColor = true;
+            this.panelAhorros.VerticalScrollbarHighlightOnWheel = false;
+            this.panelAhorros.VerticalScrollbarSize = 10;
             // 
             // metroLabel4
             // 
@@ -286,9 +286,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(585, 467);
             this.Controls.Add(this.btnTransferencias);
-            this.Controls.Add(this.buttonAjustarBalanceAhorros);
-            this.Controls.Add(this.metroPanel1);
-            this.Controls.Add(this.buttonAjustarBalanceCuentas);
+            this.Controls.Add(this.btnAjustarBalanceAhorros);
+            this.Controls.Add(this.panelAhorros);
+            this.Controls.Add(this.btnAjustarBalanceCuentas);
             this.Controls.Add(this.mPanelGridTotales);
             this.MinimumSize = new System.Drawing.Size(585, 467);
             this.Name = "FormCaja";
@@ -299,8 +299,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridCuentas)).EndInit();
             this.mPanelGridTotales.ResumeLayout(false);
             this.mPanelGridTotales.PerformLayout();
-            this.metroPanel1.ResumeLayout(false);
-            this.metroPanel1.PerformLayout();
+            this.panelAhorros.ResumeLayout(false);
+            this.panelAhorros.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -310,13 +310,13 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel mLabelTotalCuentas;
         private MetroFramework.Controls.MetroPanel mPanelGridTotales;
-        private MetroFramework.Controls.MetroButton buttonAjustarBalanceCuentas;
+        private MetroFramework.Controls.MetroButton btnAjustarBalanceCuentas;
         private MetroFramework.Controls.MetroGrid gridCuentas;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIdCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn cuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnBalanceActual;
-        private MetroFramework.Controls.MetroButton buttonAjustarBalanceAhorros;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroButton btnAjustarBalanceAhorros;
+        private MetroFramework.Controls.MetroPanel panelAhorros;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel labelTotalAhorros;
         private MetroFramework.Controls.MetroLabel metroLabel4;

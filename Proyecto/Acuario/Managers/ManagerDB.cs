@@ -43,8 +43,6 @@ namespace Acuario.Managers
         public Boolean Init()
         {
             InitSqlCon();
-            this.createDBScriptFileName = "SistemaBase 1.0.0.sql";//TODO: Set scriptFileName
-            this.createDBScriptFilePath = @"C:\Program Files\Me\Work\LUDEBE Sistemas\SistemaBase\SistemaBase 1.0.0\Base de datos\1.0.0";//TODO: Set scriptPath
             return true;
         }
 
@@ -101,7 +99,7 @@ namespace Acuario.Managers
                 try
                 {
                     String fileName = dbName + " " + DateTime.Today.ToShortDateString().Replace("/", "-");
-                    String query = "BACKUP DATABASE SistemaBase "//TODO: Nombre BDD
+                    String query = "BACKUP DATABASE Acuario "//TODO: Nombre BDD
                                    + @"TO DISK = 'C:\Program Files\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\Backup\" + fileName + ".bak' WITH FORMAT";
                     SqlCommand sqlcmd = new SqlCommand(query, sqlConnection);
                     sqlcmd.ExecuteNonQuery();
@@ -126,8 +124,8 @@ namespace Acuario.Managers
             ChangeDbName("master");
             try
             {
-                DataTable dt = ExecuteQuery("IF (EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE ('[' + name + ']' = 'SistemaBase' OR "
-                + "name = 'SistemaBase'))) SELECT 1 ELSE SELECT 0");//TODO: Nombre BDD 2 veces
+                DataTable dt = ExecuteQuery("IF (EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE ('[' + name + ']' = 'Acuario' OR "
+                + "name = 'Acuario'))) SELECT 1 ELSE SELECT 0");//TODO: Nombre BDD 2 veces
 
                 if (dt.Rows[0][0].ToString().Equals("1"))
                     exists = true;
@@ -139,7 +137,7 @@ namespace Acuario.Managers
 
             finally
             {
-                ChangeDbName("SistemaBase");//TODO: Nombre BDD
+                ChangeDbName("Acuario");//TODO: Nombre BDD
             }
 
             return exists;
@@ -156,9 +154,9 @@ namespace Acuario.Managers
 
             String[] querys = query.Split(new string[] { "GO" }, StringSplitOptions.None);
 
-            if (Execute("CREATE DATABASE SistemaBase"))//TODO: Nombre BDD
+            if (Execute("CREATE DATABASE Acuario"))//TODO: Nombre BDD
             {
-                ChangeDbName("SistemaBase");//TODO: Nombre BDD
+                ChangeDbName("Acuario");//TODO: Nombre BDD
 
                 for (int i = 1; i < querys.Length; i++)
                 {
@@ -222,7 +220,7 @@ namespace Acuario.Managers
             if (System.IO.File.Exists(createDBScriptFilePath + @"\" + createDBScriptFileName))
             {
                 //Borra la BDD
-                String query = "ALTER DATABASE [SistemaBase] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE SistemaBase;";//TODO: Nombre BDD 2 
+                String query = "ALTER DATABASE [Acuario] SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE Acuario;";//TODO: Nombre BDD 2 
 
                 if (Execute(query))
                     return true;

@@ -47,5 +47,15 @@ namespace Acuario.Forms
         {
             ManagerForms.Instance.NewForm("FormClientes", false, false);
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            ManagerForms.Instance.NewForm("FormVentas", false, false);
+        }
+
+        private void btnVender_Click(object sender, EventArgs e)
+        {
+            ManagerForms.Instance.NewForm("FormVender", false, false);
+        }
     }
 }

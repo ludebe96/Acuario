@@ -448,6 +448,16 @@ namespace Acuario.Controllers
             ManagerDB.Instance.Execute("DELETE FROM Peces WHERE ID_Pez = " + idPez);
         }
 
+        public void VariarStock(int idPez, int cantidad)
+        {
+            String signo = "";
+
+            if (cantidad >= 0)
+                signo = "+";
+
+            ManagerDB.Instance.Execute("UPDATE Peces SET Stock = Stock " + signo + " " + cantidad + " WHERE ID_Pez = " + idPez);
+        }
+
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
         // |------------------------------ESPECIES------------------------------|

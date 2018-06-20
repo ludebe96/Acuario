@@ -32,6 +32,8 @@
             this.btnGastos = new System.Windows.Forms.Button();
             this.btnPeces = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnVender = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCaja
@@ -74,11 +76,33 @@
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
+            // btnVentas
+            // 
+            this.btnVentas.Location = new System.Drawing.Point(33, 206);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(75, 23);
+            this.btnVentas.TabIndex = 4;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
+            // btnVender
+            // 
+            this.btnVender.Location = new System.Drawing.Point(114, 206);
+            this.btnVender.Name = "btnVender";
+            this.btnVender.Size = new System.Drawing.Size(75, 23);
+            this.btnVender.TabIndex = 5;
+            this.btnVender.Text = "VENDER";
+            this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 559);
+            this.Controls.Add(this.btnVender);
+            this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnPeces);
             this.Controls.Add(this.btnGastos);
@@ -96,6 +120,8 @@
         private System.Windows.Forms.Button btnGastos;
         private System.Windows.Forms.Button btnPeces;
         private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Button btnVender;
     }
 }
 

@@ -140,6 +140,11 @@ namespace Acuario.Managers
             return stringValue;
         }
 
+        public int NumberToInt(String stringNumber)
+        {
+            return Convert.ToInt32(stringNumber.Replace(".", ""));
+        }
+
         public Boolean MailValido(String mail)
         {
             try

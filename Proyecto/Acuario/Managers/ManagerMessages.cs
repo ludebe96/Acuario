@@ -41,9 +41,9 @@ namespace Acuario.Managers
                 return false;
         }
 
-        public void NewErrorMessage(String message)
+        public void NewErrorMessage(Form form, String message)
         {
-            MessageBox.Show(message + "\n\nPorfavor, contacte al Programador.", titulos[2]);
+            MetroFramework.MetroMessageBox.Show(form, message + "\n\nPorfavor, contacte al Programador.", titulos[2]);
         }
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|

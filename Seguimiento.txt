@@ -1,7 +1,7 @@
 |====================PRIMERA ENTREGA====================|
 - Caja - 8 HORAS
 - Gastos - 4 HORAS 1/2
-- Ventas
+- Ventas - 14 HORAS
 - Compras
 - Inventario - 15 HORAS
 - Clientes - 2 HORAS 1/2

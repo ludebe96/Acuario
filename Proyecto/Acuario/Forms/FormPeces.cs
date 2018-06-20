@@ -21,11 +21,23 @@ namespace Acuario.Forms
         private List<int> idEspeciesCombobox;
         private List<int> idVariedadesCombobox;
 
+        Boolean modoSeleccion;
+        public int IdPezSeleccionado;
+
         // |==============================CONSTRUCTORES==============================|
 
         public FormPeces()
         {
             InitializeComponent();
+
+            modoSeleccion = false;
+        }
+
+        public FormPeces(Boolean modoSeleccion)
+        {
+            InitializeComponent();
+
+            this.modoSeleccion = true;
         }
 
         // |==============================METODOS Y FUNCIONES==============================|
@@ -122,10 +134,25 @@ namespace Acuario.Forms
             RefreshGrid();
         }
 
+        private void PrepararModoSeleccion()
+        {
+            Text = "Seleccione un Pez";
+
+            btnNuevoPez.Text = "Seleccionar";
+
+            btnModificar.Visible = false;
+            btnEliminar.Visible = false;
+            btnVerEspecies.Visible = false;
+            btnVerVariedades.Visible = false;
+        }
+
         // |==============================EVENTOS==============================|
         private void FormPeces_Load(object sender, EventArgs e)
         {
             PopulateComboboxes();
+
+            if (modoSeleccion)
+                PrepararModoSeleccion();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -135,18 +162,26 @@ namespace Acuario.Forms
 
         private void btnNuevoPez_Click(object sender, EventArgs e)
         {
-            ManagerForms.Instance.NewForm("FormNuevoPez", false, false);
+            if (!modoSeleccion)
+                ManagerForms.Instance.NewForm("FormNuevoPez", false, false);
+            else
+            {
+                if (gridPeces.SelectedRows.Count > 0)
+                {
+                    int colIdPez = ManagerGrids.Instance.GetColumnIndexByText(gridPeces, "ID PEZ");
+                    IdPezSeleccionado = Convert.ToInt32(gridPeces.Rows[gridPeces.SelectedRows[0].Index].Cells[colIdPez].Value);
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                    ManagerMessages.Instance.NewInformationMessage(this, "Seleccione un pez");
+            }
         }
 
         private void comboboxEspecies_SelectedIndexChanged(object sender, EventArgs e)
         {
             ControllerPeces.Instance.PopulateComboboxVariedades(ref comboboxVariedades,
                 ref idVariedadesCombobox, idEspeciesCombobox[comboboxEspecies.SelectedIndex], false);
-        }
-
-        private void FormPeces_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ManagerForms.Instance.PrevForm();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -157,7 +192,7 @@ namespace Acuario.Forms
                 ManagerMessages.Instance.NewInformationMessage(this, "Seleccione un pez a modificar");
         }
 
-        private void bnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (gridPeces.SelectedRows.Count > 0)
             {
@@ -185,6 +220,14 @@ namespace Acuario.Forms
         {
             if (comboboxVariedades.Items.Count > 1)
                 RefreshGrid();
+        }
+
+
+
+        private void FormPeces_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(!Modal)
+                ManagerForms.Instance.PrevForm();
         }
     }
 }
