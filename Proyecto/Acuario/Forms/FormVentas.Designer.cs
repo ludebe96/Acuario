@@ -28,23 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.textboxNombre = new MetroFramework.Controls.MetroTextBox();
             this.btnBuscar = new MetroFramework.Controls.MetroButton();
             this.panelGrid = new MetroFramework.Controls.MetroPanel();
             this.gridVentas = new MetroFramework.Controls.MetroGrid();
-            this.dateTimeHasta = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.dateTimeDesde = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.btnDetalles = new MetroFramework.Controls.MetroButton();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.textboxNroVenta = new MetroFramework.Controls.MetroTextBox();
-            this.btnDeshacerVenta = new MetroFramework.Controls.MetroButton();
             this.columnIdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +47,14 @@
             this.columnFechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnVerDetalle = new System.Windows.Forms.DataGridViewButtonColumn();
             this.columnVerFactura = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dateTimeHasta = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.dateTimeDesde = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.btnDetalles = new MetroFramework.Controls.MetroButton();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.textboxNroVenta = new MetroFramework.Controls.MetroTextBox();
+            this.btnDeshacerVenta = new MetroFramework.Controls.MetroButton();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridVentas)).BeginInit();
             this.SuspendLayout();
@@ -138,14 +138,14 @@
             this.gridVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnIdVenta,
@@ -158,14 +158,14 @@
             this.columnFechaHora,
             this.columnVerDetalle,
             this.columnVerFactura});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridVentas.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridVentas.DefaultCellStyle = dataGridViewCellStyle7;
             this.gridVentas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridVentas.EnableHeadersVisualStyles = false;
             this.gridVentas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -174,19 +174,99 @@
             this.gridVentas.Name = "gridVentas";
             this.gridVentas.ReadOnly = true;
             this.gridVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.gridVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridVentas.Size = new System.Drawing.Size(730, 237);
             this.gridVentas.TabIndex = 2;
             this.gridVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVentas_CellContentClick);
+            // 
+            // columnIdVenta
+            // 
+            this.columnIdVenta.HeaderText = "ID VENTA";
+            this.columnIdVenta.Name = "columnIdVenta";
+            this.columnIdVenta.ReadOnly = true;
+            this.columnIdVenta.Visible = false;
+            this.columnIdVenta.Width = 76;
+            // 
+            // columnIdCuenta
+            // 
+            this.columnIdCuenta.HeaderText = "ID CUENTA";
+            this.columnIdCuenta.Name = "columnIdCuenta";
+            this.columnIdCuenta.ReadOnly = true;
+            this.columnIdCuenta.Visible = false;
+            this.columnIdCuenta.Width = 84;
+            // 
+            // columnIdCliente
+            // 
+            this.columnIdCliente.HeaderText = "ID CLIENTE";
+            this.columnIdCliente.Name = "columnIdCliente";
+            this.columnIdCliente.ReadOnly = true;
+            this.columnIdCliente.Visible = false;
+            this.columnIdCliente.Width = 84;
+            // 
+            // columnNroVenta
+            // 
+            this.columnNroVenta.HeaderText = "NRO VENTA";
+            this.columnNroVenta.Name = "columnNroVenta";
+            this.columnNroVenta.ReadOnly = true;
+            this.columnNroVenta.Width = 89;
+            // 
+            // columnCuenta
+            // 
+            this.columnCuenta.HeaderText = "CUENTA";
+            this.columnCuenta.Name = "columnCuenta";
+            this.columnCuenta.ReadOnly = true;
+            this.columnCuenta.Width = 70;
+            // 
+            // columnCliente
+            // 
+            this.columnCliente.HeaderText = "CLIENTE";
+            this.columnCliente.Name = "columnCliente";
+            this.columnCliente.ReadOnly = true;
+            this.columnCliente.Width = 70;
+            // 
+            // columnTotal
+            // 
+            this.columnTotal.HeaderText = "TOTAL";
+            this.columnTotal.Name = "columnTotal";
+            this.columnTotal.ReadOnly = true;
+            this.columnTotal.Width = 59;
+            // 
+            // columnFechaHora
+            // 
+            this.columnFechaHora.HeaderText = "FECHA HORA";
+            this.columnFechaHora.Name = "columnFechaHora";
+            this.columnFechaHora.ReadOnly = true;
+            this.columnFechaHora.Width = 98;
+            // 
+            // columnVerDetalle
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.columnVerDetalle.DefaultCellStyle = dataGridViewCellStyle6;
+            this.columnVerDetalle.HeaderText = "";
+            this.columnVerDetalle.Name = "columnVerDetalle";
+            this.columnVerDetalle.ReadOnly = true;
+            this.columnVerDetalle.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnVerDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.columnVerDetalle.Text = "";
+            this.columnVerDetalle.Width = 17;
+            // 
+            // columnVerFactura
+            // 
+            this.columnVerFactura.HeaderText = "";
+            this.columnVerFactura.Name = "columnVerFactura";
+            this.columnVerFactura.ReadOnly = true;
+            this.columnVerFactura.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnVerFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.columnVerFactura.Width = 17;
             // 
             // dateTimeHasta
             // 
@@ -281,7 +361,7 @@
             // 
             this.btnDeshacerVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDeshacerVenta.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnDeshacerVenta.Location = new System.Drawing.Point(24, 367);
+            this.btnDeshacerVenta.Location = new System.Drawing.Point(23, 367);
             this.btnDeshacerVenta.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeshacerVenta.Name = "btnDeshacerVenta";
             this.btnDeshacerVenta.Size = new System.Drawing.Size(165, 30);
@@ -290,91 +370,11 @@
             this.btnDeshacerVenta.UseSelectable = true;
             this.btnDeshacerVenta.Click += new System.EventHandler(this.btnDeshacerVenta_Click);
             // 
-            // columnIdVenta
-            // 
-            this.columnIdVenta.HeaderText = "ID VENTA";
-            this.columnIdVenta.Name = "columnIdVenta";
-            this.columnIdVenta.ReadOnly = true;
-            this.columnIdVenta.Visible = false;
-            this.columnIdVenta.Width = 76;
-            // 
-            // columnIdCuenta
-            // 
-            this.columnIdCuenta.HeaderText = "ID CUENTA";
-            this.columnIdCuenta.Name = "columnIdCuenta";
-            this.columnIdCuenta.ReadOnly = true;
-            this.columnIdCuenta.Visible = false;
-            this.columnIdCuenta.Width = 84;
-            // 
-            // columnIdCliente
-            // 
-            this.columnIdCliente.HeaderText = "ID CLIENTE";
-            this.columnIdCliente.Name = "columnIdCliente";
-            this.columnIdCliente.ReadOnly = true;
-            this.columnIdCliente.Visible = false;
-            this.columnIdCliente.Width = 84;
-            // 
-            // columnNroVenta
-            // 
-            this.columnNroVenta.HeaderText = "NRO VENTA";
-            this.columnNroVenta.Name = "columnNroVenta";
-            this.columnNroVenta.ReadOnly = true;
-            this.columnNroVenta.Width = 89;
-            // 
-            // columnCuenta
-            // 
-            this.columnCuenta.HeaderText = "CUENTA";
-            this.columnCuenta.Name = "columnCuenta";
-            this.columnCuenta.ReadOnly = true;
-            this.columnCuenta.Width = 70;
-            // 
-            // columnCliente
-            // 
-            this.columnCliente.HeaderText = "CLIENTE";
-            this.columnCliente.Name = "columnCliente";
-            this.columnCliente.ReadOnly = true;
-            this.columnCliente.Width = 70;
-            // 
-            // columnTotal
-            // 
-            this.columnTotal.HeaderText = "TOTAL";
-            this.columnTotal.Name = "columnTotal";
-            this.columnTotal.ReadOnly = true;
-            this.columnTotal.Width = 59;
-            // 
-            // columnFechaHora
-            // 
-            this.columnFechaHora.HeaderText = "FECHA HORA";
-            this.columnFechaHora.Name = "columnFechaHora";
-            this.columnFechaHora.ReadOnly = true;
-            this.columnFechaHora.Width = 98;
-            // 
-            // columnVerDetalle
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.columnVerDetalle.DefaultCellStyle = dataGridViewCellStyle2;
-            this.columnVerDetalle.HeaderText = "";
-            this.columnVerDetalle.Name = "columnVerDetalle";
-            this.columnVerDetalle.ReadOnly = true;
-            this.columnVerDetalle.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.columnVerDetalle.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.columnVerDetalle.Text = "";
-            this.columnVerDetalle.Width = 17;
-            // 
-            // columnVerFactura
-            // 
-            this.columnVerFactura.HeaderText = "";
-            this.columnVerFactura.Name = "columnVerFactura";
-            this.columnVerFactura.ReadOnly = true;
-            this.columnVerFactura.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.columnVerFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.columnVerFactura.Width = 17;
-            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 445);
+            this.ClientSize = new System.Drawing.Size(780, 425);
             this.Controls.Add(this.btnDeshacerVenta);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.textboxNroVenta);
@@ -387,7 +387,7 @@
             this.Controls.Add(this.textboxNombre);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.btnBuscar);
-            this.MinimumSize = new System.Drawing.Size(785, 445);
+            this.MinimumSize = new System.Drawing.Size(780, 425);
             this.Name = "FormVentas";
             this.Text = "Ventas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormVentas_FormClosed);

@@ -56,11 +56,14 @@ namespace Acuario.Controllers
             ManagerDB.Instance.Execute("DELETE FROM Transacciones WHERE ID_Transaccion = " + transaccion.GetIdTransaccion());
 
             String signo = "+";
+            String stringMonto = transaccion.GetMonto().ToString().Replace(",", ".");
+            if (stringMonto.Substring(0, 1) == "-")
+                stringMonto = stringMonto.Substring(1);
             // Inversa
             if (transaccion.GetMonto() >= 0)
                 signo = "-";
 
-            ManagerDB.Instance.Execute("UPDATE Cuentas SET Balance = Balance " + signo + " " + transaccion.GetMonto().ToString().Replace(",", ".") + " " +
+            ManagerDB.Instance.Execute("UPDATE Cuentas SET Balance = Balance " + signo + " " + stringMonto + " " +
                 "WHERE ID_Cuenta = " + transaccion.GetIdCuenta());
         }
 

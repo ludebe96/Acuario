@@ -33,15 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelGrid = new MetroFramework.Controls.MetroPanel();
             this.gridVentaItems = new MetroFramework.Controls.MetroGrid();
-            this.btnBuscar = new MetroFramework.Controls.MetroButton();
-            this.dateTimeHasta = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.dateTimeDesde = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.textboxCliente = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.textboxNroVenta = new MetroFramework.Controls.MetroTextBox();
             this.columnIdVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdVentaItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdPez = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +41,11 @@
             this.columnMontoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new MetroFramework.Controls.MetroButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.textboxCliente = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.textboxNroVenta = new MetroFramework.Controls.MetroTextBox();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridVentaItems)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +60,9 @@
             this.panelGrid.HorizontalScrollbarBarColor = true;
             this.panelGrid.HorizontalScrollbarHighlightOnWheel = false;
             this.panelGrid.HorizontalScrollbarSize = 10;
-            this.panelGrid.Location = new System.Drawing.Point(38, 127);
+            this.panelGrid.Location = new System.Drawing.Point(39, 96);
             this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Size = new System.Drawing.Size(722, 287);
+            this.panelGrid.Size = new System.Drawing.Size(530, 290);
             this.panelGrid.TabIndex = 18;
             this.panelGrid.VerticalScrollbarBarColor = true;
             this.panelGrid.VerticalScrollbarHighlightOnWheel = false;
@@ -126,13 +122,72 @@
             this.gridVentaItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridVentaItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridVentaItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridVentaItems.Size = new System.Drawing.Size(720, 285);
+            this.gridVentaItems.Size = new System.Drawing.Size(528, 288);
             this.gridVentaItems.TabIndex = 2;
+            // 
+            // columnIdVenta
+            // 
+            this.columnIdVenta.HeaderText = "ID VENTA";
+            this.columnIdVenta.Name = "columnIdVenta";
+            this.columnIdVenta.ReadOnly = true;
+            this.columnIdVenta.Visible = false;
+            this.columnIdVenta.Width = 76;
+            // 
+            // columnIdVentaItem
+            // 
+            this.columnIdVentaItem.HeaderText = "ID VENTA ITEM";
+            this.columnIdVentaItem.Name = "columnIdVentaItem";
+            this.columnIdVentaItem.ReadOnly = true;
+            this.columnIdVentaItem.Visible = false;
+            this.columnIdVentaItem.Width = 103;
+            // 
+            // columnIdPez
+            // 
+            this.columnIdPez.HeaderText = "ID PEZ";
+            this.columnIdPez.Name = "columnIdPez";
+            this.columnIdPez.ReadOnly = true;
+            this.columnIdPez.Visible = false;
+            this.columnIdPez.Width = 62;
+            // 
+            // columnNroVenta
+            // 
+            this.columnNroVenta.HeaderText = "NRO VENTA";
+            this.columnNroVenta.Name = "columnNroVenta";
+            this.columnNroVenta.ReadOnly = true;
+            this.columnNroVenta.Width = 82;
+            // 
+            // columnPEZ
+            // 
+            this.columnPEZ.HeaderText = "PEZ";
+            this.columnPEZ.Name = "columnPEZ";
+            this.columnPEZ.ReadOnly = true;
+            this.columnPEZ.Width = 48;
+            // 
+            // columnMontoUnitario
+            // 
+            this.columnMontoUnitario.HeaderText = "MONTO UNITARIO";
+            this.columnMontoUnitario.Name = "columnMontoUnitario";
+            this.columnMontoUnitario.ReadOnly = true;
+            this.columnMontoUnitario.Width = 112;
+            // 
+            // columnCantidad
+            // 
+            this.columnCantidad.HeaderText = "CANTIDAD";
+            this.columnCantidad.Name = "columnCantidad";
+            this.columnCantidad.ReadOnly = true;
+            this.columnCantidad.Width = 83;
+            // 
+            // columnSubtotal
+            // 
+            this.columnSubtotal.HeaderText = "SUBTOTAL";
+            this.columnSubtotal.Name = "columnSubtotal";
+            this.columnSubtotal.ReadOnly = true;
+            this.columnSubtotal.Width = 80;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.Location = new System.Drawing.Point(688, 92);
+            this.btnBuscar.Location = new System.Drawing.Point(496, 60);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(72, 30);
             this.btnBuscar.TabIndex = 9;
@@ -140,47 +195,11 @@
             this.btnBuscar.UseSelectable = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dateTimeHasta
-            // 
-            this.dateTimeHasta.Location = new System.Drawing.Point(441, 93);
-            this.dateTimeHasta.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dateTimeHasta.Name = "dateTimeHasta";
-            this.dateTimeHasta.Size = new System.Drawing.Size(239, 29);
-            this.dateTimeHasta.TabIndex = 22;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(381, 96);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(54, 25);
-            this.metroLabel1.TabIndex = 21;
-            this.metroLabel1.Text = "Hasta";
-            // 
-            // dateTimeDesde
-            // 
-            this.dateTimeDesde.Location = new System.Drawing.Point(133, 92);
-            this.dateTimeDesde.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dateTimeDesde.Name = "dateTimeDesde";
-            this.dateTimeDesde.Size = new System.Drawing.Size(239, 29);
-            this.dateTimeDesde.TabIndex = 20;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.Location = new System.Drawing.Point(39, 96);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(59, 25);
-            this.metroLabel2.TabIndex = 19;
-            this.metroLabel2.Text = "Desde";
-            // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.Location = new System.Drawing.Point(381, 60);
+            this.metroLabel3.Location = new System.Drawing.Point(279, 61);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(38, 25);
             this.metroLabel3.TabIndex = 24;
@@ -201,7 +220,7 @@
             this.textboxCliente.CustomButton.UseSelectable = true;
             this.textboxCliente.CustomButton.Visible = false;
             this.textboxCliente.Lines = new string[0];
-            this.textboxCliente.Location = new System.Drawing.Point(441, 63);
+            this.textboxCliente.Location = new System.Drawing.Point(323, 64);
             this.textboxCliente.MaxLength = 32767;
             this.textboxCliente.Name = "textboxCliente";
             this.textboxCliente.PasswordChar = '\0';
@@ -256,81 +275,18 @@
             this.textboxNroVenta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.textboxNroVenta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // columnIdVenta
-            // 
-            this.columnIdVenta.HeaderText = "ID VENTA";
-            this.columnIdVenta.Name = "columnIdVenta";
-            this.columnIdVenta.ReadOnly = true;
-            this.columnIdVenta.Visible = false;
-            this.columnIdVenta.Width = 76;
-            // 
-            // columnIdVentaItem
-            // 
-            this.columnIdVentaItem.HeaderText = "ID VENTA ITEM";
-            this.columnIdVentaItem.Name = "columnIdVentaItem";
-            this.columnIdVentaItem.ReadOnly = true;
-            this.columnIdVentaItem.Visible = false;
-            this.columnIdVentaItem.Width = 103;
-            // 
-            // columnIdPez
-            // 
-            this.columnIdPez.HeaderText = "ID PEZ";
-            this.columnIdPez.Name = "columnIdPez";
-            this.columnIdPez.ReadOnly = true;
-            this.columnIdPez.Visible = false;
-            this.columnIdPez.Width = 62;
-            // 
-            // columnNroVenta
-            // 
-            this.columnNroVenta.HeaderText = "NRO VENTA";
-            this.columnNroVenta.Name = "columnNroVenta";
-            this.columnNroVenta.ReadOnly = true;
-            this.columnNroVenta.Width = 89;
-            // 
-            // columnPEZ
-            // 
-            this.columnPEZ.HeaderText = "PEZ";
-            this.columnPEZ.Name = "columnPEZ";
-            this.columnPEZ.ReadOnly = true;
-            this.columnPEZ.Width = 48;
-            // 
-            // columnMontoUnitario
-            // 
-            this.columnMontoUnitario.HeaderText = "MONTO UNITARIO";
-            this.columnMontoUnitario.Name = "columnMontoUnitario";
-            this.columnMontoUnitario.ReadOnly = true;
-            this.columnMontoUnitario.Width = 112;
-            // 
-            // columnCantidad
-            // 
-            this.columnCantidad.HeaderText = "CANTIDAD";
-            this.columnCantidad.Name = "columnCantidad";
-            this.columnCantidad.ReadOnly = true;
-            this.columnCantidad.Width = 83;
-            // 
-            // columnSubtotal
-            // 
-            this.columnSubtotal.HeaderText = "SUBTOTAL";
-            this.columnSubtotal.Name = "columnSubtotal";
-            this.columnSubtotal.ReadOnly = true;
-            this.columnSubtotal.Width = 80;
-            // 
             // FormVentaItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 460);
+            this.ClientSize = new System.Drawing.Size(595, 410);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.textboxNroVenta);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.textboxCliente);
-            this.Controls.Add(this.dateTimeHasta);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.dateTimeDesde);
-            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.panelGrid);
-            this.MinimumSize = new System.Drawing.Size(785, 460);
+            this.MinimumSize = new System.Drawing.Size(595, 410);
             this.Name = "FormVentaItems";
             this.Text = "Detalle de Ventas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormVentaItems_FormClosed);
@@ -347,10 +303,6 @@
         private MetroFramework.Controls.MetroPanel panelGrid;
         private MetroFramework.Controls.MetroGrid gridVentaItems;
         private MetroFramework.Controls.MetroButton btnBuscar;
-        private MetroFramework.Controls.MetroDateTime dateTimeHasta;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroDateTime dateTimeDesde;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox textboxCliente;
         private MetroFramework.Controls.MetroLabel metroLabel4;

@@ -34,6 +34,8 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnVender = new System.Windows.Forms.Button();
+            this.btnCompras = new System.Windows.Forms.Button();
+            this.btnComprar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCaja
@@ -96,11 +98,33 @@
             this.btnVender.UseVisualStyleBackColor = true;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
+            // btnCompras
+            // 
+            this.btnCompras.Location = new System.Drawing.Point(33, 246);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Size = new System.Drawing.Size(75, 23);
+            this.btnCompras.TabIndex = 6;
+            this.btnCompras.Text = "Compras";
+            this.btnCompras.UseVisualStyleBackColor = true;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
+            // btnComprar
+            // 
+            this.btnComprar.Location = new System.Drawing.Point(114, 246);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(75, 23);
+            this.btnComprar.TabIndex = 7;
+            this.btnComprar.Text = "Comprar";
+            this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 559);
+            this.Controls.Add(this.btnComprar);
+            this.Controls.Add(this.btnCompras);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnClientes);
@@ -122,6 +146,8 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnVender;
+        private System.Windows.Forms.Button btnCompras;
+        private System.Windows.Forms.Button btnComprar;
     }
 }
 

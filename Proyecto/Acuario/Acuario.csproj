@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ControllerClientes.cs" />
+    <Compile Include="Controllers\ControllerCompras.cs" />
     <Compile Include="Controllers\ControllerCuentas.cs" />
     <Compile Include="Controllers\ControllerGastoCategorias.cs" />
     <Compile Include="Controllers\ControllerGastos.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="Controllers\ControllerTransacciones.cs" />
     <Compile Include="Controllers\ControllerVentas.cs" />
     <Compile Include="Entities\EntitieCliente.cs" />
+    <Compile Include="Entities\EntitieCompra.cs" />
+    <Compile Include="Entities\EntitieCompraItem.cs" />
     <Compile Include="Entities\EntitieCuenta.cs" />
     <Compile Include="Entities\EntitieGasto.cs" />
     <Compile Include="Entities\EntitiePez.cs" />
@@ -100,6 +103,24 @@
     </Compile>
     <Compile Include="Forms\FormClientes.Designer.cs">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCompraItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCompraItems.Designer.cs">
+      <DependentUpon>FormCompraItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormComprar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormComprar.Designer.cs">
+      <DependentUpon>FormComprar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCompras.Designer.cs">
+      <DependentUpon>FormCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormEspecies.cs">
       <SubType>Form</SubType>
@@ -213,6 +234,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCompraItems.resx">
+      <DependentUpon>FormCompraItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormComprar.resx">
+      <DependentUpon>FormComprar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCompras.resx">
+      <DependentUpon>FormCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEspecies.resx">
       <DependentUpon>FormEspecies.cs</DependentUpon>

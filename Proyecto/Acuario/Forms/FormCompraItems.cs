@@ -14,20 +14,20 @@ using Acuario.Managers;
 
 namespace Acuario.Forms
 {
-    public partial class FormVentaItems : MetroFramework.Forms.MetroForm
+    public partial class FormCompraItems: MetroFramework.Forms.MetroForm
     {
-        public FormVentaItems()
+        public FormCompraItems()
         {
             InitializeComponent();
         }
 
-        public FormVentaItems(int idVenta)
+        public FormCompraItems(int idCompra)
         {
             InitializeComponent();
 
-            textboxNroVenta.Text = idVenta.ToString();
+            textboxNroCompra.Text = idCompra.ToString();
 
-            List<EntitieVentaItem> items = ControllerVentas.Instance.GetItemsByIdVenta(idVenta);
+            List<EntitieCompraItem> items = ControllerCompras.Instance.GetItemsByIdCompra(idCompra);
 
             RefreshGrid(items);
         }
@@ -40,38 +40,30 @@ namespace Acuario.Forms
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
-        private void RefreshGrid(List<EntitieVentaItem> items)
+        private void RefreshGrid(List<EntitieCompraItem> items)
         {
-            gridVentaItems.Rows.Clear();
+            gridCompraItems.Rows.Clear();
             if (items == null)
             {
-                int idVenta = 0;
-                if (!textboxNroVenta.Text.Trim().Equals(""))
-                    idVenta = Convert.ToInt32(textboxNroVenta.Text);
+                int idCompra = 0;
+                if (!textboxNroCompra.Text.Trim().Equals(""))
+                    idCompra = Convert.ToInt32(textboxNroCompra.Text);
 
-                items = ControllerVentas.Instance.GetItems(idVenta, textboxCliente.Text);
+                items = ControllerCompras.Instance.GetItems(idCompra);
             }
 
             for (int i = 0; i < items.Count; i++)
             {
                 EntitiePez pez = ControllerPeces.Instance.GetPezById(items[i].GetIdPez());
 
-                gridVentaItems.Rows.Add(items[i].GetIdVentaItem(),
+                gridCompraItems.Rows.Add(items[i].GetIdCompraItem(),
                     pez.GetIdPez(),
-                    items[i].GetIdVenta(),
-                    items[i].GetIdVenta(),
+                    items[i].GetIdCompra(),
+                    items[i].GetIdCompra(),
                     pez.GetNombre(),
-                    ManagerFormats.Instance.DecimalToMoney(items[i].GetMontoUnitario(), true),
                     ManagerFormats.Instance.IntToNumber(items[i].GetCantidad()),
                     ManagerFormats.Instance.DecimalToMoney(items[i].GetSubtotal(), true));
             }
-        }
-
-        // |==============================EVENTOS==============================|
-
-        private void FormVentaItems_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -79,7 +71,14 @@ namespace Acuario.Forms
             RefreshGrid(null);
         }
 
-        private void FormVentaItems_FormClosed(object sender, FormClosedEventArgs e)
+        // |==============================EVENTOS==============================|
+
+        private void FormCompraItems_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCompraItems_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (!Modal)
                 ManagerForms.Instance.PrevForm();

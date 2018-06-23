@@ -1,7 +1,8 @@
-|=========================================V0.6.0.0=========================================|
-- Módulo Ventas
-- DECIMAL(17, 5) cambiado a DECIMAL(17, 2) en tabla Transacciones y Gastos
-- Agregado FileManager
+|=========================================V0.7.0.0=========================================|
+- Módulo Compras
+- Modificada la visual y responsividad del formulario Vender
+- Modificada la visual y responsividad del formulario Ventas
+- Correción en la lógica de Venta para el campo cantidad
 |==========================================================================================|
 
-20/06/2018
+23/06/2018

@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.btnRemover = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.btnSeleccionarCuenta = new MetroFramework.Controls.MetroButton();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.textboxCuenta = new MetroFramework.Controls.MetroTextBox();
             this.btnSeleccionarCliente = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.textboxCliente = new MetroFramework.Controls.MetroTextBox();
@@ -68,9 +71,6 @@
             this.btnSeleccionarPez = new MetroFramework.Controls.MetroButton();
             this.btnGenerarVenta = new MetroFramework.Controls.MetroButton();
             this.btnCancelar = new MetroFramework.Controls.MetroButton();
-            this.btnSeleccionarCuenta = new MetroFramework.Controls.MetroButton();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.textboxCuenta = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel1.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.panelGrid.SuspendLayout();
@@ -80,6 +80,9 @@
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.metroPanel1.Controls.Add(this.btnRemover);
             this.metroPanel1.Controls.Add(this.metroPanel2);
@@ -99,8 +102,9 @@
             // 
             // btnRemover
             // 
+            this.btnRemover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRemover.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnRemover.Location = new System.Drawing.Point(688, 252);
+            this.btnRemover.Location = new System.Drawing.Point(689, 357);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(105, 30);
             this.btnRemover.TabIndex = 20;
@@ -127,6 +131,57 @@
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // btnSeleccionarCuenta
+            // 
+            this.btnSeleccionarCuenta.Location = new System.Drawing.Point(250, 17);
+            this.btnSeleccionarCuenta.Name = "btnSeleccionarCuenta";
+            this.btnSeleccionarCuenta.Size = new System.Drawing.Size(75, 23);
+            this.btnSeleccionarCuenta.TabIndex = 23;
+            this.btnSeleccionarCuenta.Text = "Seleccionar";
+            this.btnSeleccionarCuenta.UseSelectable = true;
+            this.btnSeleccionarCuenta.Click += new System.EventHandler(this.btnSeleccionarCuenta_Click);
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel9.Location = new System.Drawing.Point(20, 44);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(64, 25);
+            this.metroLabel9.TabIndex = 22;
+            this.metroLabel9.Text = "Cliente";
+            // 
+            // textboxCuenta
+            // 
+            // 
+            // 
+            // 
+            this.textboxCuenta.CustomButton.Image = null;
+            this.textboxCuenta.CustomButton.Location = new System.Drawing.Point(118, 1);
+            this.textboxCuenta.CustomButton.Name = "";
+            this.textboxCuenta.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.textboxCuenta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textboxCuenta.CustomButton.TabIndex = 1;
+            this.textboxCuenta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textboxCuenta.CustomButton.UseSelectable = true;
+            this.textboxCuenta.CustomButton.Visible = false;
+            this.textboxCuenta.Enabled = false;
+            this.textboxCuenta.Lines = new string[0];
+            this.textboxCuenta.Location = new System.Drawing.Point(104, 17);
+            this.textboxCuenta.MaxLength = 32767;
+            this.textboxCuenta.Name = "textboxCuenta";
+            this.textboxCuenta.PasswordChar = '\0';
+            this.textboxCuenta.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textboxCuenta.SelectedText = "";
+            this.textboxCuenta.SelectionLength = 0;
+            this.textboxCuenta.SelectionStart = 0;
+            this.textboxCuenta.ShortcutsEnabled = true;
+            this.textboxCuenta.Size = new System.Drawing.Size(140, 23);
+            this.textboxCuenta.TabIndex = 21;
+            this.textboxCuenta.UseSelectable = true;
+            this.textboxCuenta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textboxCuenta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnSeleccionarCliente
             // 
@@ -181,6 +236,9 @@
             // 
             // panelGrid
             // 
+            this.panelGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGrid.Controls.Add(this.gridItems);
             this.panelGrid.HorizontalScrollbarBarColor = true;
@@ -188,7 +246,7 @@
             this.panelGrid.HorizontalScrollbarSize = 10;
             this.panelGrid.Location = new System.Drawing.Point(398, 3);
             this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Size = new System.Drawing.Size(396, 243);
+            this.panelGrid.Size = new System.Drawing.Size(396, 351);
             this.panelGrid.TabIndex = 21;
             this.panelGrid.VerticalScrollbarBarColor = true;
             this.panelGrid.VerticalScrollbarHighlightOnWheel = false;
@@ -204,14 +262,14 @@
             this.gridItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.gridItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnIdPez,
@@ -221,14 +279,14 @@
             this.columnPrecioDesc,
             this.columnCantidad,
             this.columnSubtotal});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridItems.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridItems.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridItems.EnableHeadersVisualStyles = false;
             this.gridItems.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -237,17 +295,17 @@
             this.gridItems.Name = "gridItems";
             this.gridItems.ReadOnly = true;
             this.gridItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridItems.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridItems.Size = new System.Drawing.Size(394, 241);
+            this.gridItems.Size = new System.Drawing.Size(394, 349);
             this.gridItems.TabIndex = 17;
             // 
             // columnIdPez
@@ -347,6 +405,7 @@
             // 
             // rBtnDistribuidor
             // 
+            this.rBtnDistribuidor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rBtnDistribuidor.AutoSize = true;
             this.rBtnDistribuidor.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.rBtnDistribuidor.Location = new System.Drawing.Point(284, 202);
@@ -359,6 +418,7 @@
             // 
             // rBtnOferta
             // 
+            this.rBtnOferta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rBtnOferta.AutoSize = true;
             this.rBtnOferta.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.rBtnOferta.Location = new System.Drawing.Point(284, 173);
@@ -371,6 +431,7 @@
             // 
             // rBtnMayorista
             // 
+            this.rBtnMayorista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rBtnMayorista.AutoSize = true;
             this.rBtnMayorista.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.rBtnMayorista.Location = new System.Drawing.Point(284, 144);
@@ -383,6 +444,7 @@
             // 
             // rBtnMinorista
             // 
+            this.rBtnMinorista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.rBtnMinorista.AutoSize = true;
             this.rBtnMinorista.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.rBtnMinorista.Location = new System.Drawing.Point(284, 115);
@@ -395,6 +457,7 @@
             // 
             // metroLabel8
             // 
+            this.metroLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel8.Location = new System.Drawing.Point(20, 200);
@@ -405,6 +468,7 @@
             // 
             // textboxDistribuidor
             // 
+            this.textboxDistribuidor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             // 
             // 
             // 
@@ -436,6 +500,7 @@
             // 
             // metroLabel7
             // 
+            this.metroLabel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel7.Location = new System.Drawing.Point(20, 171);
@@ -446,6 +511,7 @@
             // 
             // textboxOferta
             // 
+            this.textboxOferta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             // 
             // 
             // 
@@ -477,6 +543,7 @@
             // 
             // metroLabel6
             // 
+            this.metroLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.Location = new System.Drawing.Point(20, 142);
@@ -487,6 +554,7 @@
             // 
             // textboxMayorista
             // 
+            this.textboxMayorista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             // 
             // 
             // 
@@ -518,6 +586,7 @@
             // 
             // metroLabel5
             // 
+            this.metroLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.Location = new System.Drawing.Point(20, 113);
@@ -528,6 +597,7 @@
             // 
             // metroLabel4
             // 
+            this.metroLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.Location = new System.Drawing.Point(92, 87);
@@ -538,6 +608,7 @@
             // 
             // textboxMinorista
             // 
+            this.textboxMinorista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             // 
             // 
             // 
@@ -660,6 +731,7 @@
             // 
             // btnGenerarVenta
             // 
+            this.btnGenerarVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnGenerarVenta.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnGenerarVenta.Location = new System.Drawing.Point(23, 460);
             this.btnGenerarVenta.Margin = new System.Windows.Forms.Padding(0);
@@ -672,6 +744,7 @@
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnCancelar.Location = new System.Drawing.Point(717, 460);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(0);
@@ -682,67 +755,17 @@
             this.btnCancelar.UseSelectable = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnSeleccionarCuenta
-            // 
-            this.btnSeleccionarCuenta.Location = new System.Drawing.Point(250, 17);
-            this.btnSeleccionarCuenta.Name = "btnSeleccionarCuenta";
-            this.btnSeleccionarCuenta.Size = new System.Drawing.Size(75, 23);
-            this.btnSeleccionarCuenta.TabIndex = 23;
-            this.btnSeleccionarCuenta.Text = "Seleccionar";
-            this.btnSeleccionarCuenta.UseSelectable = true;
-            this.btnSeleccionarCuenta.Click += new System.EventHandler(this.btnSeleccionarCuenta_Click);
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel9.Location = new System.Drawing.Point(20, 44);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(64, 25);
-            this.metroLabel9.TabIndex = 22;
-            this.metroLabel9.Text = "Cliente";
-            // 
-            // textboxCuenta
-            // 
-            // 
-            // 
-            // 
-            this.textboxCuenta.CustomButton.Image = null;
-            this.textboxCuenta.CustomButton.Location = new System.Drawing.Point(118, 1);
-            this.textboxCuenta.CustomButton.Name = "";
-            this.textboxCuenta.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.textboxCuenta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.textboxCuenta.CustomButton.TabIndex = 1;
-            this.textboxCuenta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.textboxCuenta.CustomButton.UseSelectable = true;
-            this.textboxCuenta.CustomButton.Visible = false;
-            this.textboxCuenta.Enabled = false;
-            this.textboxCuenta.Lines = new string[0];
-            this.textboxCuenta.Location = new System.Drawing.Point(104, 17);
-            this.textboxCuenta.MaxLength = 32767;
-            this.textboxCuenta.Name = "textboxCuenta";
-            this.textboxCuenta.PasswordChar = '\0';
-            this.textboxCuenta.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textboxCuenta.SelectedText = "";
-            this.textboxCuenta.SelectionLength = 0;
-            this.textboxCuenta.SelectionStart = 0;
-            this.textboxCuenta.ShortcutsEnabled = true;
-            this.textboxCuenta.Size = new System.Drawing.Size(140, 23);
-            this.textboxCuenta.TabIndex = 21;
-            this.textboxCuenta.UseSelectable = true;
-            this.textboxCuenta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textboxCuenta.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // FormVender
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 516);
+            this.ClientSize = new System.Drawing.Size(845, 515);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGenerarVenta);
             this.Controls.Add(this.metroPanel1);
+            this.MinimumSize = new System.Drawing.Size(845, 515);
             this.Name = "FormVender";
-            this.Text = "FormVender";
+            this.Text = "Vender";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormVender_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormVender_FormClosed);
             this.Load += new System.EventHandler(this.FormVender_Load);

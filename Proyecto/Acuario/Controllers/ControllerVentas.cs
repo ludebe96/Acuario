@@ -284,7 +284,7 @@ namespace Acuario.Controllers
             return items;
         }
 
-        public List<EntitieVentaItem> GetItems(int idVenta, String pez, DateTime desde, DateTime hasta)
+        public List<EntitieVentaItem> GetItems(int idVenta, String pez)
         {
             List<EntitieVentaItem> items = new List<EntitieVentaItem>();
 
@@ -310,28 +310,6 @@ namespace Acuario.Controllers
                 else
                 {
                     query += "WHERE P.Nombre LIKE '%" + pez + "%' ";
-                    whereAdded = true;
-                }
-            }
-
-            if (desde != null)
-            {
-                if (whereAdded)
-                    query += "AND V.Fecha_Hora >= '" + desde.ToShortDateString() + "' ";
-                else
-                {
-                    query += "WHERE V.Fecha_Hora >= '" + desde.ToShortDateString() + "' ";
-                    whereAdded = true;
-                }
-            }
-
-            if (hasta != null)
-            {
-                if (whereAdded)
-                    query += "AND V.Fecha_Hora <= '" + hasta.ToShortDateString() + "' ";
-                else
-                {
-                    query += "WHERE V.Fecha_Hora <= '" + hasta.ToShortDateString() + "' ";
                     whereAdded = true;
                 }
             }

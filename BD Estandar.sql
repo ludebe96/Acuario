@@ -85,6 +85,25 @@ CREATE TABLE Transacciones(
 )
 GO
 
+CREATE TABLE Compras(
+	ID_Compra INT PRIMARY KEY IDENTITY,
+	ID_Transaccion INT FOREIGN KEY REFERENCES Transacciones (ID_Transaccion),
+	ID_Cuenta INT,
+	Cuenta VARCHAR(20) NOT NULL,
+	Total DECIMAL(17, 2) NOT NULL,
+	Fecha_Hora DATETIME	NOT NULL
+)
+
+CREATE TABLE Compra_Items(
+	ID_Compra_Item INT PRIMARY KEY IDENTITY,
+	ID_Compra INT FOREIGN KEY REFERENCES Compras(ID_Compra),
+	ID_Pez INT NOT NULL,
+	Nombre_Pez VARCHAR(50) NOT NULL,
+	Cantidad INT NOT NULL,
+	Subtotal DECIMAL(17, 2) NOT NULL
+)
+GO
+
 CREATE TABLE Ventas(
 	ID_Venta INT PRIMARY KEY IDENTITY,
 	ID_Transaccion INT FOREIGN KEY REFERENCES Transacciones (ID_Transaccion),

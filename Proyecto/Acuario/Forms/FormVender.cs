@@ -118,15 +118,9 @@ namespace Acuario.Forms
                 ManagerMessages.Instance.NewInformationMessage(this, "Ingrese la cantidad a vender");
                 return false;
             }
-            else if (Convert.ToInt32(textboxCantidad.Text) <= 0)
+            else if (!ManagerFormats.Instance.MontoValido(textboxCantidad.Text) || Convert.ToInt32(textboxCantidad.Text) <= 0)
             {
                 ManagerMessages.Instance.NewInformationMessage(this, "La cantidad ingresada es inválida");
-                return false;
-            }
-
-            if (!ManagerFormats.Instance.MontoValido(textboxCantidad.Text))
-            {
-                ManagerMessages.Instance.NewInformationMessage(this, "Cantidad inválida");
                 return false;
             }
 

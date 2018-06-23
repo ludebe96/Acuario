@@ -2,7 +2,7 @@
 - Caja - 8 HORAS
 - Gastos - 4 HORAS 1/2
 - Ventas - 14 HORAS
-- Compras
+- Compras - 5 HORAS
 - Inventario - 15 HORAS
 - Clientes - 2 HORAS 1/2
 |=======================================================| 
