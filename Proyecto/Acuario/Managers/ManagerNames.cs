@@ -50,17 +50,17 @@ namespace Acuario.Managers
 
         private void CreateRootDirectory()
         {
-            Directory.CreateDirectory(SYSTEM_ROOT_FOLDER);
+            ManagerFiles.Instance.CrearDirectorio(SYSTEM_ROOT_FOLDER);
         }
 
         private void CreateErrorLogsFile()
         {
-            File.Create(ERROR_LOGS_FILEPATH);
+            ManagerFiles.Instance.CrearArchivo(ERROR_LOGS_FILEPATH);
         }
 
         private void CreateConfigFile()
         {
-            File.Create(CONFIG_FILEPATH);
+            ManagerFiles.Instance.CrearArchivo(CONFIG_FILEPATH);
         }
     }
 }

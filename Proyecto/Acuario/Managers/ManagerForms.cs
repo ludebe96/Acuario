@@ -96,6 +96,11 @@ namespace Acuario.Managers
             return Forms[Forms.Count - 1];
         }
 
+        public void ActualizarResumenHome()
+        {
+            ((Forms.FormHome)(Forms[0])).UpdateResumenGeneral();
+        }
+
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
 
         private int CheckIfFormAlreadyShowing(String FormName)

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace Acuario.Managers
 {
@@ -96,9 +94,6 @@ namespace Acuario.Managers
         {
             money = money.Replace("$", "");
 
-            /* Si contiene un punto, es con decimal.
-             * Si contiene una coma, es un decimal.
-             */
             if (money.Contains(".") && !money.Contains(","))
                 money = money.Replace(".", ",");
 

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using System.Data;
 
@@ -39,7 +36,7 @@ namespace Acuario.Utilities
         {
             List<EntitieBase> _base = new List<EntitieBase>();
 
-            DataTable dt = ManagerDB.Instance.ExecuteQuery("SELECT * FROM base");
+            DataTable dt = ManagerDatabase.Instance.ExecuteQuery("SELECT * FROM base");
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -55,7 +52,7 @@ namespace Acuario.Utilities
         {
             EntitieBase _base = null;
 
-            DataTable dt = ManagerDB.Instance.ExecuteQuery("SELECT * FROM base WHERE ID_Base = " + idBase);
+            DataTable dt = ManagerDatabase.Instance.ExecuteQuery("SELECT * FROM base WHERE ID_Base = " + idBase);
 
             if (dt.Rows.Count > 0)
                 _base = new EntitieBase();
@@ -65,24 +62,24 @@ namespace Acuario.Utilities
 
         public Boolean BaseExistente(String nombre)
         {
-            return ManagerDB.Instance.ExecuteQuery("SELECT * FROM Base WHERE Nombre = '" + nombre + "'").Rows.Count > 0;
+            return ManagerDatabase.Instance.ExecuteQuery("SELECT * FROM Base WHERE Nombre = '" + nombre + "'").Rows.Count > 0;
         }
 
         public void CrearBase(EntitieBase _base)
         {
-            ManagerDB.Instance.Execute("INSERT INTO Base(Nombre) VALUES('" + _base + "')");
+            ManagerDatabase.Instance.Execute("INSERT INTO Base(Nombre) VALUES('" + _base + "')");
         }
 
         public void ModificarBase(int idBase, EntitieBase _base)
         {
-            ManagerDB.Instance.Execute("UPDATE Base SET Nombre = '" + _base + "' " +
+            ManagerDatabase.Instance.Execute("UPDATE Base SET Nombre = '" + _base + "' " +
                "WHERE ID_Base= " + idBase);
         }
 
         public void EliminarBase(int idBase)
         {
-            ManagerDB.Instance.Execute("UPDATE Base SET Base = 0 WHERE ID_Base = " + idBase);
-            ManagerDB.Instance.Execute("DELETE FROM Base WHERE ID_Base = " + idBase);
+            ManagerDatabase.Instance.Execute("UPDATE Base SET Base = 0 WHERE ID_Base = " + idBase);
+            ManagerDatabase.Instance.Execute("DELETE FROM Base WHERE ID_Base = " + idBase);
         }
 
         public void PopulateComboboxBase(ref MetroFramework.Controls.MetroComboBox combo, ref List<int> idBaseCombobox)

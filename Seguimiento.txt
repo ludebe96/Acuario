@@ -1,10 +1,14 @@
 |====================PRIMERA ENTREGA====================|
 - Caja - 8 HORAS
-- Gastos - 4 HORAS 1/2
+- Gastos - 4:30 HORAS
 - Ventas - 14 HORAS
 - Compras - 5 HORAS
 - Inventario - 15 HORAS
-- Clientes - 2 HORAS 1/2
+- Clientes - 2:30 HORAS
+- Migración - 6:00 HORAS
+- Testing - 6:00 HORAS
+
+- Otros - 7:30 HORAS
 |=======================================================| 
 
 

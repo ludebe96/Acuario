@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Acuario.Forms;
@@ -20,11 +17,15 @@ namespace Acuario
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            ManagerDB.Instance.Init();
+            // |==============================PREVIO==============================|
+
+            ManagerFiles.Instance.Init();
+            ManagerDatabase.Instance.Init();
+
+            // |==============================COMIENZA==============================|
 
             FormHome form = new FormHome();
             ManagerForms.Instance.Init(form);
-
             Application.Run(form);
         }
     }

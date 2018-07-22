@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using MetroFramework;
-
 namespace Acuario.Managers
 {
     public class ManagerGrids
@@ -27,12 +25,13 @@ namespace Acuario.Managers
         }
 
         // |==============================METODOS Y FUNCIONES==============================|
-
-        public int GetColumnIndexByText(DataGridView dgv, String columnText)
+        public int GetColumnIndexByName(DataGridView dgv, String columnText)
         {
+            columnText = "column" + columnText;
+
             for (int i = 0; i < dgv.Columns.Count; i++)
             {
-                if (dgv.Columns[i].HeaderText.ToUpper().Equals(columnText.ToUpper()))
+                if (dgv.Columns[i].Name.ToUpper().Equals(columnText.ToUpper()))
                     return i;
             }
 

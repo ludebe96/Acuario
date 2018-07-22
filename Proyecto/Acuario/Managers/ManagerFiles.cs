@@ -29,6 +29,20 @@ namespace Acuario.Managers
 
         // |==============================METODOS Y FUNCIONES==============================|
 
+        public void Init()
+        {
+            if (!DirectorioExistente(ManagerNames.SYSTEM_ROOT_FOLDER))
+                CrearDirectorio(ManagerNames.SYSTEM_ROOT_FOLDER);
+
+            if (!DirectorioExistente(ManagerNames.FACTURAS_PATH))
+                CrearDirectorio(ManagerNames.FACTURAS_PATH);
+
+            if (!DirectorioExistente(ManagerNames.SYSTEM_ROOT_FOLDER))
+                CrearDirectorio(ManagerNames.SYSTEM_ROOT_FOLDER);
+
+
+        }
+
         public Boolean AbrirArchivo(String fullFilePath)
         {
             try
@@ -39,6 +53,44 @@ namespace Acuario.Managers
             catch{
                 return true;
             }
+        }
+
+        public Boolean CrearArchivo(String fullFileName)
+        {
+            try
+            {
+                File.Create(fullFileName);
+                return true;
+            }
+            catch (Exception) { return false; }
+        }
+
+        public Boolean ArchivoExistente(String fullFileName)
+        {
+            try
+            {
+                return File.Exists(fullFileName);
+            }
+            catch (Exception) { return false; }
+        }
+
+        public Boolean DirectorioExistente(String fullDirectoryName)
+        {
+            try
+            {
+                return Directory.Exists(fullDirectoryName);
+            }
+            catch (Exception) { return false; }
+        }
+
+        public Boolean CrearDirectorio(String fullDirectoryName)
+        {
+            try
+            {
+                Directory.CreateDirectory(fullDirectoryName);
+                return true;
+            }
+            catch (Exception) { return false; }
         }
 
         public Boolean EscribirArchivo(String texto, String path, Boolean append)
@@ -55,6 +107,28 @@ namespace Acuario.Managers
             {
                 return false;
             }
+        }
+
+        public String LeerArchivo(String fullFileName)
+        {
+            try
+            {
+                return File.ReadAllText(fullFileName);
+            }
+            catch (IOException)
+            {
+                return "error";
+            }
+        }
+
+        public void BorrarArchivo(String fullFileName)
+        {
+            try
+            {
+                File.Delete(fullFileName);
+            }
+            catch (IOException)
+            { }
         }
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
