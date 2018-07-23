@@ -393,9 +393,9 @@
             this.labelVersion.ForeColor = System.Drawing.Color.DarkGray;
             this.labelVersion.Location = new System.Drawing.Point(639, 540);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(52, 19);
+            this.labelVersion.Size = new System.Drawing.Size(43, 15);
             this.labelVersion.TabIndex = 3;
-            this.labelVersion.Text = "v0.8.0.0";
+            this.labelVersion.Text = "v1.0.0.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelVersion.UseCustomForeColor = true;
             // 

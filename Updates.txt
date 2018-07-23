@@ -1,54 +1,6 @@
-|=========================================V0.8.0.0=========================================|
-
-- Corregido bug que rompía la aplicación al visualizar gastos luego de dar de
-	alta uno sin categoría
-- Corregido bug que no verificaba bien si el pez ya había sido agregado como item
-	a la compra
-- Corregido bug que no verificaba bien si el pez ya había sido agregado como item
-	a la venta
-- Corregidos algunos campos con respecto a cómo interpretaba el monto ingresado en
-	cuanto a su formato
-- Corregido bug que duplicaba el monto de ajuste de cuentas
-- Corregido bug que no permitía buscar por nro compra en la pantalla compras
-- Corregido texto de mensaje de confirmación al deshacer una compra
-- Corregido comportamiento del botón cancelar en la pantalla Comprar
-- Correcciones de diseño visual
-- Correción al deshacer una venta; ahora se borra la factura asociada almacenada
-- Corregido bug que rompía el sistema al comprobar campos vacíos en precios de peces
-	al intentar crear uno nuevo en Nuevo Pez
-- Corregido bug que no permitía crear peces sin tamaño indicado
-- Corregido el tab order de los formularios
-- Corregido bug que permitía crear una variedad sin una especie asociada
-- Corregido bug al crear un nuevo pez y asigarle el stock. No lo
-	asignaba si el precio minorista estaba vacío
-- Corregido error que permitía crear la misma variedad de una especie
-- Corregido bug que no mostraba cartel de opearación realizada al modificar
-	una variedad
-- Corregido bug que no permitía ver el detalle de la venta que contenía peces
-	eliminados
-- Corregido el filtro cliente en ventas
-- Corregido el filtro pez en detalle de ventas
-- Terminada la migración para la BD Estándar
-- Agregado el label de version en la pantalla Home
-- Ahora los clientes se muestran ordenados por nombre
-- Ahora al realizarse la transferencia entre cuentas se cierra la ventana y se
-	actualizan los montos de la pantalla de Cuentas
-- Ahora las especies y variedades se reciben desde la BDD ordenados por nombre
-- Ahora se genera el nombre del pez según la especie y variedad seleccionada
-	en la pantalla "Nuevo Pez"
-- Se intercambió el orden de la columna "Variedad" con la columna "Especie" en
-	la pantalla de Variedades
-- Se intercambió el orden de los campos "Especie" y "Variedad" en la pantalla
-	de Nueva Variedad
-- Se intercambió el orden de los campos "Especie", "Variedad" y "Nombre" en
-	la pantalla de Nuevo Pez
-- Se removieron los usings no usados del proyecto
-- Centralizado el uso de archivos a través de ManagerFiles
-- Ahora se crean los directorios necesarios para el funcionamiento del sistema
-	al inicio del mismo si estos no existen
-- Ahora al borrar una especie se eliminan sus variedades y peces asociados
-- Mejorado el funcinamiento del Manager Grids para traer el index de una columna
-- Formularios, controladores y entidades encarpetados por módulo
+|=========================================V1.0.0.0=========================================|
+- Lanzamiento a producción
+- Se removieron las dos variables de BD Estándar (Sin uso)
 |==========================================================================================|
 
-22/07/2018
+23/07/2018
