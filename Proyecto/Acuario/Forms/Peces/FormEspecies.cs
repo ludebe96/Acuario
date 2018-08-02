@@ -70,6 +70,8 @@ namespace Acuario.Forms
         private void FormEspecies_Load(object sender, EventArgs e)
         {
             RefreshGrid();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

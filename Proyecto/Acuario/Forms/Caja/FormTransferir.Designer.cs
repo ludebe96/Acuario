@@ -35,20 +35,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridDe = new MetroFramework.Controls.MetroGrid();
+            this.columnIdCuentaDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentaDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnBalanceActualDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGrillaDe = new MetroFramework.Controls.MetroPanel();
             this.panelGrillaA = new MetroFramework.Controls.MetroPanel();
             this.gridA = new MetroFramework.Controls.MetroGrid();
+            this.columnIdCuentaA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuentaA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnBalanceActualA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.textboxMonto = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.buttonTransferir = new MetroFramework.Controls.MetroButton();
-            this.columnIdCuentaA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnCuentaA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnBalanceActualA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnIdCuentaDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnCuentaDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnBalanceActualDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridDe)).BeginInit();
             this.panelGrillaDe.SuspendLayout();
             this.panelGrillaA.SuspendLayout();
@@ -106,6 +106,30 @@
             this.gridDe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDe.Size = new System.Drawing.Size(282, 282);
             this.gridDe.TabIndex = 3;
+            // 
+            // columnIdCuentaDe
+            // 
+            this.columnIdCuentaDe.HeaderText = "ID Cuenta";
+            this.columnIdCuentaDe.Name = "columnIdCuentaDe";
+            this.columnIdCuentaDe.ReadOnly = true;
+            this.columnIdCuentaDe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnIdCuentaDe.Visible = false;
+            // 
+            // columnCuentaDe
+            // 
+            this.columnCuentaDe.HeaderText = "Cuenta";
+            this.columnCuentaDe.Name = "columnCuentaDe";
+            this.columnCuentaDe.ReadOnly = true;
+            this.columnCuentaDe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnCuentaDe.Width = 122;
+            // 
+            // columnBalanceActualDe
+            // 
+            this.columnBalanceActualDe.HeaderText = "Balance Actual";
+            this.columnBalanceActualDe.Name = "columnBalanceActualDe";
+            this.columnBalanceActualDe.ReadOnly = true;
+            this.columnBalanceActualDe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnBalanceActualDe.Width = 122;
             // 
             // panelGrillaDe
             // 
@@ -189,6 +213,30 @@
             this.gridA.Size = new System.Drawing.Size(282, 282);
             this.gridA.TabIndex = 3;
             // 
+            // columnIdCuentaA
+            // 
+            this.columnIdCuentaA.HeaderText = "ID Cuenta";
+            this.columnIdCuentaA.Name = "columnIdCuentaA";
+            this.columnIdCuentaA.ReadOnly = true;
+            this.columnIdCuentaA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnIdCuentaA.Visible = false;
+            // 
+            // columnCuentaA
+            // 
+            this.columnCuentaA.HeaderText = "Cuenta";
+            this.columnCuentaA.Name = "columnCuentaA";
+            this.columnCuentaA.ReadOnly = true;
+            this.columnCuentaA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnCuentaA.Width = 122;
+            // 
+            // columnBalanceActualA
+            // 
+            this.columnBalanceActualA.HeaderText = "Balance Actual";
+            this.columnBalanceActualA.Name = "columnBalanceActualA";
+            this.columnBalanceActualA.ReadOnly = true;
+            this.columnBalanceActualA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnBalanceActualA.Width = 122;
+            // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
@@ -260,54 +308,6 @@
             this.buttonTransferir.Text = "Realizar Transferencia";
             this.buttonTransferir.UseSelectable = true;
             this.buttonTransferir.Click += new System.EventHandler(this.buttonTransferir_Click);
-            // 
-            // columnIdCuentaA
-            // 
-            this.columnIdCuentaA.HeaderText = "ID Cuenta";
-            this.columnIdCuentaA.Name = "columnIdCuentaA";
-            this.columnIdCuentaA.ReadOnly = true;
-            this.columnIdCuentaA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnIdCuentaA.Visible = false;
-            // 
-            // columnCuentaA
-            // 
-            this.columnCuentaA.HeaderText = "Cuenta";
-            this.columnCuentaA.Name = "columnCuentaA";
-            this.columnCuentaA.ReadOnly = true;
-            this.columnCuentaA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnCuentaA.Width = 122;
-            // 
-            // columnBalanceActualA
-            // 
-            this.columnBalanceActualA.HeaderText = "Balance Actual";
-            this.columnBalanceActualA.Name = "columnBalanceActualA";
-            this.columnBalanceActualA.ReadOnly = true;
-            this.columnBalanceActualA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnBalanceActualA.Width = 122;
-            // 
-            // columnIdCuentaDe
-            // 
-            this.columnIdCuentaDe.HeaderText = "ID Cuenta";
-            this.columnIdCuentaDe.Name = "columnIdCuentaDe";
-            this.columnIdCuentaDe.ReadOnly = true;
-            this.columnIdCuentaDe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnIdCuentaDe.Visible = false;
-            // 
-            // columnCuentaDe
-            // 
-            this.columnCuentaDe.HeaderText = "Cuenta";
-            this.columnCuentaDe.Name = "columnCuentaDe";
-            this.columnCuentaDe.ReadOnly = true;
-            this.columnCuentaDe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnCuentaDe.Width = 122;
-            // 
-            // columnBalanceActualDe
-            // 
-            this.columnBalanceActualDe.HeaderText = "Balance Actual";
-            this.columnBalanceActualDe.Name = "columnBalanceActualDe";
-            this.columnBalanceActualDe.ReadOnly = true;
-            this.columnBalanceActualDe.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnBalanceActualDe.Width = 122;
             // 
             // FormTransferir
             // 

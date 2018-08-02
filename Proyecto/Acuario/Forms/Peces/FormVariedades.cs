@@ -85,6 +85,8 @@ namespace Acuario.Forms
             ControllerPeces.Instance.PopulateComboboxEspecies(ref comboboxEspecies, ref idEspeciesCombobox);
 
             RefreshGrid();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -126,11 +128,6 @@ namespace Acuario.Forms
             }
         }
 
-        private void FormVariedades_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ManagerForms.Instance.PrevForm();
-        }
-
         private void comboboxEspecies_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshGrid();
@@ -140,6 +137,11 @@ namespace Acuario.Forms
         {
             if (e.KeyChar == (char)13)
                 RefreshGrid();
+        }
+
+        private void FormVariedades_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ManagerForms.Instance.PrevForm();
         }
     }
 }

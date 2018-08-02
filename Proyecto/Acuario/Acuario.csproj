@@ -212,6 +212,7 @@
     <Compile Include="Managers\ManagerFormats.cs" />
     <Compile Include="Managers\ManagerForms.cs" />
     <Compile Include="Managers\ManagerGrids.cs" />
+    <Compile Include="Managers\ManagerImpresora.cs" />
     <Compile Include="Managers\ManagerLoading.cs" />
     <Compile Include="Managers\ManagerLogs.cs" />
     <Compile Include="Managers\ManagerMessages.cs" />

@@ -86,6 +86,7 @@ namespace Acuario.Forms
                     especieDesc,
                     variedadDesc,
                     tamañoDesc,
+                    peces[i].EsProveedor() ? "SI" : "NO",
                     ManagerFormats.Instance.IntToNumber(peces[i].GetStock()),
                     ManagerFormats.Instance.DecimalToMoney(precio.GetPrecioMinorista(), true),
                     ManagerFormats.Instance.DecimalToMoney(precio.GetPrecioMayorista(), true),
@@ -147,6 +148,10 @@ namespace Acuario.Forms
 
             if (modoSeleccion)
                 PrepararModoSeleccion();
+
+            RefreshGrid();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -176,6 +181,8 @@ namespace Acuario.Forms
         {
             ControllerPeces.Instance.PopulateComboboxVariedades(ref comboboxVariedades,
                 ref idVariedadesCombobox, idEspeciesCombobox[comboboxEspecies.SelectedIndex], false);
+
+            RefreshGrid();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -212,7 +219,18 @@ namespace Acuario.Forms
 
         private void comboboxVariedades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboboxVariedades.Items.Count > 1)
+            RefreshGrid();
+        }
+
+        private void gridPeces_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (modoSeleccion)
+                btnNuevoPez.PerformClick();
+        }
+
+        private void textboxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
                 RefreshGrid();
         }
 
@@ -222,12 +240,6 @@ namespace Acuario.Forms
         {
             if(!Modal)
                 ManagerForms.Instance.PrevForm();
-        }
-
-        private void textboxNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-                RefreshGrid();
         }
     }
 }

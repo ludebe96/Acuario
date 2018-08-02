@@ -93,6 +93,8 @@ namespace Acuario.Forms
 
             if (modoSeleccion)
                 PrepararModoSeleccion();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -152,6 +154,12 @@ namespace Acuario.Forms
         {
             if (e.KeyChar == (char)13)
                 RefreshGrid();
+        }
+
+        private void gridClientes_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (modoSeleccion)
+                btnNuevo.PerformClick();
         }
     }
 }

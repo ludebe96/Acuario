@@ -14,11 +14,12 @@ namespace Acuario.Entities
         private int idPrecio;
         private String nombre;
         private int stock;
+        private Boolean proveedor;
 
 
         // |==============================CONSTRUCTORES==============================|
 
-        public EntitiePez(int idPez, int idVariedad, int idTamaño, int idPrecio, String nombre, int stock)
+        public EntitiePez(int idPez, int idVariedad, int idTamaño, int idPrecio, String nombre, int stock, Boolean proveedor)
         {
             this.idPez = idPez;
             this.idVariedad = idVariedad;
@@ -26,15 +27,17 @@ namespace Acuario.Entities
             this.idPrecio = idPrecio;
             this.nombre = nombre;
             this.stock = stock;
+            this.proveedor = proveedor;
         }
 
-        public EntitiePez(int idVariedad, int idTamaño, int idPrecio, String nombre, int stock)
+        public EntitiePez(int idVariedad, int idTamaño, int idPrecio, String nombre, int stock, Boolean proveedor)
         {
             this.idVariedad = idVariedad;
             this.idTamaño = idTamaño;
             this.idPrecio = idPrecio;
             this.nombre = nombre;
             this.stock = stock;
+            this.proveedor = proveedor;
         }
 
         // |==============================GETTERS & SETTERS==============================|
@@ -97,6 +100,16 @@ namespace Acuario.Entities
         public void SetStock(int stock)
         {
             this.stock = stock;
+        }
+
+        public Boolean EsProveedor()
+        {
+            return proveedor;
+        }
+
+        public void SetProvedor(Boolean proveedor)
+        {
+            this.proveedor = proveedor;
         }
 
         // |==============================MÉTODOS==============================|

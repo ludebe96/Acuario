@@ -50,12 +50,16 @@
             this.btnNuevaVariedad = new MetroFramework.Controls.MetroButton();
             this.btnNuevaEspecie = new MetroFramework.Controls.MetroButton();
             this.btnCrearPez = new MetroFramework.Controls.MetroButton();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.checkboxProveedor = new MetroFramework.Controls.MetroCheckBox();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
             this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.checkboxProveedor);
+            this.metroPanel1.Controls.Add(this.metroLabel10);
             this.metroPanel1.Controls.Add(this.comboboxTamaños);
             this.metroPanel1.Controls.Add(this.metroLabel9);
             this.metroPanel1.Controls.Add(this.textboxNombre);
@@ -326,7 +330,7 @@
             this.textboxStock.CustomButton.Visible = false;
             this.textboxStock.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.textboxStock.Lines = new string[0];
-            this.textboxStock.Location = new System.Drawing.Point(241, 145);
+            this.textboxStock.Location = new System.Drawing.Point(520, 130);
             this.textboxStock.MaxLength = 32767;
             this.textboxStock.Name = "textboxStock";
             this.textboxStock.PasswordChar = '\0';
@@ -345,7 +349,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.Location = new System.Drawing.Point(15, 143);
+            this.metroLabel3.Location = new System.Drawing.Point(362, 128);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(100, 25);
             this.metroLabel3.TabIndex = 6;
@@ -431,6 +435,26 @@
             this.btnCrearPez.UseSelectable = true;
             this.btnCrearPez.Click += new System.EventHandler(this.btnCrearPez_Click);
             // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel10.Location = new System.Drawing.Point(15, 142);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(90, 25);
+            this.metroLabel10.TabIndex = 20;
+            this.metroLabel10.Text = "Proveedor";
+            // 
+            // checkboxProveedor
+            // 
+            this.checkboxProveedor.AutoSize = true;
+            this.checkboxProveedor.Location = new System.Drawing.Point(111, 150);
+            this.checkboxProveedor.Name = "checkboxProveedor";
+            this.checkboxProveedor.Size = new System.Drawing.Size(26, 15);
+            this.checkboxProveedor.TabIndex = 21;
+            this.checkboxProveedor.Text = " ";
+            this.checkboxProveedor.UseSelectable = true;
+            // 
             // FormNuevoPez
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,5 +500,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroComboBox comboboxTamaños;
         private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroCheckBox checkboxProveedor;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
     }
 }

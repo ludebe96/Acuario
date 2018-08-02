@@ -363,7 +363,7 @@ namespace Acuario.Controllers
 
             List<EntitiePez> peces = new List<EntitiePez>();
             String query = "SELECT " +
-                "DISTINCT(P.ID_Pez), P.ID_Pez_Variedad, P.ID_Pez_Tamaño, P.ID_Precio, P.Nombre, P.Stock, PE.Nombre, PV.Nombre, PT.Nombre " +
+                "DISTINCT(P.ID_Pez), P.ID_Pez_Variedad, P.ID_Pez_Tamaño, P.ID_Precio, P.Nombre, P.Stock, P.Proveedor, PE.Nombre, PV.Nombre, PT.Nombre " +
                 "FROM Peces P " +
                 "LEFT JOIN Pez_Variedades PV " +
                 "ON P.ID_Pez_Variedad = PV.ID_Pez_Variedad " +
@@ -414,7 +414,8 @@ namespace Acuario.Controllers
                     Convert.ToInt32(dt.Rows[i][2]),
                     Convert.ToInt32(dt.Rows[i][3]),
                     dt.Rows[i][4].ToString(),
-                    Convert.ToInt32(dt.Rows[i][5]));
+                    Convert.ToInt32(dt.Rows[i][5]),
+                    Convert.ToBoolean(dt.Rows[i][6]));
 
                 peces.Add(pez);
             }
@@ -435,7 +436,8 @@ namespace Acuario.Controllers
                     Convert.ToInt32(dt.Rows[0][2]),
                     Convert.ToInt32(dt.Rows[0][3]),
                     dt.Rows[0][4].ToString(),
-                    Convert.ToInt32(dt.Rows[0][5]));
+                    Convert.ToInt32(dt.Rows[0][5]),
+                    Convert.ToBoolean(dt.Rows[0][6]));
 
             return pez;
         }
@@ -448,8 +450,9 @@ namespace Acuario.Controllers
 
         public void CrearPez(EntitiePez pez)
         {
-            ManagerDatabase.Instance.Execute("INSERT INTO Peces(ID_Pez_Variedad, ID_Pez_Tamaño, ID_Precio, Nombre, Stock) " +
-                "VALUES(" + pez.GetIdVariedad() + ", " + pez.GetIdTamaño() + ", " + pez.GetIdPrecio() + ", '" + pez.GetNombre() + "', " + pez.GetStock() + ")");
+            ManagerDatabase.Instance.Execute("INSERT INTO Peces(ID_Pez_Variedad, ID_Pez_Tamaño, ID_Precio, Nombre, Stock, Proveedor) " +
+                "VALUES(" + pez.GetIdVariedad() + ", " + pez.GetIdTamaño() + ", " + pez.GetIdPrecio() + ", '" + pez.GetNombre() + "', " +
+                pez.GetStock() + ", " + Convert.ToInt16(pez.EsProveedor() ? 1 : 0) + ")");
         }
 
         public void ModificarPez(int idPezAModificar, EntitiePez pez)
@@ -459,6 +462,7 @@ namespace Acuario.Controllers
                 "ID_Precio = " + pez.GetIdPrecio() + ", " +
                 "Nombre = '" + pez.GetNombre() + "', " +
                 "Stock = " + pez.GetStock() + " " +
+                "Proveedor = " + Convert.ToInt16(pez.EsProveedor() ? 1 : 0) + " " +
                 "WHERE ID_Pez = " + idPezAModificar);
         }
 

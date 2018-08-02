@@ -74,6 +74,10 @@ namespace Acuario.Forms
                 else if (gridVentas.Columns[i].Name == "columnVerFactura")
                     INDEX_COL_VER_FACTURA = i;
             }
+
+            RefreshGrid();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -124,12 +128,6 @@ namespace Acuario.Forms
                 ManagerMessages.Instance.NewInformationMessage(this, "Seleccione una venta a deshacer");
         }
 
-        private void FormVentas_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (!Modal)
-                ManagerForms.Instance.PrevForm();
-        }
-
         private void textboxNroVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
@@ -145,6 +143,22 @@ namespace Acuario.Forms
         private void btnVender_Click(object sender, EventArgs e)
         {
             ManagerForms.Instance.NewForm("FormVender", false, false);
+        }
+
+        private void dateTimeDesde_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void dateTimeHasta_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void FormVentas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!Modal)
+                ManagerForms.Instance.PrevForm();
         }
     }
 }

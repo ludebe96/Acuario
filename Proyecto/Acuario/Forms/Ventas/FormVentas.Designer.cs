@@ -279,6 +279,7 @@
             this.dateTimeHasta.Name = "dateTimeHasta";
             this.dateTimeHasta.Size = new System.Drawing.Size(239, 29);
             this.dateTimeHasta.TabIndex = 13;
+            this.dateTimeHasta.ValueChanged += new System.EventHandler(this.dateTimeHasta_ValueChanged);
             // 
             // metroLabel1
             // 
@@ -297,6 +298,7 @@
             this.dateTimeDesde.Name = "dateTimeDesde";
             this.dateTimeDesde.Size = new System.Drawing.Size(239, 29);
             this.dateTimeDesde.TabIndex = 11;
+            this.dateTimeDesde.ValueChanged += new System.EventHandler(this.dateTimeDesde_ValueChanged);
             // 
             // metroLabel2
             // 

@@ -128,6 +128,8 @@ namespace Acuario.Forms
 
             if (modoSeleccion)
                 PrepararModoSeleccion();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnAjustarBalanceCuentas_Click(object sender, EventArgs e)
@@ -177,6 +179,12 @@ namespace Acuario.Forms
                     RefreshAhorros();
                 }
             }
+        }
+
+        private void gridCuentas_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (modoSeleccion)
+                btnAjustarBalanceCuentas.PerformClick();
         }
 
         private void FormCaja_FormClosed(object sender, FormClosedEventArgs e)

@@ -33,6 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mPanelGrid = new MetroFramework.Controls.MetroPanel();
             this.gridCuentas = new MetroFramework.Controls.MetroGrid();
+            this.columnIdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnBalanceActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.mLabelTotalCuentas = new MetroFramework.Controls.MetroLabel();
             this.mPanelGridTotales = new MetroFramework.Controls.MetroPanel();
@@ -43,9 +46,6 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.labelTotalAhorros = new MetroFramework.Controls.MetroLabel();
             this.btnTransferencias = new MetroFramework.Controls.MetroButton();
-            this.columnIdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnBalanceActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mPanelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCuentas)).BeginInit();
             this.mPanelGridTotales.SuspendLayout();
@@ -121,6 +121,29 @@
             this.gridCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCuentas.Size = new System.Drawing.Size(535, 98);
             this.gridCuentas.TabIndex = 2;
+            this.gridCuentas.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCuentas_CellMouseDoubleClick);
+            // 
+            // columnIdCuenta
+            // 
+            this.columnIdCuenta.HeaderText = "ID Cuenta";
+            this.columnIdCuenta.Name = "columnIdCuenta";
+            this.columnIdCuenta.ReadOnly = true;
+            this.columnIdCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnIdCuenta.Visible = false;
+            // 
+            // columnCuenta
+            // 
+            this.columnCuenta.HeaderText = "Cuenta";
+            this.columnCuenta.Name = "columnCuenta";
+            this.columnCuenta.ReadOnly = true;
+            this.columnCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnBalanceActual
+            // 
+            this.columnBalanceActual.HeaderText = "Balance Actual";
+            this.columnBalanceActual.Name = "columnBalanceActual";
+            this.columnBalanceActual.ReadOnly = true;
+            this.columnBalanceActual.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // metroLabel1
             // 
@@ -254,28 +277,6 @@
             this.btnTransferencias.Text = "Transferencias";
             this.btnTransferencias.UseSelectable = true;
             this.btnTransferencias.Click += new System.EventHandler(this.btnTransferencias_Click);
-            // 
-            // columnIdCuenta
-            // 
-            this.columnIdCuenta.HeaderText = "ID Cuenta";
-            this.columnIdCuenta.Name = "columnIdCuenta";
-            this.columnIdCuenta.ReadOnly = true;
-            this.columnIdCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.columnIdCuenta.Visible = false;
-            // 
-            // columnCuenta
-            // 
-            this.columnCuenta.HeaderText = "Cuenta";
-            this.columnCuenta.Name = "columnCuenta";
-            this.columnCuenta.ReadOnly = true;
-            this.columnCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // columnBalanceActual
-            // 
-            this.columnBalanceActual.HeaderText = "Balance Actual";
-            this.columnBalanceActual.Name = "columnBalanceActual";
-            this.columnBalanceActual.ReadOnly = true;
-            this.columnBalanceActual.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // FormCaja
             // 

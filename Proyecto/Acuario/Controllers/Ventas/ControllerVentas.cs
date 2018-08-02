@@ -25,19 +25,26 @@ namespace Acuario.Controllers
             }
         }
 
-        private static int[] FACTURA_POS_Y = new int[] { 51, 76, 98, 120, 143, 163, 183, 200, 219, 239, 257, 278, 296, 313, 331, 350 };
+        private static int FACTURA_STARTING_ITEM = 21;
+        private static int FACTURA_NEW_LINE_HEIGHT = 30;
+        /*{ 51, 83, 114, 141, 178,
+          209, 183, 200, 219, 239,
+          257, 278, 296, 313, 331,
+            350, 379, 398, 427, 450 };*/
         private static int[] FACTURA_POS_X = new int[] { 5, 85, 500, 602 };
         private static int CANTIDAD_MAX_WIDTH = 75;
         private static int DESCRIPCION_MAX_WIDTH = 415;
         private static int PRECIO_UNITARIO_MAX_WIDTH = 110;
         private static int SUBTOTAL_MAX_WIDTH = 150;
 
-        private static Point CLIENTE_POS = new Point(15, 390);
+        private static Point CLIENTE_POS = new Point(15, 653);
         private static int CLIENTE_MAX_WIDTH = 435;
-        private static Point FECHA_POS = new Point(400, 390);
+        private static Point FECHA_POS = new Point(350, 653);
         private static int FECHA_MAX_WIDTH = 170;
-        private static Point TOTAL_POS = new Point(650, 390);
-        private static int TOTAL_MAX_WIDTH = 90;
+        private static Point TOTAL_POS = new Point(635, 653);
+        private static int TOTAL_MAX_WIDTH = 95;
+
+        public static int ITEMS_POR_FACTURA = 20;
 
 
         // |==============================CONSTRUCTORES==============================|
@@ -216,7 +223,7 @@ namespace Acuario.Controllers
             return venta;
         }
 
-        public Boolean GenerarVenta(EntitieVenta venta)
+        public int GenerarVenta(EntitieVenta venta)
         {
             int idTransaccion = ControllerTransacciones.Instance.NuevaTransaccion(
                 new EntitieTransaccion(
@@ -240,7 +247,7 @@ namespace Acuario.Controllers
             GenerarItems(venta.GetItems());
             GenerarFacturaPdf(idVenta);
 
-            return true;
+            return idVenta;
         }
 
         public Boolean RollbackVenta(int idVenta)
@@ -387,38 +394,38 @@ namespace Acuario.Controllers
                 formatter.Alignment = StringAlignment.Center;
                 DrawOnGraphics(g,
                     ManagerFormats.Instance.IntToNumber(venta.GetItems()[i].GetCantidad()),
-                    new Point(FACTURA_POS_X[0], FACTURA_POS_Y[i]), CANTIDAD_MAX_WIDTH, formatter);
+                    new Point(FACTURA_POS_X[0], FACTURA_STARTING_ITEM + (FACTURA_NEW_LINE_HEIGHT * (i+1))), CANTIDAD_MAX_WIDTH, formatter, false);
 
                 formatter.Alignment = StringAlignment.Near;
                 DrawOnGraphics(g,
                     (venta.GetItems()[i].GetNombrePez().Length > 35 ?
                     venta.GetItems()[i].GetNombrePez().Substring(0, 35) + "." :
                     venta.GetItems()[i].GetNombrePez()),
-                    new Point(FACTURA_POS_X[1], FACTURA_POS_Y[i]), DESCRIPCION_MAX_WIDTH, formatter);
+                    new Point(FACTURA_POS_X[1], FACTURA_STARTING_ITEM + (FACTURA_NEW_LINE_HEIGHT * (i + 1))), DESCRIPCION_MAX_WIDTH, formatter, false);
 
                 formatter.Alignment = StringAlignment.Center;
                 DrawOnGraphics(g,
                     ManagerFormats.Instance.DecimalToMoney(venta.GetItems()[i].GetMontoUnitario(), true),
-                    new Point(FACTURA_POS_X[2], FACTURA_POS_Y[i]), PRECIO_UNITARIO_MAX_WIDTH, formatter);
+                    new Point(FACTURA_POS_X[2], FACTURA_STARTING_ITEM + (FACTURA_NEW_LINE_HEIGHT * (i + 1))), PRECIO_UNITARIO_MAX_WIDTH, formatter, false);
 
                 DrawOnGraphics(g,
                     ManagerFormats.Instance.DecimalToMoney(venta.GetItems()[i].GetSubtotal(), true),
-                    new Point(FACTURA_POS_X[3], FACTURA_POS_Y[i]), SUBTOTAL_MAX_WIDTH, formatter);
+                    new Point(FACTURA_POS_X[3], FACTURA_STARTING_ITEM + (FACTURA_NEW_LINE_HEIGHT * (i + 1))), SUBTOTAL_MAX_WIDTH, formatter, false);
             }
 
             formatter.Alignment = StringAlignment.Far;
             DrawOnGraphics(g, ManagerFormats.Instance.DecimalToMoney(venta.GetTotal(), false),
-                TOTAL_POS, TOTAL_MAX_WIDTH, formatter);
+                TOTAL_POS, TOTAL_MAX_WIDTH, formatter, true);
 
             //Dibuja el nombre del cliente
             formatter.Alignment = StringAlignment.Near;
             DrawOnGraphics(g, "Cliente: " +
                 (venta.GetCliente().Length > 29 ? venta.GetCliente().Substring(0, 29) + "." : venta.GetCliente()),
-                CLIENTE_POS, CLIENTE_MAX_WIDTH, formatter);
+                CLIENTE_POS, CLIENTE_MAX_WIDTH, formatter, true);
 
             //Dibuja la fecha actual
             formatter.Alignment = StringAlignment.Far;
-            DrawOnGraphics(g, "Fecha: " + DateTime.Today.ToShortDateString(), FECHA_POS, FECHA_MAX_WIDTH, formatter);
+            DrawOnGraphics(g, "Fecha: " + DateTime.Today.ToShortDateString(), FECHA_POS, FECHA_MAX_WIDTH, formatter, true);
             factura.Save(ManagerNames.FACTURAS_PATH + idVenta + ".jpg");
         }
 
@@ -435,11 +442,15 @@ namespace Acuario.Controllers
         /* Método que escribe el texto en la imagen
          * de la factura
          * */
-        private void DrawOnGraphics(Graphics g, String textToDraw, Point point, int maxWidth, StringFormat formatter)
+        private void DrawOnGraphics(Graphics g, String textToDraw, Point point, int maxWidth, StringFormat formatter, Boolean bold)
         {
             //Prepara variables 
             SolidBrush brush = new SolidBrush(Color.Black);
-            Font font = new Font(new FontFamily("Microsoft Sans Serif"), 11.0F, FontStyle.Regular);
+            FontStyle fontStyle = FontStyle.Regular;
+            if (bold)
+                fontStyle = FontStyle.Bold;
+
+            Font font = new Font(new FontFamily("Microsoft Sans Serif"), 11.0F, fontStyle);
             float textWidth = g.MeasureString(textToDraw, font).Width;
             float textHeight = g.MeasureString(textToDraw, font).Height;
             RectangleF rect = new RectangleF(point.X, point.Y, maxWidth,

@@ -133,6 +133,7 @@
             this.gridClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridClientes.Size = new System.Drawing.Size(632, 290);
             this.gridClientes.TabIndex = 1;
+            this.gridClientes.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridClientes_CellMouseDoubleClick);
             // 
             // columnIdCliente
             // 
@@ -217,6 +218,7 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.btnBuscar.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.btnBuscar.Location = new System.Drawing.Point(537, 61);

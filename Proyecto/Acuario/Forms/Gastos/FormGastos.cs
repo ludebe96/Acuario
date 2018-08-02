@@ -87,6 +87,8 @@ namespace Acuario.Forms
             dateTimeDesde.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
 
             RefreshGrid();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -104,9 +106,14 @@ namespace Acuario.Forms
             }
         }
 
-        private void FormGastos_FormClosed(object sender, FormClosedEventArgs e)
+        private void dateTimeDesde_ValueChanged(object sender, EventArgs e)
         {
-            ManagerForms.Instance.PrevForm();
+            RefreshGrid();
+        }
+
+        private void dateTimeHasta_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
         }
 
         private void btnEliminarGasto_Click(object sender, EventArgs e)
@@ -114,6 +121,16 @@ namespace Acuario.Forms
             if (gridGastos.SelectedRows.Count > 0 &&
                 ManagerMessages.Instance.NewConfirmMessage(this, "¿Está seguro que desea eliminar el gasto seleccionado?"))
                 EliminarGastoSeleccionado();
+        }
+
+        private void comboBoxCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
+        }
+
+        private void FormGastos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ManagerForms.Instance.PrevForm();
         }
     }
 }

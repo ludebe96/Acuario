@@ -137,7 +137,7 @@ namespace Acuario.Forms
                 stock = Convert.ToInt32(textboxStock.Text);
 
             ControllerPeces.Instance.CrearPez(new EntitiePez(idVariedadesCombobox[comboboxVariedades.SelectedIndex],
-                idTamañosCombobox[comboboxTamaños.SelectedIndex], idPrecio, textboxNombre.Text, stock));
+                idTamañosCombobox[comboboxTamaños.SelectedIndex], idPrecio, textboxNombre.Text, stock, checkboxProveedor.Checked));
             ManagerMessages.Instance.NewInformationMessage(this, "Pez creado");
         }
 
@@ -151,7 +151,7 @@ namespace Acuario.Forms
                 stock = Convert.ToInt32(textboxStock.Text);
 
             ControllerPeces.Instance.ModificarPez(pezAModificar.GetIdPez(), new EntitiePez(idVariedadesCombobox[comboboxVariedades.SelectedIndex],
-                idTamañosCombobox[comboboxTamaños.SelectedIndex], idPrecio, textboxNombre.Text, stock));
+                idTamañosCombobox[comboboxTamaños.SelectedIndex], idPrecio, textboxNombre.Text, stock, checkboxProveedor.Checked));
 
             ManagerMessages.Instance.NewInformationMessage(this, "Pez modificado");
         }
@@ -195,6 +195,9 @@ namespace Acuario.Forms
                 if (idTamañosCombobox[i] == pezAModificar.GetIdTamaño())
                     comboboxTamaños.SelectedIndex = i;
             }
+
+            if (pezAModificar.EsProveedor())
+                checkboxProveedor.Checked = true;
 
             textboxStock.Text = pezAModificar.GetStock().ToString();
             textboxPrecioMinorista.Text = ManagerFormats.Instance.DecimalToMoney(precio.GetPrecioMinorista(), false);

@@ -32,20 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridPeces = new MetroFramework.Controls.MetroGrid();
-            this.columnIdPez = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnIdEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnIdVariedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnIdTamaño = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnIdPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnVariedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnTamaño = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPrecioMenor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPrecioMayor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPrecioOferta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPrecioDistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGrid = new MetroFramework.Controls.MetroPanel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.comboboxEspecies = new MetroFramework.Controls.MetroComboBox();
@@ -59,6 +45,21 @@
             this.btnModificar = new MetroFramework.Controls.MetroButton();
             this.btnVerVariedades = new MetroFramework.Controls.MetroButton();
             this.btnVerEspecies = new MetroFramework.Controls.MetroButton();
+            this.columnIdPez = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIdEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIdVariedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIdTamaño = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIdPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnVariedad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnTamaño = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrecioMenor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrecioMayor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrecioOferta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrecioDistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridPeces)).BeginInit();
             this.panelGrid.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +93,7 @@
             this.columnEspecie,
             this.columnVariedad,
             this.columnTamaño,
+            this.columnProveedor,
             this.columnStock,
             this.columnPrecioMenor,
             this.columnPrecioMayor,
@@ -125,109 +127,7 @@
             this.gridPeces.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridPeces.Size = new System.Drawing.Size(841, 316);
             this.gridPeces.TabIndex = 2;
-            // 
-            // columnIdPez
-            // 
-            this.columnIdPez.HeaderText = "ID PEZ";
-            this.columnIdPez.Name = "columnIdPez";
-            this.columnIdPez.ReadOnly = true;
-            this.columnIdPez.Visible = false;
-            this.columnIdPez.Width = 62;
-            // 
-            // columnIdEspecie
-            // 
-            this.columnIdEspecie.HeaderText = "ID ESPECIE";
-            this.columnIdEspecie.Name = "columnIdEspecie";
-            this.columnIdEspecie.ReadOnly = true;
-            this.columnIdEspecie.Visible = false;
-            this.columnIdEspecie.Width = 84;
-            // 
-            // columnIdVariedad
-            // 
-            this.columnIdVariedad.HeaderText = "ID VARIEDAD";
-            this.columnIdVariedad.Name = "columnIdVariedad";
-            this.columnIdVariedad.ReadOnly = true;
-            this.columnIdVariedad.Visible = false;
-            this.columnIdVariedad.Width = 96;
-            // 
-            // columnIdTamaño
-            // 
-            this.columnIdTamaño.HeaderText = "ID TAMAÑO";
-            this.columnIdTamaño.Name = "columnIdTamaño";
-            this.columnIdTamaño.ReadOnly = true;
-            this.columnIdTamaño.Visible = false;
-            this.columnIdTamaño.Width = 89;
-            // 
-            // columnIdPrecio
-            // 
-            this.columnIdPrecio.HeaderText = "ID PRECIO";
-            this.columnIdPrecio.Name = "columnIdPrecio";
-            this.columnIdPrecio.ReadOnly = true;
-            this.columnIdPrecio.Visible = false;
-            this.columnIdPrecio.Width = 82;
-            // 
-            // columnNombre
-            // 
-            this.columnNombre.HeaderText = "NOMBRE";
-            this.columnNombre.Name = "columnNombre";
-            this.columnNombre.ReadOnly = true;
-            this.columnNombre.Width = 77;
-            // 
-            // columnEspecie
-            // 
-            this.columnEspecie.HeaderText = "ESPECIE";
-            this.columnEspecie.Name = "columnEspecie";
-            this.columnEspecie.ReadOnly = true;
-            this.columnEspecie.Width = 70;
-            // 
-            // columnVariedad
-            // 
-            this.columnVariedad.HeaderText = "VARIEDAD";
-            this.columnVariedad.Name = "columnVariedad";
-            this.columnVariedad.ReadOnly = true;
-            this.columnVariedad.Width = 82;
-            // 
-            // columnTamaño
-            // 
-            this.columnTamaño.HeaderText = "TAMAÑO";
-            this.columnTamaño.Name = "columnTamaño";
-            this.columnTamaño.ReadOnly = true;
-            this.columnTamaño.Width = 75;
-            // 
-            // columnStock
-            // 
-            this.columnStock.HeaderText = "STOCK";
-            this.columnStock.Name = "columnStock";
-            this.columnStock.ReadOnly = true;
-            this.columnStock.Width = 62;
-            // 
-            // columnPrecioMenor
-            // 
-            this.columnPrecioMenor.HeaderText = "PRECIO MENOR";
-            this.columnPrecioMenor.Name = "columnPrecioMenor";
-            this.columnPrecioMenor.ReadOnly = true;
-            this.columnPrecioMenor.Width = 102;
-            // 
-            // columnPrecioMayor
-            // 
-            this.columnPrecioMayor.HeaderText = "PRECIO MAYOR";
-            this.columnPrecioMayor.Name = "columnPrecioMayor";
-            this.columnPrecioMayor.ReadOnly = true;
-            this.columnPrecioMayor.Width = 99;
-            // 
-            // columnPrecioOferta
-            // 
-            this.columnPrecioOferta.HeaderText = "PRECIO OFERTA";
-            this.columnPrecioOferta.Name = "columnPrecioOferta";
-            this.columnPrecioOferta.ReadOnly = true;
-            this.columnPrecioOferta.Width = 101;
-            // 
-            // columnPrecioDistribuidor
-            // 
-            this.columnPrecioDistribuidor.HeaderText = "PRECIO DISTRIBUIDOR";
-            this.columnPrecioDistribuidor.Name = "columnPrecioDistribuidor";
-            this.columnPrecioDistribuidor.ReadOnly = true;
-            this.columnPrecioDistribuidor.Width = 132;
+            this.gridPeces.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridPeces_CellMouseDoubleClick);
             // 
             // panelGrid
             // 
@@ -413,6 +313,116 @@
             this.btnVerEspecies.UseSelectable = true;
             this.btnVerEspecies.Click += new System.EventHandler(this.btnVerEspecies_Click);
             // 
+            // columnIdPez
+            // 
+            this.columnIdPez.HeaderText = "ID PEZ";
+            this.columnIdPez.Name = "columnIdPez";
+            this.columnIdPez.ReadOnly = true;
+            this.columnIdPez.Visible = false;
+            this.columnIdPez.Width = 62;
+            // 
+            // columnIdEspecie
+            // 
+            this.columnIdEspecie.HeaderText = "ID ESPECIE";
+            this.columnIdEspecie.Name = "columnIdEspecie";
+            this.columnIdEspecie.ReadOnly = true;
+            this.columnIdEspecie.Visible = false;
+            this.columnIdEspecie.Width = 84;
+            // 
+            // columnIdVariedad
+            // 
+            this.columnIdVariedad.HeaderText = "ID VARIEDAD";
+            this.columnIdVariedad.Name = "columnIdVariedad";
+            this.columnIdVariedad.ReadOnly = true;
+            this.columnIdVariedad.Visible = false;
+            this.columnIdVariedad.Width = 96;
+            // 
+            // columnIdTamaño
+            // 
+            this.columnIdTamaño.HeaderText = "ID TAMAÑO";
+            this.columnIdTamaño.Name = "columnIdTamaño";
+            this.columnIdTamaño.ReadOnly = true;
+            this.columnIdTamaño.Visible = false;
+            this.columnIdTamaño.Width = 89;
+            // 
+            // columnIdPrecio
+            // 
+            this.columnIdPrecio.HeaderText = "ID PRECIO";
+            this.columnIdPrecio.Name = "columnIdPrecio";
+            this.columnIdPrecio.ReadOnly = true;
+            this.columnIdPrecio.Visible = false;
+            this.columnIdPrecio.Width = 82;
+            // 
+            // columnNombre
+            // 
+            this.columnNombre.HeaderText = "NOMBRE";
+            this.columnNombre.Name = "columnNombre";
+            this.columnNombre.ReadOnly = true;
+            this.columnNombre.Width = 77;
+            // 
+            // columnEspecie
+            // 
+            this.columnEspecie.HeaderText = "ESPECIE";
+            this.columnEspecie.Name = "columnEspecie";
+            this.columnEspecie.ReadOnly = true;
+            this.columnEspecie.Width = 70;
+            // 
+            // columnVariedad
+            // 
+            this.columnVariedad.HeaderText = "VARIEDAD";
+            this.columnVariedad.Name = "columnVariedad";
+            this.columnVariedad.ReadOnly = true;
+            this.columnVariedad.Width = 82;
+            // 
+            // columnTamaño
+            // 
+            this.columnTamaño.HeaderText = "TAMAÑO";
+            this.columnTamaño.Name = "columnTamaño";
+            this.columnTamaño.ReadOnly = true;
+            this.columnTamaño.Width = 75;
+            // 
+            // columnProveedor
+            // 
+            this.columnProveedor.HeaderText = "PROVEEDOR";
+            this.columnProveedor.Name = "columnProveedor";
+            this.columnProveedor.ReadOnly = true;
+            this.columnProveedor.Width = 95;
+            // 
+            // columnStock
+            // 
+            this.columnStock.HeaderText = "STOCK";
+            this.columnStock.Name = "columnStock";
+            this.columnStock.ReadOnly = true;
+            this.columnStock.Width = 62;
+            // 
+            // columnPrecioMenor
+            // 
+            this.columnPrecioMenor.HeaderText = "PRECIO MENOR";
+            this.columnPrecioMenor.Name = "columnPrecioMenor";
+            this.columnPrecioMenor.ReadOnly = true;
+            this.columnPrecioMenor.Width = 102;
+            // 
+            // columnPrecioMayor
+            // 
+            this.columnPrecioMayor.HeaderText = "PRECIO MAYOR";
+            this.columnPrecioMayor.Name = "columnPrecioMayor";
+            this.columnPrecioMayor.ReadOnly = true;
+            this.columnPrecioMayor.Width = 99;
+            // 
+            // columnPrecioOferta
+            // 
+            this.columnPrecioOferta.HeaderText = "PRECIO OFERTA";
+            this.columnPrecioOferta.Name = "columnPrecioOferta";
+            this.columnPrecioOferta.ReadOnly = true;
+            this.columnPrecioOferta.Width = 101;
+            // 
+            // columnPrecioDistribuidor
+            // 
+            this.columnPrecioDistribuidor.HeaderText = "PRECIO DISTRIBUIDOR";
+            this.columnPrecioDistribuidor.Name = "columnPrecioDistribuidor";
+            this.columnPrecioDistribuidor.ReadOnly = true;
+            this.columnPrecioDistribuidor.Width = 132;
+            // 
             // FormPeces
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +478,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnEspecie;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnVariedad;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnTamaño;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrecioMenor;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrecioMayor;

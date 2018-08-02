@@ -63,7 +63,7 @@ namespace Acuario.Forms
 
         private void FormVentaItems_Load(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

@@ -69,7 +69,7 @@
             this.panelNavegacion.Controls.Add(this.btnClientes);
             this.panelNavegacion.Location = new System.Drawing.Point(189, 63);
             this.panelNavegacion.Name = "panelNavegacion";
-            this.panelNavegacion.Size = new System.Drawing.Size(502, 474);
+            this.panelNavegacion.Size = new System.Drawing.Size(492, 474);
             this.panelNavegacion.TabIndex = 0;
             // 
             // btnCaja
@@ -140,7 +140,7 @@
             // btnGastos
             // 
             this.btnGastos.ActiveControl = null;
-            this.btnGastos.Location = new System.Drawing.Point(400, 0);
+            this.btnGastos.Location = new System.Drawing.Point(0, 100);
             this.btnGastos.Margin = new System.Windows.Forms.Padding(0);
             this.btnGastos.Name = "btnGastos";
             this.btnGastos.Size = new System.Drawing.Size(100, 100);
@@ -156,7 +156,7 @@
             // btnClientes
             // 
             this.btnClientes.ActiveControl = null;
-            this.btnClientes.Location = new System.Drawing.Point(0, 100);
+            this.btnClientes.Location = new System.Drawing.Point(100, 100);
             this.btnClientes.Margin = new System.Windows.Forms.Padding(0);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(100, 100);
@@ -285,7 +285,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.metroLabel2.Location = new System.Drawing.Point(304, 78);
+            this.metroLabel2.Location = new System.Drawing.Point(294, 78);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(75, 25);
             this.metroLabel2.TabIndex = 3;
@@ -299,7 +299,7 @@
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.Location = new System.Drawing.Point(3, 224);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(504, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(494, 25);
             this.metroLabel3.TabIndex = 4;
             this.metroLabel3.Text = "BALANCE";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -314,7 +314,7 @@
             this.labelBalance.ForeColor = System.Drawing.Color.DarkGray;
             this.labelBalance.Location = new System.Drawing.Point(3, 249);
             this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(504, 25);
+            this.labelBalance.Size = new System.Drawing.Size(494, 25);
             this.labelBalance.TabIndex = 5;
             this.labelBalance.Text = "$0,00";
             this.labelBalance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -338,7 +338,7 @@
             this.panelResumenesGenerales.HorizontalScrollbarSize = 10;
             this.panelResumenesGenerales.Location = new System.Drawing.Point(179, 63);
             this.panelResumenesGenerales.Name = "panelResumenesGenerales";
-            this.panelResumenesGenerales.Size = new System.Drawing.Size(512, 474);
+            this.panelResumenesGenerales.Size = new System.Drawing.Size(502, 474);
             this.panelResumenesGenerales.TabIndex = 2;
             this.panelResumenesGenerales.VerticalScrollbarBarColor = true;
             this.panelResumenesGenerales.VerticalScrollbarHighlightOnWheel = false;
@@ -353,7 +353,7 @@
             this.metroLabel4.ForeColor = System.Drawing.Color.DimGray;
             this.metroLabel4.Location = new System.Drawing.Point(3, 3);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(504, 25);
+            this.metroLabel4.Size = new System.Drawing.Size(494, 25);
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "RESUMEN GENERAL DEL DÍA";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -365,7 +365,7 @@
             this.labelGastos.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.labelGastos.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.labelGastos.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelGastos.Location = new System.Drawing.Point(239, 106);
+            this.labelGastos.Location = new System.Drawing.Point(229, 106);
             this.labelGastos.Name = "labelGastos";
             this.labelGastos.Size = new System.Drawing.Size(200, 25);
             this.labelGastos.TabIndex = 7;
@@ -388,14 +388,15 @@
             // 
             // labelVersion
             // 
+            this.labelVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelVersion.AutoSize = true;
             this.labelVersion.FontSize = MetroFramework.MetroLabelSize.Small;
             this.labelVersion.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelVersion.Location = new System.Drawing.Point(639, 540);
+            this.labelVersion.Location = new System.Drawing.Point(629, 540);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(43, 15);
+            this.labelVersion.Size = new System.Drawing.Size(41, 15);
             this.labelVersion.TabIndex = 3;
-            this.labelVersion.Text = "v1.0.0.0";
+            this.labelVersion.Text = "v1.1.0.0";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelVersion.UseCustomForeColor = true;
             // 
@@ -403,7 +404,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(714, 560);
+            this.ClientSize = new System.Drawing.Size(704, 560);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.panelNavegacion);
             this.Controls.Add(this.metroPanel1);

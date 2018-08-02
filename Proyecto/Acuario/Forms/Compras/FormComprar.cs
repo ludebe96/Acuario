@@ -177,6 +177,8 @@ namespace Acuario.Forms
         private void FormComprar_Load(object sender, EventArgs e)
         {
             subtotalesItems = new List<Decimal>();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnSeleccionarCuenta_Click(object sender, EventArgs e)

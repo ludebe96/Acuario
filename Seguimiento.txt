@@ -7,10 +7,10 @@
 - Clientes - 2:30 HORAS
 - Migración - 6:00 HORAS
 - Testing - 6:00 HORAS
-
 - Otros - 7:30 HORAS
+- Implementación - 1:00 HORAS
+- Soporte y Calibraciones - 3:30 HORAS
 |=======================================================| 
-
 
 |-------------------------DETALLES-------------------------|
 

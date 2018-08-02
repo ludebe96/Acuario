@@ -61,7 +61,7 @@
             // 
             // 
             this.textboxDescripcion.CustomButton.Image = null;
-            this.textboxDescripcion.CustomButton.Location = new System.Drawing.Point(118, 1);
+            this.textboxDescripcion.CustomButton.Location = new System.Drawing.Point(127, 1);
             this.textboxDescripcion.CustomButton.Name = "";
             this.textboxDescripcion.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.textboxDescripcion.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -71,7 +71,7 @@
             this.textboxDescripcion.CustomButton.Visible = false;
             this.textboxDescripcion.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.textboxDescripcion.Lines = new string[0];
-            this.textboxDescripcion.Location = new System.Drawing.Point(137, 17);
+            this.textboxDescripcion.Location = new System.Drawing.Point(128, 51);
             this.textboxDescripcion.MaxLength = 32767;
             this.textboxDescripcion.Name = "textboxDescripcion";
             this.textboxDescripcion.PasswordChar = '\0';
@@ -80,7 +80,7 @@
             this.textboxDescripcion.SelectionLength = 0;
             this.textboxDescripcion.SelectionStart = 0;
             this.textboxDescripcion.ShortcutsEnabled = true;
-            this.textboxDescripcion.Size = new System.Drawing.Size(140, 23);
+            this.textboxDescripcion.Size = new System.Drawing.Size(149, 23);
             this.textboxDescripcion.TabIndex = 1;
             this.textboxDescripcion.UseSelectable = true;
             this.textboxDescripcion.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -90,7 +90,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(19, 15);
+            this.metroLabel1.Location = new System.Drawing.Point(19, 49);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(100, 25);
             this.metroLabel1.TabIndex = 2;
@@ -124,7 +124,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.Location = new System.Drawing.Point(312, 50);
+            this.metroLabel4.Location = new System.Drawing.Point(19, 15);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(92, 25);
             this.metroLabel4.TabIndex = 9;
@@ -134,7 +134,7 @@
             // 
             this.comboBoxCategorias.FormattingEnabled = true;
             this.comboBoxCategorias.ItemHeight = 23;
-            this.comboBoxCategorias.Location = new System.Drawing.Point(421, 50);
+            this.comboBoxCategorias.Location = new System.Drawing.Point(128, 15);
             this.comboBoxCategorias.Name = "comboBoxCategorias";
             this.comboBoxCategorias.Size = new System.Drawing.Size(200, 29);
             this.comboBoxCategorias.TabIndex = 4;
@@ -142,7 +142,7 @@
             // 
             // datetimeFecha
             // 
-            this.datetimeFecha.Location = new System.Drawing.Point(421, 15);
+            this.datetimeFecha.Location = new System.Drawing.Point(443, 51);
             this.datetimeFecha.MinimumSize = new System.Drawing.Size(0, 29);
             this.datetimeFecha.Name = "datetimeFecha";
             this.datetimeFecha.Size = new System.Drawing.Size(200, 29);
@@ -152,7 +152,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.Location = new System.Drawing.Point(312, 15);
+            this.metroLabel3.Location = new System.Drawing.Point(334, 51);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(56, 25);
             this.metroLabel3.TabIndex = 6;
@@ -162,7 +162,7 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.Location = new System.Drawing.Point(19, 44);
+            this.metroLabel2.Location = new System.Drawing.Point(334, 19);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(62, 25);
             this.metroLabel2.TabIndex = 4;
@@ -184,7 +184,7 @@
             this.textboxMonto.CustomButton.Visible = false;
             this.textboxMonto.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.textboxMonto.Lines = new string[0];
-            this.textboxMonto.Location = new System.Drawing.Point(137, 46);
+            this.textboxMonto.Location = new System.Drawing.Point(443, 21);
             this.textboxMonto.MaxLength = 32767;
             this.textboxMonto.Name = "textboxMonto";
             this.textboxMonto.PasswordChar = '\0';

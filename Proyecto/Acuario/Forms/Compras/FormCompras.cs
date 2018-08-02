@@ -70,6 +70,10 @@ namespace Acuario.Forms
                     break;
                 }
             }
+
+            RefreshGrid();
+
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -111,11 +115,14 @@ namespace Acuario.Forms
                 ManagerMessages.Instance.NewInformationMessage(this, "Seleccione una compra a deshacer");
         }
 
-
-        private void FormCompras_FormClosed(object sender, FormClosedEventArgs e)
+        private void dateTimeDesde_ValueChanged(object sender, EventArgs e)
         {
-            if (!Modal)
-                ManagerForms.Instance.PrevForm();
+            RefreshGrid();
+        }
+
+        private void dateTimeHasta_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshGrid();
         }
 
         private void textboxNroCompra_KeyPress(object sender, KeyPressEventArgs e)
@@ -127,6 +134,12 @@ namespace Acuario.Forms
         private void btnComprar_Click(object sender, EventArgs e)
         {
             ManagerForms.Instance.NewForm("FormComprar", false, false);
+        }
+
+        private void FormCompras_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!Modal)
+                ManagerForms.Instance.PrevForm();
         }
     }
 }

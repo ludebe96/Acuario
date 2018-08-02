@@ -67,7 +67,7 @@ namespace Acuario.Forms
 
         private void FormCompraItems_Load(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Maximized;
         }
 
         private void FormCompraItems_FormClosed(object sender, FormClosedEventArgs e)

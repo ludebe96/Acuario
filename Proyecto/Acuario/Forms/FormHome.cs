@@ -53,6 +53,7 @@ namespace Acuario.Forms
         private void FormHome_Load(object sender, EventArgs e)
         {
             UpdateResumenGeneral();
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
 
@@ -106,7 +107,6 @@ namespace Acuario.Forms
         {
             ManagerForms.Instance.NewForm("FormClientes", false, false);
         }
-
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

@@ -35,6 +35,7 @@ namespace Acuario.Forms
             textboxMayorista.Enabled = false;
             textboxOferta.Enabled = false;
             textboxDistribuidor.Enabled = false;
+            textboxOtro.Enabled = false;
         }
 
         private void SeleccionarPrecioMayorista()
@@ -44,6 +45,7 @@ namespace Acuario.Forms
             textboxMinorista.Enabled = false;
             textboxOferta.Enabled = false;
             textboxDistribuidor.Enabled = false;
+            textboxOtro.Enabled = false;
         }
 
         private void SeleccionarPrecioOferta()
@@ -53,6 +55,7 @@ namespace Acuario.Forms
             textboxMinorista.Enabled = false;
             textboxMayorista.Enabled = false;
             textboxDistribuidor.Enabled = false;
+            textboxOtro.Enabled = false;
         }
 
         private void SeleccionarPrecioDistribuidor()
@@ -62,6 +65,17 @@ namespace Acuario.Forms
             textboxMinorista.Enabled = false;
             textboxMayorista.Enabled = false;
             textboxOferta.Enabled = false;
+            textboxOtro.Enabled = false;
+        }
+
+        private void SeleccionarPrecioOtro()
+        {
+            textboxOtro.Enabled = true;
+
+            textboxMinorista.Enabled = false;
+            textboxMayorista.Enabled = false;
+            textboxOferta.Enabled = false;
+            textboxDistribuidor.Enabled = false;
         }
 
         private void LimpiarCamposItem()
@@ -119,9 +133,16 @@ namespace Acuario.Forms
             }
 
             if (!rBtnMinorista.Checked && !rBtnMayorista.Checked &&
-                !rBtnOferta.Checked && !rBtnDistribuidor.Checked)
+                !rBtnOferta.Checked && !rBtnDistribuidor.Checked &&
+                !rBtnOtro.Checked)
             {
                 ManagerMessages.Instance.NewInformationMessage(this, "Seleccione un precio");
+                return false;
+            }
+
+            if (rBtnOtro.Checked && !ManagerFormats.Instance.MontoValido(textboxOtro.Text))
+            {
+                ManagerMessages.Instance.NewInformationMessage(this, "El monto ingresado no es válido");
                 return false;
             }
 
@@ -131,7 +152,11 @@ namespace Acuario.Forms
                 return false;
             }
 
-
+            if (gridItems.Rows.Count >= ControllerVentas.ITEMS_POR_FACTURA)
+            {
+                ManagerMessages.Instance.NewInformationMessage(this, "Máximo de items por factura alcanzado. Para facturar más items, genere otra venta.");
+                return false;
+            }
 
             if (pezAVender != null &&
                 pezAVender.GetStock() - Convert.ToInt32(textboxCantidad.Text) < 0)
@@ -195,10 +220,16 @@ namespace Acuario.Forms
                 precioSeleccionado = pezAVender.GetPrecio().GetPrecioOferta();
                 descPrecio = "OFERTA";
             }
-            else
+            else if (rBtnDistribuidor.Checked)
             {
                 precioSeleccionado = pezAVender.GetPrecio().GetPrecioDistribuidor();
                 descPrecio = "DISTRIBUIDOR";
+            }
+
+            else
+            {
+                precioSeleccionado = Convert.ToDecimal(textboxOtro.Text);
+                descPrecio = "OTRO";
             }
 
             gridItems.Rows.Add(
@@ -215,9 +246,11 @@ namespace Acuario.Forms
         private void RemoverItem()
         {
             gridItems.Rows.RemoveAt(gridItems.SelectedRows[0].Index);
+
+            ActualizarSubtotal();
         }
 
-        private Boolean GenerarVenta()
+        private int GenerarVenta()
         {
             Decimal total = 0;
 
@@ -237,23 +270,37 @@ namespace Acuario.Forms
                 items.Add(new EntitieVentaItem(0, pez.GetIdPez(), pez.GetNombre(), precio, cantidad));
             }
 
-            if (ControllerVentas.Instance.GenerarVenta(new EntitieVenta(cuenta.GetIdCuenta(), cliente.GetIdCliente(),
-                cuenta.GetNombre(), cliente.GetNombre(), total, DateTime.Today, items)))
-            {
+            int nroVenta = ControllerVentas.Instance.GenerarVenta(new EntitieVenta(cuenta.GetIdCuenta(), cliente.GetIdCliente(),
+                cuenta.GetNombre(), cliente.GetNombre(), total, DateTime.Today, items));
+
+            if (nroVenta > 0)
                 ManagerMessages.Instance.NewInformationMessage(this, "Venta generada");
-                return true;
-            }
             else
-            {
                 ManagerMessages.Instance.NewErrorMessage(this, "No se pudo generar la venta");
-                return false;
-            }
+
+            return nroVenta;
+        }
+
+        private void ActualizarSubtotal()
+        {
+            int indexColSubtotal = ManagerGrids.Instance.GetColumnIndexByName(gridItems, "subtotal");
+            decimal total = 0;
+
+            for (int i = 0; i < gridItems.Rows.Count; i++)
+                total += ManagerFormats.Instance.MoneyToDecimal(gridItems.Rows[i].Cells[indexColSubtotal].Value.ToString());
+
+            labelTotal.Text = ManagerFormats.Instance.DecimalToMoney(total, true);
+        }
+
+        private void ImprimirFactura(int nroVenta)
+        {
+            ManagerImpresora.Instance.ImprimirArchivo(ManagerNames.FACTURAS_PATH + nroVenta + ".jpg");
         }
 
         // |==============================EVENTOS==============================|
         private void FormVender_Load(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Maximized;
         }
 
         private void btnGenerarVenta_Click(object sender, EventArgs e)
@@ -261,8 +308,17 @@ namespace Acuario.Forms
             if (ValidVenta())
             {
                 if (ManagerMessages.Instance.NewConfirmMessage(this, "¿Desea generar la venta?"))
-                    if (GenerarVenta())
+                {
+                    int nroVenta = GenerarVenta();
+
+                    if (nroVenta > 0)
+                    {
+                        if(checkBoxImprimir.Checked)
+                            ImprimirFactura(nroVenta);
+
                         LimpiarCamposNuevaVenta();
+                    }
+                }
             }
         }
 
@@ -299,24 +355,29 @@ namespace Acuario.Forms
 
         private void btnSeleccionarPez_Click(object sender, EventArgs e)
         {
-            using (var form = new FormPeces(true))
+            if (gridItems.Rows.Count < ControllerVentas.ITEMS_POR_FACTURA)
             {
-                var result = form.ShowDialog();
-                if (result == DialogResult.OK)
+                using (var form = new FormPeces(true))
                 {
-                    pezAVender = ControllerPeces.Instance.GetPezById(form.IdPezSeleccionado);
-                    textboxPez.Text = pezAVender.GetNombre();
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        pezAVender = ControllerPeces.Instance.GetPezById(form.IdPezSeleccionado);
+                        textboxPez.Text = pezAVender.GetNombre();
 
-                    textboxMinorista.Text =
-                        ManagerFormats.Instance.DecimalToMoney(pezAVender.GetPrecio().GetPrecioMinorista(), true);
-                    textboxMayorista.Text =
-                        ManagerFormats.Instance.DecimalToMoney(pezAVender.GetPrecio().GetPrecioMayorista(), true);
-                    textboxOferta.Text =
-                        ManagerFormats.Instance.DecimalToMoney(pezAVender.GetPrecio().GetPrecioOferta(), true);
-                    textboxDistribuidor.Text =
-                        ManagerFormats.Instance.DecimalToMoney(pezAVender.GetPrecio().GetPrecioDistribuidor(), true);
+                        textboxMinorista.Text =
+                            ManagerFormats.Instance.DecimalToMoney(pezAVender.GetPrecio().GetPrecioMinorista(), true);
+                        textboxMayorista.Text =
+                            ManagerFormats.Instance.DecimalToMoney(pezAVender.GetPrecio().GetPrecioMayorista(), true);
+                        textboxOferta.Text =
+                            ManagerFormats.Instance.DecimalToMoney(pezAVender.GetPrecio().GetPrecioOferta(), true);
+                        textboxDistribuidor.Text =
+                            ManagerFormats.Instance.DecimalToMoney(pezAVender.GetPrecio().GetPrecioDistribuidor(), true);
+                    }
                 }
             }
+            else
+                ManagerMessages.Instance.NewInformationMessage(this, "Máximo de items por factura alcanzado. Para facturar más items, genere otra venta.");
         }
 
         private void rBtnMinorista_CheckedChanged(object sender, EventArgs e)
@@ -343,12 +404,19 @@ namespace Acuario.Forms
                 SeleccionarPrecioDistribuidor();
         }
 
+        private void rBtnOtro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rBtnOtro.Checked)
+                SeleccionarPrecioOtro();
+        }
+
         private void btnAgregarItem_Click(object sender, EventArgs e)
         {
             if (ValidItem())
             {
                 AgregarItem();
                 LimpiarCamposItem();
+                ActualizarSubtotal();
             }
         }
 
