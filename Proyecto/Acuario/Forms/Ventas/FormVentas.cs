@@ -49,6 +49,8 @@ namespace Acuario.Forms
                     ventas[i].GetFechaHora().ToShortDateString(),
                     "VER DETALLE", "VER FACTURA");
             }
+
+            CalcularSubtotal();
         }
 
         private void DeshacerVenta()
@@ -59,6 +61,17 @@ namespace Acuario.Forms
             ControllerVentas.Instance.RollbackVenta(idVenta);
             ManagerMessages.Instance.NewInformationMessage(this, "La venta ha sido reestablecida");
             RefreshGrid();
+        }
+
+        private void CalcularSubtotal()
+        {
+            decimal subtotal = 0;
+            int indexColMonto = ManagerGrids.Instance.GetColumnIndexByName(gridVentas, "TOTAL");
+
+            for (int i = 0; i < gridVentas.Rows.Count; i++)
+                subtotal += ManagerFormats.Instance.MoneyToDecimal(gridVentas.Rows[i].Cells[indexColMonto].Value.ToString());
+
+            labelSubtotal.Text = ManagerFormats.Instance.DecimalToMoney(subtotal, true);
         }
 
         // |==============================EVENTOS==============================|

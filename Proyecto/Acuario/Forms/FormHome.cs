@@ -19,7 +19,41 @@ namespace Acuario.Forms
 
         // |==============================METODOS Y FUNCIONES==============================|
 
-        public void UpdateResumenGeneral()
+        public void UpdateBalances()
+        {
+            // Inicializa rows si o las tiene
+            if (gridBalanceDia.Rows.Count == 0)
+            {
+                gridBalanceDia.Rows.Add();
+                gridBalanceDia.Rows[0].Cells[0].Style.ForeColor = Color.DarkGreen;
+                gridBalanceDia.Rows[0].Cells[1].Style.ForeColor = Color.DarkRed;
+                gridBalanceDia.Columns[0].HeaderCell.Style.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                gridBalanceDia.Columns[1].HeaderCell.Style.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                gridBalanceDia.Columns[2].HeaderCell.Style.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                gridBalanceDia.Columns[0].HeaderCell.Style.Font = new Font("Micorosft Sans Serif", 12F);
+                gridBalanceDia.Columns[1].HeaderCell.Style.Font = new Font("Micorosft Sans Serif", 12F);
+                gridBalanceDia.Columns[2].HeaderCell.Style.Font = new Font("Micorosft Sans Serif", 12F);
+                gridBalanceDia.ClearSelection();
+
+                gridBalanceMes.Rows.Add();
+                gridBalanceMes.Rows[0].Cells[0].Style.ForeColor = Color.DarkGreen;
+                gridBalanceMes.Rows[0].Cells[1].Style.ForeColor = Color.DarkRed;
+                gridBalanceMes.Columns[0].HeaderCell.Style.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                gridBalanceMes.Columns[1].HeaderCell.Style.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                gridBalanceMes.Columns[2].HeaderCell.Style.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                gridBalanceMes.Columns[0].HeaderCell.Style.Font = new Font("Micorosft Sans Serif", 12F);
+                gridBalanceMes.Columns[1].HeaderCell.Style.Font = new Font("Micorosft Sans Serif", 12F);
+                gridBalanceMes.Columns[2].HeaderCell.Style.Font = new Font("Micorosft Sans Serif", 12F);
+                gridBalanceMes.ClearSelection();
+            }
+
+            UpdateBalanceDia();
+            UpdateBalanceMes();
+        }
+
+        // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
+
+        private void UpdateBalanceDia()
         {
             int idTipoTransaccionIngreso =
                 ControllerTipoTransacciones.Instance.GetTipoTransaccionByNombre("Ingreso").GetIdTipoTransaccion();
@@ -28,31 +62,56 @@ namespace Acuario.Forms
 
             Decimal ingresos =
                 ControllerTransacciones.Instance.GetTotalTransacciones(idTipoTransaccionIngreso, DateTime.Today, DateTime.Today);
-           Decimal egresos =
-                ControllerTransacciones.Instance.GetTotalTransacciones(idTipoTransaccionEgreso, DateTime.Today, DateTime.Today);
+            Decimal egresos =
+                 ControllerTransacciones.Instance.GetTotalTransacciones(idTipoTransaccionEgreso, DateTime.Today, DateTime.Today);
 
-            labelIngresos.Text = ManagerFormats.Instance.DecimalToMoney(ingresos, true);
-            labelGastos.Text = ManagerFormats.Instance.DecimalToMoney(egresos, true);
+            gridBalanceDia.Rows[0].Cells[0].Value = ManagerFormats.Instance.DecimalToMoney(ingresos, true);
+            gridBalanceDia.Rows[0].Cells[1].Value = ManagerFormats.Instance.DecimalToMoney(egresos, true);
 
             Decimal balance = ingresos + egresos;
 
-            labelBalance.Text = ManagerFormats.Instance.DecimalToMoney(balance, true);
+            gridBalanceDia.Rows[0].Cells[2].Value = ManagerFormats.Instance.DecimalToMoney(balance, true);
 
             if (balance > 0)
-                labelBalance.ForeColor = Color.DarkGreen;
+                gridBalanceDia.Rows[0].Cells[2].Style.ForeColor = Color.DarkGreen;
             else if (balance < 0)
-                labelBalance.ForeColor = Color.DarkRed;
+                gridBalanceDia.Rows[0].Cells[2].Style.ForeColor = Color.DarkRed;
             else
-                labelBalance.ForeColor = Color.DarkGray;
+                gridBalanceDia.Rows[0].Cells[2].Style.ForeColor = Color.DarkGray;
         }
 
-        // |==============================METODOS Y FUNCIONES PRIVADOS==============================|
+        private void UpdateBalanceMes()
+        {
+            int idTipoTransaccionIngreso =
+                ControllerTipoTransacciones.Instance.GetTipoTransaccionByNombre("Ingreso").GetIdTipoTransaccion();
+            int idTipoTransaccionEgreso =
+                ControllerTipoTransacciones.Instance.GetTipoTransaccionByNombre("Egreso").GetIdTipoTransaccion();
+
+            Decimal ingresos =
+                ControllerTransacciones.Instance.GetTotalTransacciones(idTipoTransaccionIngreso, new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1), DateTime.Today);
+            Decimal egresos =
+                 ControllerTransacciones.Instance.GetTotalTransacciones(idTipoTransaccionEgreso, new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1), DateTime.Today);
+
+            gridBalanceMes.Rows[0].Cells[0].Value = ManagerFormats.Instance.DecimalToMoney(ingresos, true);
+            gridBalanceMes.Rows[0].Cells[1].Value = ManagerFormats.Instance.DecimalToMoney(egresos, true);
+
+            Decimal balance = ingresos + egresos;
+
+            gridBalanceMes.Rows[0].Cells[2].Value = ManagerFormats.Instance.DecimalToMoney(balance, true);
+
+            if (balance > 0)
+                gridBalanceMes.Rows[0].Cells[2].Style.ForeColor = Color.DarkGreen;
+            else if (balance < 0)
+                gridBalanceMes.Rows[0].Cells[2].Style.ForeColor = Color.DarkRed;
+            else
+                gridBalanceMes.Rows[0].Cells[2].Style.ForeColor = Color.DarkGray;
+        }
 
         // |==============================EVENTOS==============================|
 
         private void FormHome_Load(object sender, EventArgs e)
         {
-            UpdateResumenGeneral();
+            UpdateBalances();
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
@@ -62,9 +121,9 @@ namespace Acuario.Forms
             panelNavegacion.BringToFront();
         }
 
-        private void btnResumenesGenerales_Click(object sender, EventArgs e)
+        private void btnBalances_Click(object sender, EventArgs e)
         {
-            panelResumenesGenerales.BringToFront();
+            panelBalances.BringToFront();
         }
 
 
@@ -112,6 +171,16 @@ namespace Acuario.Forms
         {
             if (ManagerMessages.Instance.NewConfirmMessage(this, "¿Desea salir del sistema?"))
                 Close();
+        }
+
+        private void gridBalanceDia_SelectionChanged(object sender, EventArgs e)
+        {
+            gridBalanceDia.ClearSelection();
+        }
+
+        private void gridBalanceMes_SelectionChanged(object sender, EventArgs e)
+        {
+            gridBalanceMes.ClearSelection();
         }
     }
 }

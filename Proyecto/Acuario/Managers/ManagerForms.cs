@@ -98,7 +98,7 @@ namespace Acuario.Managers
 
         public void ActualizarResumenHome()
         {
-            ((Forms.FormHome)(Forms[0])).UpdateResumenGeneral();
+            ((Forms.FormHome)(Forms[0])).UpdateBalances();
         }
 
         // |==============================METODOS Y FUNCIONES PRIVADOS==============================|

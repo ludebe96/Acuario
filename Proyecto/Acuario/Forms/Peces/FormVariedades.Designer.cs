@@ -104,6 +104,7 @@
             this.gridVariedades.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridVariedades.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gridVariedades.Location = new System.Drawing.Point(0, 0);
+            this.gridVariedades.MultiSelect = false;
             this.gridVariedades.Name = "gridVariedades";
             this.gridVariedades.ReadOnly = true;
             this.gridVariedades.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

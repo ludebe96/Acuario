@@ -56,8 +56,12 @@
             this.textboxNroVenta = new MetroFramework.Controls.MetroTextBox();
             this.btnDeshacerVenta = new MetroFramework.Controls.MetroButton();
             this.btnVender = new MetroFramework.Controls.MetroButton();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.labelSubtotal = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridVentas)).BeginInit();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel3
@@ -126,7 +130,7 @@
             this.panelGrid.HorizontalScrollbarSize = 10;
             this.panelGrid.Location = new System.Drawing.Point(23, 126);
             this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Size = new System.Drawing.Size(781, 239);
+            this.panelGrid.Size = new System.Drawing.Size(781, 203);
             this.panelGrid.TabIndex = 17;
             this.panelGrid.VerticalScrollbarBarColor = true;
             this.panelGrid.VerticalScrollbarHighlightOnWheel = false;
@@ -175,6 +179,7 @@
             this.gridVentas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.gridVentas.Location = new System.Drawing.Point(0, 0);
+            this.gridVentas.MultiSelect = false;
             this.gridVentas.Name = "gridVentas";
             this.gridVentas.ReadOnly = true;
             this.gridVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -188,7 +193,7 @@
             this.gridVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridVentas.Size = new System.Drawing.Size(779, 237);
+            this.gridVentas.Size = new System.Drawing.Size(779, 201);
             this.gridVentas.TabIndex = 2;
             this.gridVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridVentas_CellContentClick);
             // 
@@ -396,11 +401,52 @@
             this.btnVender.UseSelectable = true;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel1.Controls.Add(this.labelSubtotal);
+            this.metroPanel1.Controls.Add(this.metroLabel5);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(23, 335);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(781, 29);
+            this.metroPanel1.TabIndex = 37;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // labelSubtotal
+            // 
+            this.labelSubtotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelSubtotal.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.labelSubtotal.Location = new System.Drawing.Point(423, 2);
+            this.labelSubtotal.Name = "labelSubtotal";
+            this.labelSubtotal.Size = new System.Drawing.Size(353, 25);
+            this.labelSubtotal.TabIndex = 3;
+            this.labelSubtotal.Text = "$0,00";
+            this.labelSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel5.Location = new System.Drawing.Point(3, 2);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(94, 25);
+            this.metroLabel5.TabIndex = 2;
+            this.metroLabel5.Text = "SUBTOTAL:";
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 425);
+            this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.btnVender);
             this.Controls.Add(this.btnDeshacerVenta);
             this.Controls.Add(this.metroLabel4);
@@ -421,6 +467,8 @@
             this.Load += new System.EventHandler(this.FormVentas_Load);
             this.panelGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridVentas)).EndInit();
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,5 +500,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn columnVerDetalle;
         private System.Windows.Forms.DataGridViewButtonColumn columnVerFactura;
         private MetroFramework.Controls.MetroButton btnVender;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroLabel labelSubtotal;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }

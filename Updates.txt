@@ -1,6 +1,9 @@
-|=========================================V1.1.1.0=========================================|
-- Se corrigió bug que no permitía modificar un pez por un problema en la sintáxis del
-    SQL Query al haber agregado el campo Proveedor
+|=========================================V1.2.0.0=========================================|
+- Se agregó la visualización de la suma de Totales en la ventana de Ventas
+- Se renombró "Resumenes Generales" a "Balances" en el Home
+- Se agregó al visualización de Balance del mes actual en la ventana Home sección Balances
+- Se corrijió bug que permitía seleccionar más de uan fila en las grillas de las ventanas
+que no debeían (Peces, Ventas, Ventas Detalles, Compras, Compras Detalles, Clientes)
 |==========================================================================================|
 
-29/08/2018
+05/09/2018
