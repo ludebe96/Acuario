@@ -1,17 +1,6 @@
-|=========================================V1.1.0.0=========================================|
-- Selección doble clic en todas las pantallas
-- Búsqueda automática en pantallas (Peces mas que nada)
-- Total acumulado en items al vender
-- Imprimir factura al vender (Checkbox default si)
-- Tamaños numéricos default tamaño "1"
-- Factura en vertical y con más líneas (22 o la mayor cantidad)
-- Categorias VARIOS, CAMPO, SERVICIOS, IMPUESTO (Estas últimas dos separarlas), MARCE, LITO, PEPE, OSVALDO, CLAUDIO
-- Ahora se actualizan las grillas al cambiar de item seleccionado en los filtros
-- Se cambió el orden de los campos en la pantalla Nuevo Gasto
-- Ahora la versión del home se posiciona correctamente al expandir la pantalla
-- Ahora las pantallas se abren en modo maximizado
-- Se agregó el campo booleano "Proveedor" a la entidad Pez
-- Se agregó la posibilidad de establecer otro precio diferente al momento de vender
+|=========================================V1.1.1.0=========================================|
+- Se corrigió bug que no permitía modificar un pez por un problema en la sintáxis del
+    SQL Query al haber agregado el campo Proveedor
 |==========================================================================================|
 
-01/08/2018
+29/08/2018

@@ -10,7 +10,7 @@ namespace Acuario.Managers
         // |==============================ATRIBUTOS==============================|
 
         private String PC_NAME = System.Environment.MachineName;
-        private String dbName = "Acuario";
+        private String dbName = "Acuario2";
         private static String DB_INSTANCE = "SQLEXPRESS";
         private static ManagerDatabase instance;
         public static ManagerDatabase Instance

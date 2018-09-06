@@ -461,7 +461,7 @@ namespace Acuario.Controllers
                 "ID_Pez_Tamaño = " + pez.GetIdTamaño() + ", " +
                 "ID_Precio = " + pez.GetIdPrecio() + ", " +
                 "Nombre = '" + pez.GetNombre() + "', " +
-                "Stock = " + pez.GetStock() + " " +
+                "Stock = " + pez.GetStock() + ", " +
                 "Proveedor = " + Convert.ToInt16(pez.EsProveedor() ? 1 : 0) + " " +
                 "WHERE ID_Pez = " + idPezAModificar);
         }

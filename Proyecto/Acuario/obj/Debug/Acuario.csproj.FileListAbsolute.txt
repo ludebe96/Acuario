@@ -286,3 +286,37 @@ C:\Program Files (x86)\Acuario\Acuario V1.1.0.0\Proyecto\Acuario\obj\Debug\Acuar
 C:\Program Files (x86)\Acuario\Acuario V1.1.0.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormVentas.resources
 C:\Program Files (x86)\Acuario\Acuario V1.1.0.0\Proyecto\Acuario\obj\Debug\Acuario.Properties.Resources.resources
 C:\Program Files (x86)\Acuario\Acuario V1.1.0.0\Proyecto\Acuario\obj\Debug\Acuario.csproj.GenerateResource.Cache
+C:\Users\Acuario\Desktop\Acuario V1.1.0.0\Proyecto\Acuario\bin\Debug\Acuario.exe.config
+C:\Users\Acuario\Desktop\Acuario V1.1.0.0\Proyecto\Acuario\obj\Debug\Acuario.exe
+C:\Users\Acuario\Desktop\Acuario V1.1.0.0\Proyecto\Acuario\obj\Debug\Acuario.pdb
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\bin\Debug\Acuario.exe.config
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\bin\Debug\Acuario.exe
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\bin\Debug\Acuario.pdb
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\bin\Debug\MetroFramework.Design.dll
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\bin\Debug\MetroFramework.dll
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\bin\Debug\MetroFramework.Fonts.dll
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.csprojResolveAssemblyReference.cache
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormAjustarBalance.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormCaja.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormClientes.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormCompraItems.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormComprar.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormCompras.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormEspecies.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormGastos.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormHome.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormNuevaEspecie.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormNuevaVariedad.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormNuevoCliente.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormNuevoGasto.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormNuevoPez.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormPeces.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormTransferir.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormVariedades.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormVender.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormVentaItems.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Forms.FormVentas.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.Properties.Resources.resources
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.csproj.GenerateResource.Cache
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.exe
+C:\Program Files\Me\Work\LUDEBE Sistemas\Acuario\Desarrollo\Acuario V1.1.1.0\Proyecto\Acuario\obj\Debug\Acuario.pdb
